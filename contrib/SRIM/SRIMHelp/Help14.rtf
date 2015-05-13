@@ -1,0 +1,63 @@
+{\rtf1\ansi\deff0\deflang1033{\fonttbl{\f0\froman\fprq2 Times New Roman;}{\f1\froman\fprq2\fcharset0 Times New Roman;}{\f2\froman Times New Roman;}{\f3\fnil\fcharset2 Symbol;}}
+{\colortbl ;\red0\green0\blue128;\red255\green0\blue255;\red0\green0\blue255;\red128\green0\blue0;\red255\green0\blue0;}
+\viewkind4\uc1\pard\qc\cf1\b\f0\fs32 Special Applications of TRIM\par
+\cf0\par
+\cf1\fs28 Ions starting with varying Energies, Angles and Depths\par
+\pard\cf0\i\fs22 Examples:\par
+\pard\li432\cf2 Calculating Plasma Ions Hitting a Solid\par
+Simulating a Receding Surface from Sputtering\par
+Simulating Reactor Radiation Damage in Metals\par
+\pard\cf0\b0\i0\par
+Sometimes users wish to consider incident ions with various energies, with various angles of incidence and possibly starting at various depths. For this application the data file, \cf3\b\i TRIM.DAT\cf0\b0 ,\i0  is used, see Table 1 below. It can be used to simulate the ions from a plasma hitting a surface (various angles and energies), e.g. solar wind effects on planetary materials. It can be used to simulate a receding surface with subsequent ions starting at increasing depths, e.g. from ion sputtering effects. Or it can be used to simulate nuclear reaction processes, e.g. neutron induced alpha-particles created throughout reactor materials.\par
+\par
+\f1 Examples of typical \cf3\b\i TRIM.DAT \cf0\b0\i0 files are found in the sub-directory \cf3\b\i SRIM Tools \cf0\b0\i0 as files \cf3\b\i TRIM1.DAT \cf0\b0\i0 and \cf3\b\i TRIM2.dat\cf0\b0\i0 . When you construct a \cf3\b\i TRIM.DAT \cf0\b0\i0 file, this file must be placed in the SRIM root directory (which holds the program \cf4\b\i TRIM.exe\cf0\b0\i0 ).\f0\par
+\par
+\pard\tx288\tx432\tx1728\tx1872\tx2160\tx3024\tx3744\tx4032\tx5040\tx6192\tx7488\tx8640\tx11232 The top of file \cf3\b\i TRIM.DAT\b0\i0  \cf0 contains 10 lines of comments, which are not used in the TRIM calculation. (Ignore the special fonts used in the figure for emphasis; the data file on the disk will be in simple ASCII format.) One of the data lines, as noted in the sample file, will be included as an identifying comment in all output files (named *.TXT) which tabulates the statistics of each collision. This is the line: \b\i Ar Plasma Ions into Si (1000A thick) (Energies 20-80 keV, Various Angles).\par
+\pard\tx360\tx1080\tx2160\tx3060\tx4050\tx5040\tx5760\tx6660\tx7830\tx9000\cf3\ul\i0 _______________________________________________________________________\par
+\pard\ulnone\i\fs24\par
+\i0 Table \lang1024 1\lang1033 - \i TRIM.DAT\i0  -  Sample File for Varying Energy, Angle and Depth\par
+\pard\tx360\tx1080\tx2160\tx3060\tx4050\tx5040\tx5760\tx6660\tx7830\tx9000\ul _______________________________________________________________________\par
+\pard\tx360\tx1080\tx1890\tx2700\tx3510\tx4320\tx5040\tx5940\tx6840\tx7830\cf0\ulnone TRIM.DAT:  TRIM with various Incident Ion Energies/Angles and Depths\par
+\pard\b0\i Data Format:  \b Top 10 lines\b0\i0  are user comments, with line #8 describing experiment.\par
+\i Data Format:  \b Line #8\b0\i0  will be written into all TRIM output files ( various files:  *.TXT).\par
+\i Data Format:  \b\i0 Data Table\b0  line consist of: EventName(5 char.) + 8 numbers separated by spaces.\par
+\i Data Format:  \i0 The Event Name consists of any 5 characters to identify that line. \par
+\pard\fi-576\li576\tx360\tx1080\tx2070\tx2880\tx3780\tx4590\tx5220\tx6120\tx7110\tx8190 Typical Data File is shown below, with a variety of numerical formats, all acceptable.\par
+Note that cos(X) = 1 for normal incidence, and cos(X) = -1 for back towards the target surface.\par
+\pard\tx288\tx432\tx1728\tx1872\tx2160\tx3024\tx3744\tx4032\tx5040\tx6192\tx7488\tx8640\tx11232\b\i >> Ar Plasma Ions into Si (1000A thick) (Energies 20-80 keV, Various Angles) \par
+\pard\tx720\tx1350\tx2250\tx3060\tx3870\tx4950\tx5850\tx6750\tx9360\i0\f2 Event\tab Atom\tab Energy\tab Depth\tab Lateral-Position\tab ------- Atom Direction -------\par
+\ul\f0 Name\tab Numb\tab __(eV)__\tab\f1 _X_(\'c5)_\f0\tab\f1 _Y_(\'c5)_\f0\tab\f1 _Z_(\'c5)_\f0\tab Cos(X)\tab Cos(Y)\tab Cos(Z)\par
+\ulnone\b0   A-1\tab   18\tab 12345\tab   0\tab   0\tab  0  \tab  1.00000\tab  .000000\tab -.000000\par
+  abcde\tab   18\tab 54321\tab   0\tab   0  \tab  0 \tab  0.62344\tab -.295513\tab  .003415\par
+  AA#1\tab   18\tab 1.31E4\tab   123\tab   0\tab -154\tab  0.34234\tab -.336437\tab -.017437\par
+  C-3\tab   18\tab 123.55\tab   1230\tab  432\tab  12.3E2\tab -0.23258\tab -.543453\tab  .443483\par
+  AA-1\tab   18\tab 0.123E2\tab   0\tab   -10\tab -12\tab  0.99998\tab  .000012\tab -.000017\par
+\pard\tx360\tx1080\tx2160\tx3060\tx4050\tx5040\tx5760\tx6660\tx7830\tx9000\b _______________________________________________________________________\par
+\pard\tx288\tx432\tx1728\tx1872\tx2160\tx3024\tx3744\tx4032\tx5040\tx6192\tx7488\tx8640\tx11232\b0\par
+\pard\f1\fs22 Table 1 shows the data format for several ions using various numerical styles to show how to specify numbers (all are acceptable). The numbers must be separated by spaces or commas. The first column is a five character ID which will be displayed on the screen while that ion is active. Columns 2-3 show the ion atomic number and energy (eV). Column 4 indicates the depth (\'c5) in the target where the ion begins: this is its x-axis coordinate. The depth must be a positive number. Columns 5-6 are the initial lateral position of the ion (\'c5). TRIM normally uses (0,0,0) as the starting coordinates of the ion. The ion's starting position is always randomly modified within an atomic diameter so that successive ions starting, for example, at (0,0,0) will not have the same impact parameter. The incident angle of the ion is specified by its directional cosines, columns 7-9, with the x-axis corresponding to depth into the target. For normal incidence, the three directional cosines are: 1,0,0. Note that cos(X) is posi\f0 tive when the ion is going into the target, and negative when moving towards the target surface. The \cf3 TRIM.DAT \cf0 file may be up to 99999 lines long. If any illegal input values are discovered, an error message is displayed on the screen and that input line is skipped.\par
+\par
+\f1 As an example, a file TRIM1.DAT is included on the TRIM disk. This file contains data similar to that shown in the box above for Ar ions (20-80 keV) incident on a Si target (1000 \'c5 thick) To illustrate various modes, we start the ions at different angles and at different depths in the target. To use this file to make a TRIM calculation, do the following:\f0\par
+\par
+\pard{\pntext\f3\'B7\tab}{\*\pn\pnlvlblt\pnf3\pnindent360{\pntxtb\'B7}}\fi-360\li360 In DOS, create a data file using:  \i COPY  TRIM1.DAT  TRIM.DAT\i0       This will create the control file \cf3 TRIM.DAT \cf0 out of the above TRIM1.DAT demo file.\par
+{\pntext\f3\'B7\tab} Specify that TRIM uses the specil data file TRIM.DAT (upper right box in the TRIM setup window).\par
+{\pntext\f3\'B7\tab}Specify either item  Quick calculation of damage or  Full Cascades. \par
+{\pntext\f3\'B7\tab}Specify any kind of plot.\par
+{\pntext\f3\'B7\tab}Go through the ion type, mass and energy for \b Ar\b0  ions at \b 80 keV\b0 . Note that you must use at least the maximum energy of ions which occurs in the \cf3 TRIM.DAT \cf0 file, column 3.\par
+{\pntext\f3\'B7\tab}Specify for the first Target Atom the element  \b Si\b0  .  (default)\par
+{\pntext\f3\'B7\tab}Specify that there are no other target atoms.  (default)\par
+{\pntext\f3\'B7\tab}Specify \b 1000\b0  Angstroms for the depth of Layer #1.\par
+{\pntext\f3\'B7\tab}Specify the stoichiometry as Si = \b 1\b0  .  (default).\par
+{\pntext\f3\'B7\tab}Use the defaults to specify target density and description (\b 2.32\b0  g/cm2 and \b Silicon\b0 ).\par
+{\pntext\f3\'B7\tab}Specify no other layers.\par
+{\pntext\f3\'B7\tab}During the running of TRIM you will see in the top left of the plots the current ion Event Name from the table in \cf3 TRIM.DAT\cf0 . On the left side of the screen you will see the ion energy and position. You may turn this latter information off during the calculation by pressing the hotkey "\b I\b0 ".\par
+{\pntext\f3\'B7\tab}Run TRIM to completion, (about a minute) and then go to the Plot Menu using \b Spacebar\b0 .\par
+\pard\par
+\cf5\i Note: The Event in line 4 in \i0 Table 1\i\f1  contains a mistake (depth > 1000 \'c5) to illustrate the error messages associated with using\cf0\f0  \cf3\b TRIM.DAT\cf0\b0 .\par
+\i0\par
+To run your own calculation, make up a new file \cf3\b\i TRIM.DAT\cf0\b0\i0 , then follow the instructions above.\par
+You will have to specify your own ion and target. When you prepare the TRIM.DAT file be sure that your editor places \b CR+LF\b0  characters at the end of each line, and at the end of the file there is an \b EOF\b0  character (\b EOF\b0  = End Of File). Most editors do this automatically and these characters are essential. If you finish your calculation and suddenly get Error #62, then your data file is missing the EOF character. \par
+\par
+This application of TRIM was suggested by: K. Bodek, PSI, Switzerland, F. Calvino, Barcelona, Spain and many others.\par
+\par
+}
+ 

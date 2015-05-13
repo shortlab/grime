@@ -1,0 +1,123 @@
+{\rtf1\ansi\deff0\deflang1033{\fonttbl{\f0\froman\fprq2 Times New Roman;}{\f1\froman\fprq2\fcharset0 Times New Roman;}{\f2\froman\fprq2 NewCenturySchlbk;}{\f3\froman NewCenturySchlbk;}{\f4\fmodern\fprq1\fcharset2 MS LineDraw;}{\f5\fmodern\fcharset2 MS LineDraw;}{\f6\fnil\fcharset2 Symbol;}}
+{\colortbl ;\red0\green0\blue255;\red128\green0\blue0;\red0\green0\blue128;\red0\green128\blue0;}
+\viewkind4\uc1\pard\qc\cf1\b\i\f0\fs36 Radiation Damage from Neutrons/Electrons/Photons\par
+\pard\tx1152\tx1584\cf0\b0\i0\fs20\par
+\fs22 TRIM can be used to calculate the recoil cascades in solids caused by neutrons, electrons or photons (which we will call NEP particles). These cases are treated identically, with TRIM evaluating only cascade damage without any incident particle damage.\par
+\par
+One must first obtain another computer program for the transport of NEP particles through matter. Widely used codes are the "Integrated TIGER Series", (ITS code) for electrons and photons, or the "Monte Carlo Neutron Program" (MCNP code) for neutrons in matter. Both are available from the Radiation Shielding Information Center, Oak Ridge National Laboratory, P.O. Box 2008, Oak Ridge, TN, 37831-6362, USA, telephone: (01)-615-5746176, Fax: (01)-615-574-6182, Internet: PDC@EPIC.EPM.ORNL.GOV, Bitnet: PDC@ORNLSTC. The separate NEP transport programs are used to calculate where collisions are made in the target, and give the position, and recoil statistics for each collision atom. Then TRIM can be used to calculate the full target recoil cascade which occurs from each NEP collision atom.\par
+\par
+A file called \cf1\b\i TRIM.DAT\cf0\b0\i0  must be prepared by the user which specifies the parameters of each cascade. An example of \cf1\b\i TRIM.DAT\cf0\b0\i0  is shown in Table \b 1\b0  and included \f1 in SRIM as\f0  \f1  \cf1\b\i SRIM Tools/TR\f0 IM2.DAT\cf0\b0\i0 . TRIM calculates the cascades with an "invisible" incident particle. \cf1\b\i TRIM.DAT \cf0\b0\i0 specifies each recoil atom and calculates its cascade. \f1 If you construct a \cf1\b\i TRIM.DAT \cf0\b0\i0 file, for execution it must be placed in the root directory of SRIM (the directory that contains the program \cf2\b\i TRIM.exe\cf0\b0\i0 ).\f0\par
+\par
+The top of file \cf1\b\i TRIM.DAT\b0\i0  \cf0 contains 10 lines of comments, which are not used in the TRIM calculation. (Ignore the special fonts used in the figure for emphasis; the data file on the disk is in simple ASCII format.) One of the data lines, as noted in the sample file, will be included as an identifying comment in the file \b\i COLLISON.TXT\b0\i0  (see Table A-6 of the TRIM Manual, shown below) which tabulates the statistics of each collision (This is the line: "\i Recoils from 1670000 eV electrons in SiO2(1200 \i0\f1\'c5\i )+ GaAs(10000 \'c5)\i0\f0 ")\i .\i0  The numerical data at the bottom of the file may be written in several different formats, such as 12345, 12.345E3, 0.12345E5, etc. \par
+\par
+\pard\qc\cf3\b\f2\fs28 Table \lang1024 1\lang1033  - \cf1\i TRIM.DAT \cf3\b0 - \b\i0  Sample File for Collision Cascades\cf0\par
+\pard\qc\tx360\tx1080\tx2160\tx3060\tx4050\tx5040\tx5760\tx6660\tx7830\tx9000\cf3\ul\f0\fs32 __________________________________________\par
+\pard\cf0\ulnone\b0\fs8\par
+\pard\qc\tx360\tx1080\tx2160\tx3060\tx4050\tx5040\tx5760\tx6660\tx7830\tx9000\b\par
+\fs28 TRIM.DAT  :  TRIM recoil cascade data file\par
+\pard\b0\i\fs22 Data Format:\tab\b Top 10 lines\b0\i0  are user comments, with line #8 describing experiment.\par
+\i Data Format:\tab\b Line #8\b0\i0  will be written into all TRIM output files ( various files:  *.TXT).\par
+\i Data Format:\i0\tab\b Data Table\b0  line consist of: EventName(5 char.) + 9 numbers separated by spaces.\par
+\i Data Format:\tab\i0 The Event Name consists of any 5 characters to identify that line. \par
+\pard\fi-576\li576\tx360\tx1080\tx2070\tx2880\tx3780\tx4590\tx5220\tx6120\tx7110\tx8190 Typical Data File is shown below, with a variety of numerical formats, all acceptable.\par
+Note that cos(X) = 1 for normal incidence, and cos(X) = -1 for back towards the target surface.\par
+\b\i Recoils from 1670000 eV electrons in SiO2(1200A)+GaAs(10000A)\par
+\pard\tx810\tx1620\tx2160\tx2790\tx3780\tx4860\tx5760\tx6750\tx7740\i0 Event\tab Atom\tab Energy\tab Depth\tab Lateral-Position\tab ------------ Atom Direction ------------\par
+\ul Name\tab Numb\tab   (eV)\tab\f1 _X_(\'c5)\f0\tab\f1 Y_(\'c5)\f0\tab\f1 Z_(\'c5)_\f0\tab Cos(X)\tab Cos(Y)\tab Cos(Z)\par
+\ulnone\b0   A-1\tab   8\tab 59.2 \tab 322\tab  24\tab  12.34\tab  0.99998\tab  .000012\tab -.000017\par
+  C-3\tab   33\tab 1259. \tab 10.02E3\tab  432\tab  12.3E2\tab -0.23258\tab -.543453\tab  .443483\par
+  AA-1\tab   8\tab 98764\tab 522\tab -24.3\tab -12\tab  0.99998\tab  .000012\tab -.000017\par
+  123C\tab   14\tab 1.56E4\tab 2222\tab -33\tab -69\tab  0.62344\tab -.295513\tab  .003415\par
+  9875\tab   33\tab 7.31E4\tab 3322\tab -82.9\tab  154\tab  0.34234\tab -.336437\tab -.017437\par
+  asd\tab   6\tab 0.98E5\tab 0.882E2\tab -206\tab  588\tab  0.03754\tab  .032936\tab -.334616\par
+\pard\qc\tx360\tx1080\tx2160\tx3060\tx4050\tx5040\tx5760\tx6660\tx7830\tx9000\b\fs32 ___________________________________________\par
+\pard\tx1152\tx1584\b0\fs20\par
+\pard\fs22 Table \b 1\b0\f1  shows the data for several recoils using various formats to show how to specify numbers. The numbers must be separated by spaces or commas. The first column is a five character ID which will be displayed on the screen while that recoil is active. Columns 2-3 show the recoiling atom atomic number and energy (eV). Column 4 indicates the depth (\'c5) in the target where the recoil atom starts- this is the x-axis coordinate. The depth must be a positive number. Columns 5-6 are the initial lateral position of the atom (\'c5). The initial trajectory of the recoiling atom is specified by its directional cosines, columns 7-9, with the x-axis corresponding to depth into the target. For a recoil trajectory normal to the target surface, the three directional cosines would be: cos(X)=1, cos(Y)=0, cos (Z)=0. Note that cos(X) is positive when the ion is going into the target, and negative when moving towards the target surface. The TRIM.DAT file may be up to 99999 lines long. If any illegal input values are discovered, \f0 an error message is displayed on the screen and that input line is skipped.\par
+\par
+\pard\tx1152\tx1584 The sample input data file shown in Table \b 1\b0  and on the TRIM disk, file TRIM2.DAT\b\i ,\b0\i0  is for 1.67 MeV electrons into a target of SiO\dn6 2\up0\f1  (1200 \'c5) on GaAs (10000 \'c5). If you wish to try TRIM using the sample data file \b\i\f0 ,\b0\i0  follow these steps:\par
+\par
+\pard{\pntext\f6\'B7\tab}{\*\pn\pnlvlblt\pnf6\pnindent360{\pntxtb\'B7}}\fi-360\li360\tx1152\tx1584 In DOS, create a data file using:  \i COPY  TRIM2.DAT  TRIM.DAT\i0     This will create the control file TRIM.DAT out of the above TRIM2.DAT demo file.\par
+{\pntext\f6\'B7\tab}In the TRIM setup page, in the upper-right window specify Kinetics : Use TRIM.DAT file (dropdown menu).\par
+{\pntext\f6\'B7\tab}For the ion Type and Mass use the defaults since this data is not used.\par
+{\pntext\f6\'B7\tab}For the ion Energy, \cf4\b\i specify the maximum energy \cf0\b0\i0 which occurs in column 3 in TRIM.DAT. This will assure that stopping powers are calculated for all recoils up to this energy.\par
+{\pntext\f6\'B7\tab}Specify target atoms of \b\i Si\b0\i0 , \b\i O\b0\i0 , \b\i Ga\b0\i0  and \b\i As \b0\i0 (You must specify every atom noted in column 2 of the TRIM.DAT file, and this atom must exist at the depth noted in column 4. Otherwise, you will get an error message on the screen, and this event will be omitted.)\par
+{\pntext\f6\'B7\tab}Specify that the first layer with a depth of \b\i 1200 \b0\i0\f1\'c5 and containing \b\i\f0 Si(1)+O(2).\b0\i0  TRIM normalizes the stoichiometry so you may use any equivalent units such as \b\i Si(33)+O(66).\b0  \i0 The second layer has a layer depth of \b\i 10000 \b0\i0\f1\'c5 and is composed of \b\i\f0 Ga(1)+ As(1).\b0\i0  There is no third layer.\par
+{\pntext\f6\'B7\tab}Specify that you wish to have a datafile made of all Collision Details (bottom of window).\par
+{\pntext\f6\'B7\tab}Press \cf4\b\i Start TRIM Calculation\cf0\b0\i0\par
+{\pntext\f6\'B7\tab}TRIM will detect that this is a special calculation based on TRIM.DAT. During the cascade calculation, on the screen you will see small isolated pockets of damage, with no intermediate ion tracks. The TRIM damage plots may be accessed normally at any time. The cascade results will be stored in \b COLLISON.TXT\b0 . You may interrupt the calculation at any time, and continue it later (TRIM will start where it left off).\par
+\pard\fi-360\li360\tx1152\tx1584\par
+\pard\tx1152\tx1584 When you prepare your own \cf1\b\i TRIM.DAT\b0\i0  \cf0 file be sure that your editor places \b CR+LF\b0  characters at the end of each line, and at the end of the file there is an \b EOF\b0  character (\b EOF\b0  = End Of File). Most editors do this automatically and these characters are essential. If you finish your calculation and suddenly get Error #62, then your data file is missing the EOF character.\par
+\par
+NOTE: TRIM will assume that each \cf2\b\i Event Name \cf0\b0\i0 data row in \cf1\b\i TRIM.DAT \cf0\b0\i0 comes from a different incident particle, and hence its statistical averages will be in error for cases where a single particle may cause several recoils, e.g. for a high energy neutron may cause several \i Event \i0 data lines in \cf1\b\i TRIM.DAT\cf0\b0\i0 . To correct for this counting error, take the calculated TRIM statistical averages and multiply by (N\dn4 Events\up0 /N\dn4 Particles\up0 ). \par
+\par
+For example, if the \cf1\b\i TRIM.DAT \cf0\b0\i0 file contains 100 events caused by 20 incident particles, then every average needs to be corrected by multiplying by (100/20) = 5. So if the TRIM output shows "Vacancies/Ion = 10" the corrected average value would be 50 Vacancies/Ion.\par
+As with normal runs of TRIM, the calculation may be interrupted and saved at any time. When TRIM resumes, it will automatically skip cascades which have been previously calculated.\par
+\b\i\par
+COLLISON.TXT\b0\i0  contains the data on every ion/target collision which exchanges enough energy to produce a vacancy (energy above the Displacement Energy).  This file is turned on during TRIM using the \b  C\b0   command. This file can get quite large. If the data file is turned off, then on again, further data may be appended to the old data.\par
+\pard\par
+\pard\tx576\tx864\tx1152 NOTE: A Cascade with 1000 recoils will take about 64  kb of memory if COLLISON.TXT is actively storing data.\par
+\par
+The above instructions were suggested by R. Macaulay-Newcombe @ McMaster Univ.; Canada, M. Robbins, Univ. of West London, UK; and F. Calvino, Barcelona, Spain).\par
+\par
+----------------------------------------------------------------------------------------------------------------------\par
+\pard\cf1\b\i\f3\fs28 COLLISON.TXT     (Ion-Atom Collision Kinetics)\par
+\cf0\b0\i0\f0\fs24\par
+\cf3\fs22 COLLISON.TXT contains information any Ion/Target collisions which result in a recoil cascade.\par
+\par
+\f1 This output is for a calculation of Boron ions (17 keV) into Tungsten (300 \'c5 thick).\cf0\f0\par
+\f3\par
+\f4\fs16\par
+\cf4\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\par
+\'df\'df\'df\'df\'df\'df TRIM Calc.=  B( 17 keV) ==> Tungsten(  300A ) \'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\par
+\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\par
+\'c9\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'bb\par
+\'ba     Ion Name   =      B                                  \'ba\par
+\'ba     Ion Mass   =     11.010 amu                          \'ba\par
+\'ba     Ion Energy =       17.0 keV                          \'ba\par
+\'c7\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'b6\par
+\'ba     Displacement Energy=    20 eV  ( Tgt. Atom =  W )    \'ba\par
+\'ba     Binding Energy     =     2 eV                        \'ba\par
+\'c8\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'bc\par
+ \par
+\'c9\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd  COLLISION HISTORY  \'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'bb\par
+\'ba NOTES: Only Ion Collisions which produce Displacements are tabulated.                              \'ba\par
+\'ba        Atom Sums and Averages are Incomplete if Recoil Cascades Leave Target.                      \'ba\par
+\'ba        Target DISPlacements = VACancies + REPLACement Collisions.                                  \'ba\par
+\'ba        Target VACancies = INTERstitial Atoms + (Atoms Leave Target Volume).                        \'ba\par
+\'c7\'c4\'c4\'c4\'c4\'c4\'c2\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c2\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c2\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c2\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c2\'c4\'c4\'c4\'c4\'c2\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c2\'c4\'c4\'c4\'c4\'c4\'c4\'c2\'c4\'c4\'c4\'c4\'c4\'c4\'c2\'c4\'c4\'c4\'c4\'c4\'c4\'c2\'c4\'c4\'c4\'c4\'c4\'c4\'b6\par
+\'ba Ion \'b3  Energy \'b3  Depth   \'b3 Lateral Distance (A)\'b3  Se   \'b3Atom\'b3 Recoil   \'b3Target\'b3Target\'b3Target\'b3Target\'ba\par
+\'ba Numb\'b3  (keV)  \'b3   (A)    \'b3  Y Axis  \'b3 Z Axis   \'b3(eV/A) \'b3Hit \'b3Energy(eV)\'b3DISP. \'b3VAC.  \'b3REPLAC\'b3INTER \'ba\par
+\'cc\'cd\'cd\'cd\'cd\'cd\'d8\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'d8\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'d8\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'d8\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'d8\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'d8\'cd\'cd\'cd\'cd\'d8\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'d8\'cd\'cd\'cd\'cd\'cd\'cd\'d8\'cd\'cd\'cd\'cd\'cd\'cd\'d8\'cd\'cd\'cd\'cd\'cd\'cd\'d8\'cd\'cd\'cd\'cd\'cd\'cd\'b9\par
+\'b3    1\'b316.07E+00\'b3    33E+00\'b3 66461E-05\'b3     4E+00\'b3  15.84\'b3  W \'b3    83E+00\'b3     4\'b3     2\'b3     2\'b3     2\'b3\par
+\'b3    1\'b316.10E+00\'b3    49E+00\'b3    -3E+00\'b3     7E+00\'b3  15.86\'b3  W \'b3    57E+00\'b3     2\'b3     1\'b3     1\'b3     1\'b3\par
+\'b3    1\'b316.28E+00\'b3    65E+00\'b3    -6E+00\'b3     6E+00\'b3  15.93\'b3  W \'b3    94E+00\'b3     4\'b3     1\'b3     3\'b3     1\'b3\par
+\'b3    1\'b316.06E+00\'b3   111E+00\'b3   -12E+00\'b3    -8E+00\'b3  15.85\'b3  W \'b3    48E+00\'b3     2\'b3     1\'b3     1\'b3     1\'b3\par
+\'b3    1\'b315.00E+00\'b3   125E+00\'b3   -14E+00\'b3   -15E+00\'b3  15.32\'b3  W \'b3   114E+00\'b3     3\'b3     1\'b3     2\'b3     1\'b3\par
+\'b3    ---------------- Data Omitted  -------------------------- Data Omitted ----------------------   \'b3\par
+\'b3    1\'b311.15E+00\'b3   293E+00\'b3  -163E+00\'b3     4E+00\'b3  13.35\'b3  W \'b3    27E+00\'b3     1\'b3     1\'b3     0\'b3     1\'b3\par
+\'c7\'c4\'c4\'c4\'c4\'c4\'c1\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c1\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c1\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c1\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c1\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c1\'c4\'c4\'c4\'c4\'c1\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c1\'c4\'c4\'c4\'c4\'c4\'c4\'c1\'c4\'c4\'c4\'c4\'c4\'c4\'c1\'c4\'c4\'c4\'c4\'c4\'c4\'c1\'c4\'c4\'c4\'c4\'c4\'c4\'b6\par
+\'ba For Ion      1:                For All Ions to date :                                              \'ba\par
+\'ba Displacements =    160.0       Average Displacements/Ion =     160.000                             \'ba\par
+\'ba Vacancies     =     48.0       Average Vacancies/Ion     =      48.000                             \'ba\par
+\'ba Replacements  =    112.0       Average Replacements/Ion  =     112.000                             \'ba\par
+\'ba Interstitials =     48.0       Average Interstitials/Ion =      48.000                             \'ba\par
+\'c7\'c4\'c4\'c4\'c4\'c4\'c2\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c2\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c2\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c2\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c2\'c4\'c4\'c4\'c4\'c2\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c2\'c4\'c4\'c4\'c4\'c4\'c4\'c2\'c4\'c4\'c4\'c4\'c4\'c4\'c2\'c4\'c4\'c4\'c4\'c4\'c4\'c2\'c4\'c4\'c4\'c4\'c4\'c4\'b6\par
+\'ba Ion \'b3  Energy \'b3  Depth   \'b3 Lateral Distance (A)\'b3  Se   \'b3Atom\'b3 Recoil   \'b3Target\'b3Target\'b3Target\'b3Target\'ba\par
+\'ba Numb\'b3  (keV)  \'b3   (A)    \'b3  Y Axis  \'b3 Z Axis   \'b3(eV/A) \'b3Hit \'b3Energy(eV)\'b3DISP. \'b3VAC.  \'b3REPLAC\'b3INTER \'ba\par
+\'cc\'cd\'cd\'cd\'cd\'cd\'d8\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'d8\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'d8\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'d8\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'d8\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'d8\'cd\'cd\'cd\'cd\'d8\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'d8\'cd\'cd\'cd\'cd\'cd\'cd\'d8\'cd\'cd\'cd\'cd\'cd\'cd\'d8\'cd\'cd\'cd\'cd\'cd\'cd\'d8\'cd\'cd\'cd\'cd\'cd\'cd\'b9\par
+\'b3    2\'b317.00E+00\'b3    37E+00\'b3    -2E+00\'b3 -8967E-04\'b3  16.09\'b3  W \'b3   476E+00\'b3    20\'b3     1\'b3    19\'b3     1\'b3\par
+\'b3    2\'b317.00E+00\'b3    50E+00\'b3     8E+00\'b3    -2E+00\'b3  16.29\'b3  W \'b3    24E+00\'b3     1\'b3     1\'b3     0\'b3     1\'b3\par
+\'b3    2\'b315.63E+00\'b3    65E+00\'b3    16E+00\'b3    -2E+00\'b3  15.63\'b3  W \'b3    77E+00\'b3     3\'b3     2\'b3     1\'b3     2\'b3\par
+\'b3    ---------------- Data Omitted  -------------------------- Data Omitted ----------------------   \'b3\par
+\f5\par
+\cf0\b\fs14\par
+\cf3\b0\f0\fs22 COLLISON.TXT shows only those collisions which result in a recoiling target atom are shown, i. e. only those collisions in which the ion transfers to the target atom an energy greater than its displacement energy (which was entered in the setup program). Additionally, it contains the following information:\par
+\b\i\par
+\f1 Se (eV/\'c5)\b0\i0\f0  is the electronic stopping power of the ion in the target at its current energy. This energy is modified by including a straggling component (random variation) in the calculation, so that the actual ion electronic energy loss between specific collisions can not be directly obtained from this number. Because of statistical fluctuations, the ion energy may actually increase between collisions.\par
+\par
+Target \b\i Displacements, Vacancies, Replacement Collisions, and Interstitial Atoms\b0\i0  are described in the Help section \cf2\b\i Physics of Recoil Cascades\cf3\b0\i0 . These constitute the changes introduced into the target by each collision.\par
+\par
+After each ion, there is a summary of the target damage by that ion, and the damage averages from all ions up to that point. For ion #1, shown above, the individual ion damage and the summary total damage are identical.\par
+\pard\tx576\tx864\tx1152\cf0\par
+}
+ 

@@ -1,0 +1,64 @@
+{\rtf1\ansi\deff0\deftab720{\fonttbl{\f0\fswiss MS Sans Serif;}{\f1\froman\fcharset2 Symbol;}{\f2\froman\fprq2 Times New Roman;}{\f3\froman Times New Roman;}{\f4\fmodern\fcharset2 MS LineDraw;}{\f5\froman NewCenturySchlbk;}}
+{\colortbl\red0\green0\blue0;\red0\green0\blue255;\red0\green0\blue128;\red0\green128\blue0;}
+\deflang1033\pard\qc\plain\f2\fs32\cf2\b Physics of Sputtering\plain\f2\fs28\b\i 
+\par \pard\plain\f2\fs20 
+\par \pard\tx576\tx720\plain\f2\fs22 Sputtering is the removal of near-surface atoms from the target. When a cascade gives a target atom an energy greater than the "surface binding energy" of that target, the atom may be sputtered. To actually be sputtered, the atom's energy normal to the surface must still be above the surface binding energy when it crosses the plane of the surface. The sputtering of a surface is described by a "Sputtering Yield", which is defined as the mean number of sputtered target atoms per incident ion.  If the target is made of several elements, there is a separate sputtering yield for each element.
+\par \pard\tx576\plain\f2\fs22 
+\par The surface binding energy (SBE) of an atom to a surface is known only for a few materials, but it is common to use the heat of sublimation as an estimate. Typical values are: Ni (4.46 eV), Cu (3.52 eV), Pd (3.91 eV), Ag (2.97 eV), Pt (5.86 eV) and Au (3.80 eV). Values will be suggested when you set up the TRIM calculation.
+\par 
+\par One may calculate sputtering by setting up a normal TRIM calculation with full recoils, but by asking for the "Sputtering" calculation, ion/target collisions are calculated for every monolayer. This may be especially important for sputtering by light ions. 
+\par 
+\par Only the cascades which reach back to the target surface are important to sputtering, so it is adequate to use only a thin target to simulate sputtering (the sputtering calculation is very detailed, and takes longer than the cascade damage calculation). For heavy ions, e.g. heavier than 20 amu, a target thickness of 40 \'c5 to 50 \'c5 is usually adequate. Using a very thin target reduces the time spent calculating cascades which will not contribute to sputtering. For light ions, e.g. He, it will be necessary to use thicker targets, as much as 300 - 500 \'c5, since these ions may backscatter from deeper in the target and cause sputtering as they exit from the target surface. The target depth needed for a calculation may be estimated by running several quick cases and seeing for which target depth the sputtering yield remains constant.
+\par 
+\par For cascades within the target at very low energy (which is a major contributor to sputtering) we use the hard-sphere model for scattering as described in J. P. Biersack and W. Eckstein, Appl. Phys., A34, 73-94 (1984). See figure 3 of this paper, for example.
+\par 
+\par A final word of caution. The sputtering yield is very sensitive to the surface binding energy (SBE) which you input to the calculation. Be aware that for real surfaces, this changes under bombardment due to surface roughness, and also changes due to surface stoichiometry for compounds. Further, sputtering involves mostly the upper monolayer of the target. For targets such as Ni, or heavier, the electronic energy loss of a target atom moving through the last monolayer is of the order of the surface binding energy, so even monolayer roughness will change the sputtering yield. \plain\f2\fs22\b\i Surface roughness is not included in the SBE taken from sublimation energies, and real sputtering values may be much greater than those calculated.
+\par 
+\par \plain\f2\fs22 The sensitivity of the calculated sputtering yield to surface binding energy may be displayed during the calculation by using the plotting menu.  The plots of sputtering yield to SBE are accurate to about 30%.
+\par 
+\par By asking for the data file SPUTTER.TXT, a description will be made of each sputtered atom (see Table below). This request can be made either during the TRIM setup program, or during the calculation. During the calculation, special plots and analysis may be displayed of Sputtering Yield vs. Surface Binding Energy. 
+\par 
+\par \pard\plain\f2\fs22 ---------------------------------------------------------------------------------------------------------------------\plain\f2\fs20 
+\par \plain\f5\fs28\cf2\b\i SPUTTER.TXT     (Sputtered Atom Kinetics)
+\par \plain\f5\fs22 SPUTTER.TXT contains the kinetic data of Sputtered Target Atoms.
+\par This output is for a calculation of Boron ions (17 keV) into Tungsten (300 \'c5 thick).
+\par 
+\par \plain\f4\fs18\cf3\b 
+\par \plain\f4\fs16\cf3  \'c9\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'bb
+\par  \'ba                     SPUTTERING   CALCULATION                      \'ba
+\par  \'c8\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'bc
+\par  \'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd  CALCULATION   DATA  \'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd
+\par   Calculation Date= 02-16-1995, Time= 14:01:36
+\par   Ion Data: Name,   Mass,   Energy (keV)
+\par             B     11.01000        17.00
+\par   Binding Energy =  2.000 eV  Surface Binding Energy =   0.00000 eV
+\par   Displacement Energy of  W =   20.00000 eV
+\par 
+\par \'db\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'db
+\par \'db  This file tabulates the kinetics of ions or atoms leaving the target.     \'db
+\par \'db  Column #1: S= Sputtered Atom, B= Backscattered Ion, T= Transmitted Ion.   \'db
+\par \'db  Col.#2: Ion Number, Col.#3: Z of atom leaving, Col.#4: Atom energy (eV).  \'db
+\par \'db  Col.#5-7: Last location:  X= Depth into target, Y,Z= Transverse axes.     \'db
+\par \'db  Col.#8-10: Cosines of final trajectory.  NOTE: Use hotkey  C  for details.\'db
+\par \'db *** This data file is in the same format as TRIM.DAT (see manual for uses).\'db
+\par \'df\'df\'df\'df\'df\'df\'df TRIM Calc.=   B( 17 keV) ==> Tungsten(  300A ) \'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df
+\par  Ion\'cd\'bbAtomic\'c9Energy\'cd\'bb \'c9\'cdDepth\'cd\'cd\'bb\'c9\'cdLateral-Position\'cd\'cd\'cd\'bb\'c9\'cd\'cd Atom Direction \'cd\'cd\'cd\'cd\'bb
+\par  Numb\'baNumber\'cc\'cd(eV)\'cd\'cd\'b9 \'cc\'cd\'cdX(A)\'cd\'cd\'b9\'cc\'cd\'cdY(A)\'cd\'cd\'cd\'cd\'cb\'cd\'cdZ(A)\'cd\'cd\'cd\'b9\'cc Cos(X)  Cos(Y) Cos(Z)\'b9
+\par S    3 74   2.640E+02 -.1299E+01 +.7458E+02 -.7523E+01 -.85533 +.36191 -.37071
+\par S    3 74   1.744E+01 -.8171E-01 +.7227E+02 -.8352E+01 -.50451 +.02197 +.86313
+\par S    3 74   1.764E+01 -.6202E+00 +.6902E+02 -.5024E+01 -.80043 +.20743 -.56240
+\par S    3 74   7.021E+01 -.3815E-01 +.6268E+02 -.1561E+02 -.46169 +.57273 -.67737
+\par S    3 74   1.988E+01 -.8088E-01 +.6274E+02 -.1553E+02 -.47872 +.59604 -.64465
+\par S    4 74   1.241E+01 -.1031E+01 +.1047E+02 -.3258E+01 -.97305 -.23028 -.01206
+\par S    4 74   7.195E+02 -.4300E+00 +.1155E+02 +.6229E+01 -.33431 +.74901 +.57203
+\par S    4 74   8.581E+00 -.1205E+01 +.1281E+02 +.1811E+01 -.53863 +.78204 -.31350
+\par S    4 74   2.451E+01 -.1204E+01 +.8711E+01 +.1321E+01 -.49240 -.57988 -.64906
+\par S    4 74   5.306E+01 -.1609E+01 +.8221E+01 +.8536E+01 -.78921 +.54503 +.28298
+\par S    4 74   5.440E+01 -.4831E+00 +.4934E+01 +.9197E+01 -.34047 -.76523 +.54636
+\par \plain\f5\fs22\cf3 
+\par \plain\f2\fs22 The first lines of SPUTTER.TXT contain explanations (some of these lines are omitted in the table). After these explanations, the format of the SPUTTER.TXT file is similar to that of BACKSCAT.TXT, TRANSMIT.TXT, TRIMOUT.TXT, etc. See these samples for descriptions of the data fields.
+\par 
+\par Sputtering calculations create the above table when requesting during the TRIM setup program, or by pressing the hotkey, \plain\f2\fs22\b S\plain\f2\fs22  , during the calculation. In addition to the above table of sputtered atoms, two special plots relating sputtering to the surface binding energy (SBE) of the target can be made. Since this parameter, SBE, is difficult to estimate, one needs to see how much it is influencing the TRIM sputtering results. These plots show graphically how much effect small changes in this parameter will make on the final sputtering yield.
+\par 
+\par }
+ 

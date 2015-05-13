@@ -1,0 +1,114 @@
+#include "GrimeApp.h"
+#include "Moose.h"
+#include "AppFactory.h"
+
+// Include kernel header files
+#include "DefectSink.h"
+#include "DefectSource.h"
+#include "DefectRecombination.h"
+#include "MatPropDiffusion.h"
+  //for cluster
+#include "VariableProduct.h"
+#include "CoeffDiffusion.h"
+#include "SingleVariable.h"
+
+// Include auxkernel header files
+#include "DislocationSinkRate.h"
+#include "DefectRecombinationRateConstant.h"
+#include "ExcessInterstitialFractionAux.h"
+#include "VacancySupersaturation.h"
+#include "VacancySupersaturationNumerator.h"
+#include "VoidNucleation.h"
+#include "VoidSinkRate.h"
+
+// Next come the materials
+#include "RadiationMaterial.h"
+#include "ArcMaterial.h"
+
+// ********************actions********************* //
+#include "AddLotsOfVariableProduct.h"
+#include "AddLotsOfTimeDerivative.h"
+#include "AddLotsOfCoeffDiffusion.h"
+#include "AddLotsOfSingleVariable.h"
+#include "AddLotsOfSource.h"
+#include "AddClusterICAction.h"
+#include "AddFunctionAction.h"
+
+template<>
+InputParameters validParams<GrimeApp>()
+{
+  InputParameters params = validParams<MooseApp>();
+  return params;
+}
+
+GrimeApp::GrimeApp(const std::string & name, InputParameters parameters) :
+    MooseApp(name, parameters)
+{
+  srand(processor_id());
+
+  Moose::registerObjects(_factory);
+  GrimeApp::registerObjects(_factory);
+
+  Moose::associateSyntax(_syntax, _action_factory);
+  GrimeApp::associateSyntax(_syntax, _action_factory);
+}
+
+GrimeApp::~GrimeApp()
+{
+}
+
+void
+GrimeApp::registerApps()
+{
+  registerApp(GrimeApp);
+}
+
+void
+GrimeApp::registerObjects(Factory & factory)
+{
+  // Register kernels
+  registerKernel(DefectSink);
+  registerKernel(DefectSource);
+  registerKernel(DefectRecombination);
+  registerKernel(MatPropDiffusion);
+  registerKernel(VariableProduct);
+  registerKernel(CoeffDiffusion);
+  registerKernel(SingleVariable);
+
+  // Register auxkernels
+  registerAux(DislocationSinkRate);
+  registerAux(DefectRecombinationRateConstant);
+  registerAux(ExcessInterstitialFractionAux);
+  registerAux(VacancySupersaturation);
+  registerAux(VacancySupersaturationNumerator);
+  registerAux(VoidNucleation);
+  registerAux(VoidSinkRate);
+
+  // Register materials classes
+  registerMaterial(RadiationMaterial);
+  registerMaterial(ArcMaterial);
+}
+
+void
+GrimeApp::associateSyntax(Syntax & syntax, ActionFactory & action_factory)
+{
+//actions
+  registerAction(AddLotsOfVariableProduct, "add_variable");
+  registerAction(AddLotsOfVariableProduct, "add_kernel");
+  registerAction(AddLotsOfVariableProduct, "add_bc");
+  registerAction(AddLotsOfTimeDerivative,"add_kernel");
+  registerAction(AddLotsOfCoeffDiffusion,"add_kernel");
+  registerAction(AddLotsOfSingleVariable,"add_kernel");
+  registerAction(AddLotsOfSource,"add_kernel");
+  registerAction(AddClusterICAction, "add_ic");
+  registerAction(AddFunctionAction, "add_function");
+
+//syntax
+  syntax.registerActionSyntax("AddLotsOfVariableProduct", "LotsOfVariableProduct/*");
+  syntax.registerActionSyntax("AddLotsOfTimeDerivative", "LotsOfTimeDerivative/*");
+  syntax.registerActionSyntax("AddLotsOfCoeffDiffusion", "LotsOfCoeffDiffusion/*");
+  syntax.registerActionSyntax("AddLotsOfSingleVariable", "LotsOfSingleVariable/*");
+  syntax.registerActionSyntax("AddLotsOfSource", "LotsOfSource/*");
+  syntax.registerActionSyntax("AddClusterICAction", "ClusterIC/*");
+  syntax.registerActionSyntax("AddFunctionAction", "ClusterIC/*");
+}

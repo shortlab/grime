@@ -1,0 +1,28 @@
+==============  Input  Data  File  for  TRIM ===================
+Ion: Z1, M1, Energy (keV), Angle, Number, Bragg Corr., AutoSave
+      78  195        10       0      999999      0     10000
+Cascades(1=No; 2=Full; 3=Sputt.; 4,5= Neutrons), Random Number Seed, Reminders
+               2                                0			0
+Diskfiles (0=no,1=yes): Ranges, Backscatt, Transmit, Sputtered, Collisions(1=Ion;2=Ion+Recoils), Special EXYZ.txt file
+                         0       0          0         0          0        0
+Target material : Number of Elements & Layers
+"Pt(10keV) into C (Shallow Cascades)     "       1       1
+PlotType (0-4), Plotting Depths: Xmin, Xmax(A) [=0 for Viewing Full Target]
+      0               0    150 
+Target Elements: Z    Mass (amu)
+     Atom 1 =    6     12.00000
+Layer  Layer Name/       Width     Density     Atom 1          
+Numb.  Description        (A)      (g/cm3)     Stoich        
+   1 "Carbon         "        150   2.26         1           
+0  Target layer phases (0=Solid, 1=Gas)
+       0
+Target Compound Corrections (Bragg)
+	1
+Target atom displacement energies (eV)
+      21
+Target atom lattice binding energies (eV)
+     2.1
+Target atom surface binding energies (eV)
+     3.1
+Stopping Power Version (2=1996, 0=2000, 1=2000 interpolated)
+ 0 

@@ -1,0 +1,267 @@
+
+[Executioner]
+  active                         = __all__                     # If specified only the blocks named will be visited and made active
+  l_abs_step_tol                 = -1                          # Linear Absolute Step Tolerance
+  l_max_its                      = 10000                       # Max Linear Iterations
+  l_tol                          = 1e-05                       # Linear Tolerance
+  line_search                    = default                     # Specifies the line search type (Note: none = basic)
+  nl_abs_step_tol                = 1e-50                       # Nonlinear Absolute step Tolerance
+  nl_abs_tol                     = 1e-50                       # Nonlinear Absolute Tolerance
+  nl_max_funcs                   = 10000                       # Max Nonlinear solver function evaluations
+  nl_max_its                     = 50                          # Max Nonlinear Iterations
+  nl_rel_step_tol                = 1e-50                       # Nonlinear Relative step Tolerance
+  nl_rel_tol                     = 1e-08                       # Nonlinear Relative Tolerance
+  no_fe_reinit                   = 0                           # Specifies whether or not to reinitialize FEs
+  petsc_options                  =                             # Singleton PETSc options
+  petsc_options_iname            =                             # Names of PETSc name/value pairs
+  petsc_options_value            =                             # Values of PETSc name/value pairs (must correspond with "petsc_options_iname"
+  solve_type                     =                             # PJFNK: Preconditioned Jacobian-Free Newton Krylov JFNK: Jacobian-Free ...
+                                                               # Newton Krylov NEWTON: Full Newton Solve FD: Use finite differences to ...
+                                                               # compute Jacobian LINEAR: Solving a linear problem
+
+  [./<type>]
+
+    [./CoupledTransientExecutioner]
+      num_steps                  = 4294967295                  # The number of timesteps in a transient run
+      restart_file_base          =                             # File base name used for restart
+      splitting                  =                             # Top-level splitting defining a hierarchical decomposition into subsystems ...
+                                                               # to help the solver.
+      type                       = CoupledTransientExecutioner
+    [../]
+
+    [./InversePowerMethod]
+      Chebyshev_acceleration_on  = 1                           # If Chebyshev acceleration is turned on
+      auto_initialization        = 1                           # True to ask the solver to set initial
+      bx_norm                    = (required)                  # To evaluate |Bx| for the eigenvalue
+      eig_check_tol              = 1e-06                       # Eigenvalue convergence tolerance
+      k0                         = 1                           # Initial guess of the eigenvalue
+      max_power_iterations       = 300                         # The maximum number of power iterations
+      min_power_iterations       = 1                           # Minimum number of power iterations
+      normal_factor              =                             # Normalize x to make |x| equal to this factor
+      normalization              =                             # To evaluate |x| for normalization
+      output_on_final            = 0                           # True to disable all the intemediate exodus outputs
+      output_pi_history          = 0                           # True to output solutions durint PI
+      pfactor                    = 0.01                        # Reduce residual norm per power iteration by this factor
+      restart_file_base          =                             # File base name used for restart
+      splitting                  =                             # Top-level splitting defining a hierarchical decomposition into subsystems ...
+                                                               # to help the solver.
+      time                       = 0                           # System time
+      type                       = InversePowerMethod
+      xdiff                      =                             # To evaluate |x-x_previous| for power iterations
+    [../]
+
+    [./NonlinearEigen]
+      auto_initialization        = 1                           # True to ask the solver to set initial
+      bx_norm                    = (required)                  # To evaluate |Bx| for the eigenvalue
+      free_power_iterations      = 4                           # The number of free power iterations
+      k0                         = 1                           # Initial guess of the eigenvalue
+      normal_factor              =                             # Normalize x to make |x| equal to this factor
+      normalization              =                             # To evaluate |x| for normalization
+      output_on_final            = 0                           # True to disable all the intemediate exodus outputs
+      output_pi_history          = 0                           # True to output solutions durint PI
+      pfactor                    = 0.01                        # The factor of residual to be reduced per power iteration
+      restart_file_base          =                             # File base name used for restart
+      source_abs_tol             = 1e-06                       # Absolute tolernance on residual norm
+      source_rel_tol             = 1e-50                       # Relative tolernance on residual norm after free power iterations
+      splitting                  =                             # Top-level splitting defining a hierarchical decomposition into subsystems ...
+                                                               # to help the solver.
+      time                       = 0                           # System time
+      type                       = NonlinearEigen
+      xdiff                      =                             # To evaluate |x-x_previous| for power iterations
+    [../]
+
+    [./Steady]
+      restart_file_base          =                             # File base name used for restart
+      splitting                  =                             # Top-level splitting defining a hierarchical decomposition into subsystems ...
+                                                               # to help the solver.
+      type                       = Steady
+    [../]
+
+    [./Transient]
+      abort_on_solve_fail        = 0                           # abort if solve not converged rather than cut timestep
+      dt                         = 1                           # The timestep size between solves
+      dtmax                      = 1e+30                       # The maximum timestep size in an adaptive run
+      dtmin                      = 2e-14                       # The minimum timestep size in an adaptive run
+      end_time                   = 1e+30                       # The end time of the simulation
+      n_startup_steps            = 0                           # The number of timesteps during startup
+      num_steps                  = 4294967295                  # The number of timesteps in a transient run
+      picard_abs_tol             = 1e-50                       # The absolute nonlinear residual to shoot for during Picard iterations. ...
+                                                               # This check is performed based on the Master app's nonlinear residual.
+      picard_max_its             = 1                           # Number of times each timestep will be solved.  Mainly used when wanting ...
+                                                               # to do Picard iterations with MultiApps that are set to execute_on timestep ...
+                                                               # or timestep_begin
+      picard_rel_tol             = 1e-08                       # The relative nonlinear residual drop to shoot for during Picard iterations. ...
+                                                               # This check is performed based on the Master app's nonlinear residual.
+      predictor_scale            =                             # The scale factor for the predictor (can range from 0 to 1)
+      reset_dt                   = 0                           # Use when restarting a calculation to force a change in dt.
+      restart_file_base          =                             # File base name used for restart
+      scheme                     = implicit-euler              # Time integration scheme used.
+      splitting                  =                             # Top-level splitting defining a hierarchical decomposition into subsystems ...
+                                                               # to help the solver.
+      ss_check_tol               = 1e-08                       # Whenever the relative residual changes by less than this the solution ...
+                                                               # will be considered to be at steady state.
+      ss_tmin                    = 0                           # Minimum number of timesteps to take before checking for steady state ...
+                                                               # conditions.
+      start_time                 = 0                           # The start time of the simulation
+      time_period_ends           =                             # The end times of time periods
+      time_period_starts         =                             # The start times of time periods
+      time_periods               =                             # The names of periods
+      timestep_tolerance         = 2e-14                       # the tolerance setting for final timestep size and sync times
+      trans_ss_check             = 0                           # Whether or not to check for steady state conditions
+      type                       = Transient
+      use_multiapp_dt            = 0                           # If true then the dt for the simulation will be chosen by the MultiApps. ...
+                                                               # If false (the default) then the minimum over the master dt and the MultiApps ...
+                                                               # is used
+      verbose                    = 0                           # Print detailed diagnostics on timestep calculation
+    [../]
+  [../]
+
+  [./Adaptivity]
+    active                       = __all__                     # If specified only the blocks named will be visited and made active
+    coarsen_fraction             = 0                           # The fraction of elements or error to coarsen. Should be between 0 and ...
+                                                               # 1.
+    cycles_per_step              = 1                           # The number of adaptivity cycles per step
+    error_estimator              = KellyErrorEstimator         # The class name of the error estimator you want to use.
+    initial_adaptivity           = 0                           # The number of adaptivity steps to perform using the initial conditions
+    max_h_level                  = 0                           # Maximum number of times a single element can be refined. If 0 then infinite.
+    print_changed_info           = 0                           # Determines whether information about the mesh is printed when adaptivity ...
+                                                               # occurs
+    refine_fraction              = 0                           # The fraction of elements or error to refine. Should be between 0 and ...
+                                                               # 1.
+    show_initial_progress        = 1                           # Show the progress of the initial adaptivity
+    start_time                   = -1.79769e+308               # The time that adaptivity will be active after.
+    steps                        = 0                           # The number of adaptivity steps to perform at any one time for steady ...
+                                                               # state
+    stop_time                    = 1.79769e+308                # The time after which adaptivity will no longer be active.
+    weight_names                 =                             # List of names of variables that will be associated with weight_values
+    weight_values                =                             # List of values between 0 and 1 to weight the associated weight_names ...
+                                                               # error by
+  [../]
+
+  [./Predictor]
+    active                       = __all__                     # If specified only the blocks named will be visited and made active
+
+    [./<type>]
+
+      [./AdamsPredictor]
+        order                    = 2                           # The maximum reachable order of the Adams-Bashforth Predictor
+        scale                    = (required)                  # The scale factor for the predictor (can range from 0 to 1)
+        type                     = AdamsPredictor
+      [../]
+
+      [./SimplePredictor]
+        scale                    = (required)                  # The scale factor for the predictor (can range from 0 to 1)
+        type                     = SimplePredictor
+      [../]
+    [../]
+  [../]
+
+  [./Quadrature]
+    active                       = __all__                     # If specified only the blocks named will be visited and made active
+    element_order                = AUTO                        # Order of the quadrature for elements
+    order                        = AUTO                        # Order of the quadrature
+    side_order                   = AUTO                        # Order of the quadrature for sides
+    type                         = GAUSS                       # Type of the quadrature rule
+  [../]
+
+  [./TimePeriods]
+
+    [./*]
+      active                     = __all__                     # If specified only the blocks named will be visited and made active
+      active_bcs                 =                             # The list of active boundary conditions during this time period (must ...
+                                                               # not be used with "inactive_bcs")
+      active_kernels             =                             # The list of active kernels during this time period (must not be used ...
+                                                               # with "inactive_kernels")
+      inactive_bcs               =                             # The list of inactive boundary conditions during this time period (must ...
+                                                               # not be used with "active_bcs")
+      inactive_kernels           =                             # The list of inactive kernels during this time period (must not be used ...
+                                                               # with "active_kernels")
+      start                      = 0                           # The start time for this time period
+    [../]
+  [../]
+
+  [./TimeStepper]
+    active                       = __all__                     # If specified only the blocks named will be visited and made active
+
+    [./<type>]
+
+      [./AB2PredictorCorrector]
+        dt                       = (required)                  # Initial time step size
+        e_max                    = (required)                  # Maximum acceptable error.
+        e_tol                    = (required)                  # Target error tolerance.
+        max_increase             = 1e+09                       # Maximum ratio that the time step can increase.
+        reset_dt                 = 0                           # Use when restarting a calculation to force a change in dt.
+        scaling_parameter        = 0.8                         # scaling parameter for dt selection
+        start_adapting           = 2                           # when to start taking adaptive time steps
+        steps_between_increase   = 1                           # the number of time steps before recalculating dt
+        type                     = AB2PredictorCorrector
+      [../]
+
+      [./ConstantDT]
+        dt                       = (required)                  # Size of the time step
+        growth_factor            = 2                           # Maximum ratio of new to previous timestep sizes following a step that ...
+                                                               # required the time step to be cut due to a failed solve.
+        reset_dt                 = 0                           # Use when restarting a calculation to force a change in dt.
+        type                     = ConstantDT
+      [../]
+
+      [./DT2]
+        dt                       = 1                           # The initial time step size.
+        e_max                    = (required)                  # Maximum acceptable error.
+        e_tol                    = (required)                  # Target error tolerance.
+        max_increase             = 1e+09                       # Maximum ratio that the time step can increase.
+        reset_dt                 = 0                           # Use when restarting a calculation to force a change in dt.
+        type                     = DT2
+      [../]
+
+      [./FunctionDT]
+        growth_factor            = 2                           # Maximum ratio of new to previous timestep sizes following a step that ...
+                                                               # required the time step to be cut due to a failed solve.
+        min_dt                   = 0                           # The minimal dt to take.
+        reset_dt                 = 0                           # Use when restarting a calculation to force a change in dt.
+        time_dt                  =                             # The values of dt
+        time_t                   =                             # The values of t
+        type                     = FunctionDT
+      [../]
+
+      [./IterationAdaptiveDT]
+        cutback_factor           = 0.5                         # Factor to apply to timestep if difficult convergence (if 'optimal_iterations' ...
+                                                               # is specified) or if solution failed.
+        dt                       = (required)                  # The default timestep size between solves
+        force_step_every_function_point = 0                           # Forces the timestepper to take a step that is consistent with points ...
+                                                               # defined in the function.
+        growth_factor            = 2                           # Factor to apply to timestep if easy convergence (if 'optimal_iterations' ...
+                                                               # is specified) or if recovering from failed solve
+        iteration_window         =                             # The size of the nonlinear iteration window for adaptive timestepping ...
+                                                               # (default = 0.2*optimal_iterations)
+        linear_iteration_ratio   =                             # The ratio of linear to nonlinear iterations to determine target linear ...
+                                                               # iterations and window for adaptive timestepping (default = 25)
+        max_function_change      =                             # The absolute value of the maximum change in timestep_limiting_function ...
+                                                               # over a timestep
+        optimal_iterations       =                             # The target number of nonlinear iterations for adaptive timestepping
+        reset_dt                 = 0                           # Use when restarting a calculation to force a change in dt.
+        time_dt                  =                             # The values of dt
+        time_t                   =                             # The values of t
+        timestep_limiting_function =                             # A function used to control the timestep by limiting the change in the ...
+                                                               # function over a timestep
+        type                     = IterationAdaptiveDT
+      [../]
+
+      [./PostprocessorDT]
+        dt                       =                             # Initial value of dt
+        postprocessor            = (required)                  # The name of the postprocessor that computes the dt
+        reset_dt                 = 0                           # Use when restarting a calculation to force a change in dt.
+        type                     = PostprocessorDT
+      [../]
+
+      [./SolutionTimeAdaptiveDT]
+        adapt_log                = 0                           # Output adaptive time step log
+        dt                       = (required)                  # The timestep size between solves
+        initial_direction        = 1                           # Direction for the first step.  1 for up... -1 for down. 
+        percent_change           = 0.1                         # Percentage to change the timestep by.  Should be between 0 and 1
+        reset_dt                 = 0                           # Use when restarting a calculation to force a change in dt.
+        type                     = SolutionTimeAdaptiveDT
+      [../]
+    [../]
+  [../]
+[]

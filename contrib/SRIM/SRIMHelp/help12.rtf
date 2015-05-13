@@ -1,0 +1,92 @@
+{\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\froman\fprq2 Times New Roman;}{\f1\froman\fprq2 NewCenturySchlbk;}{\f2\froman\fprq2\fcharset0 Times New Roman;}{\f3\fnil NewCenturySchlbk;}{\f4\froman NewCenturySchlbk;}{\f5\fmodern\fcharset2 MS LineDraw;}{\f6\fnil\fcharset2 Symbol;}}
+{\colortbl ;\red0\green0\blue128;\red128\green0\blue0;\red0\green0\blue255;\red0\green128\blue0;}
+\viewkind4\uc1\pard\cf1\b\i\f0\fs32 2 - Physics of Full Recoil Cascades\fs28\par
+\cf0\i0\f1\fs16\par
+\pard\tx576\tx720\b0\f2\fs22 This option gives the full TRIM calculation: every target atom which is hit may recoil and cause its own sub-cascade of target damage. This calculation should be used to understand the details of  the types of target damage which are caused by energetic incident ions. There are two primary limitations to this calculation: \par
+\pard{\pntext\f6\'B7\tab}{\*\pn\pnlvlblt\pnf6\pnindent0{\pntxtb\'B7}}\fi-720\li720\tx576\tx720 For energetic light ions, e.g.  H and He ions which produce dilute target damage, it is better to use option (3) for "monolayer collisions". This increases the calculation time of TRIM, but it enables a more accurate calculation of target damage for these light ions.\par
+{\pntext\f6\'B7\tab}There are no temperature effects included in TRIM. So there is no "self-annealing" or thermal annealing. The amount of damage calculated is the maximum that can be observed from the kinetic effects of the ion on the target atoms. \f0\par
+\pard\tx576\tx720\par
+The easiest way to understand the TRIM cascades is to start TRIM (with the full cascade calculation option) and \f2 in the left box called "\cf2\b DISTRIBUTIONS\cf0\b0 ", select the item called "\cf2\b Collision Details\cf0\b0 ". This will initiate a file \f0 called "\cf3\b\i COLLISON.TXT\cf0\b0\i0 " (see Table A-6 and Table A-7 in the TRIM Manual).  Table A-7 is shown below). Note that you may \f2 select this item also from the TRIM Setup window, where one report is called "Collision Details". \f0 This file can get quite large, so for a first experiment try it only for a few minutes of calculation time.  Then stop TRIM and edit the file \cf3\b\i COLLISON.TXT\b0\i0  \cf0 using any text editor.  You will see tables of each ion colliding with various atoms in the target, and the detailed results of any collision cascades.  Only those collisions which produce at least one displacement are tabulated, so you may not have a record of every collision.\par
+\par
+In the file \cf3\b\i COLLISON.TXT\cf0\b0\i0 , first the current ion energy and depth are given, and then the current rate of energy loss of the ion to the target electrons, i.e. the electronic stopping power, called "Se" in the table with units of eV/Angstrom.  Then the target atom that is hit and starts a recoil cascade is identified, along with its recoil energy.  Each cascade is then divided into displacement collisions, vacancy production, replacement collisions and interstitial atoms, as described below.\par
+\par
+In the file, the number of displacement collisions indicates how many target atoms were set in motion in the cascade with energies above their displacement energy (which you specified in the input program to TRIM). The next item in the table is Target Vacancies. A vacancy is the hole left behind when a recoil atom moves from its original site.  Next, the table shows replacement collisions, which reduce the number of vacancies.  If a moving atom strikes a stationary target atom and transfers more than its displacement energy to it, and the initial atom, after the collision, does not have enough energy to move onwards, and it is the same element as the atom it struck, then it just replaces that atom in the target and there is no vacancy created.  Although this may sound complicated, this mechanism may reduce the total vacancies by up to 30%.  The summation goes:\par
+\b\i\par
+\tab\tab Displacements  =  Vacancies  +  Replacement Collisions\par
+\b0\i0\par
+Finally, the table lists interstitial atoms. When a recoil atom stops, and is not a replacement atom, then it becomes an interstitial. These may be summed as:\par
+\b\i\par
+\tab\tab Vacancies  =  Interstitials + (Atoms which leave the target volume)\par
+\b0\i0\par
+If a cascade atom leaves the target volume, it is no longer followed. That is, if it leaves the target front surface or the rear surface, it is discarded. TRIM will follow atoms indefinitely as they go sideways, even though they leave your screen. But if they go through either target surface they are discarded and not counted. So vacancies occur within the target, and the final resting place of a moving recoil atom can be some distance from its vacancy. If the recoil leaves the target, clearly the sum of interstitials will be less than the number of vacancies by the loss of that atom. Replacement collisions are not part of this equation because each replacement collision reduces the number of vacancies and the number of interstitials by one, leaving the equation in balance. Finally, an atom which comes to rest in the topmost monolayer of the target is always assumed to be a lattice atom if it originated in that layer (i.e. it is neither a replacement nor an interstitial atom).\par
+\par
+The calculation of cascades, target displacements, replacement collisions, etc. makes certain assumptions which are defined explicitly below:\par
+\par
+Assume an incident atom has atomic number Z\dn6 1\up0 , and energy E. It has a collision within the target with an atom of atomic number Z\dn6 2\up0 . After the collision, the incident ion has energy E\dn6 1\up0  and the struck atom has energy E\dn6 2\up0 .  Previously specified for the target are energies E\dn6 d\up0 , the displacement energy, E\dn6 b\up0 , the binding energy of a lattice atom to its site, and E\dn6 f\up0 , the final energy of a moving atom, below which it is considered to be stopped.\par
+\par
+A \b\i displacement\b0\i0  occurs if E\dn6 2\up0 >E\dn6 d\up0  (the hit atom is given enough energy to leave the site).  A \b\i vacancy\b0\i0  occurs if both E\dn6 1\up0 >E\dn6 d\up0  and E\dn6 2\up0 >E\dn6 d\up0  (both atoms have enough energy to leave the site).  Both atoms then become moving atoms of the cascade.  The energy, E\dn6 2\up0 , of atom Z\dn6 2\up0  is reduced by E\dn6 b\up0  before it has another collision.  If E\dn6 2\up0 <E\dn6 d\up0 , then the struck atom does not have enough energy and it will vibrate back to its original site, releasing E\dn6 2\up0  as \b\i phonons\b0\i0 .\par
+\par
+If E\dn6 1\up0 <E\dn6 d\up0  and E\dn6 2\up0 >E\dn6 d\up0  and Z\dn6 1\up0  = Z\dn6 2\up0 , then the incoming atom will remain at the site and the collision is called a \b\i replacement collision\b0\i0  with E\dn6 1\up0  released as \b\i phonons\b0\i0 .  The atom in the lattice site remains the same atom by exchange.  This type of collision is common in single element targets with large recoil cascades.  If E\dn6 1\up0 <E\dn6 d\up0  and E\dn6 2\up0 >E\dn6 d\up0  and Z\dn6 1\up0\f2\'b9Z\dn6\f0 2\up0 , then Z\dn6 1\up0  becomes a stopped \b\i interstitial\b0\i0  atom.\par
+\par
+\pard Finally, if E\dn6 1\up0 <E\dn6 d\up0  and E\dn6 2\up0 <E\dn6 d\up0 , then Z\dn6 1\up0  becomes an \b\i interstitial\b0\i0  and E\dn6 1\up0 +E\dn6 2\up0  is released as \b\i phonons\b0\i0 . If a target has several different elements in it, and each has a different displacement energy, then E\dn6 d\up0  will change for each atom of the cascade hitting different target atoms.\fs24\par
+\fs20\par
+\par
+\pard\qc\cf3\b\i\f3\fs26 COLLISON.TXT     \cf0\f4 (with Recoil Cascades)\par
+\b0\i0\fs20\par
+\pard\f0\fs22 This version of \cf3 COLLISON.TXT \cf0 results from requesting the file, and specifying both ion and recoil data be stored. It includes all the ion/target collisions which result in a recoiling target atom, and also the history of what happens to that recoiling atom, i.e. the recoil cascade.\par
+\i\par
+\i0\f2 This output is for a calculation of Boron ions (17 keV) into Tungsten (300 \'c5 thick).\f0\fs24\par
+\f4\fs8\par
+\cf4\b\f5\fs14\par
+\b0\fs16\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\par
+\'df\'df\'df\'df\'df\'df TRIM Calc.=  B( 17 keV) ==> Tungsten(  300A ) \'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\par
+\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\par
+\'c9\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'bb\par
+\'ba     Ion Name   =      B                                  \'ba\par
+\'ba     Ion Mass   =     11.010 amu                          \'ba\par
+\'ba     Ion Energy =       17.0 keV                          \'ba\par
+\'c7\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'b6\par
+\'ba     Displacement Energy=    20 eV  ( Tgt. Atom =  W )    \'ba\par
+\'ba     Binding Energy     =     2 eV                        \'ba\par
+\'c8\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'bc\par
+\par
+\'c9\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd  COLLISION HISTORY  \'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'bb\par
+\'ba NOTES: Only Ion Collisions which produce Displacements are tabulated.                              \'ba\par
+\'ba        Atom Sums and Averages are Incomplete if Recoil Cascades Leave Target.                      \'ba\par
+\'ba        Target DISPlacements = VACancies + REPLACement Collisions.                                  \'ba\par
+\'ba        Target VACancies = INTERstitial Atoms + (Atoms Leave Target Volume).                        \'ba\par
+\'c7\'c4\'c4\'c4\'c4\'c4\'c2\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c2\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c2\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c2\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c2\'c4\'c4\'c4\'c4\'c2\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c2\'c4\'c4\'c4\'c4\'c4\'c4\'c2\'c4\'c4\'c4\'c4\'c4\'c4\'c2\'c4\'c4\'c4\'c4\'c4\'c4\'c2\'c4\'c4\'c4\'c4\'c4\'c4\'b6\par
+\'ba Ion \'b3  Energy \'b3  Depth   \'b3 Lateral Distance (A)\'b3  Se   \'b3Atom\'b3 Recoil   \'b3Target\'b3Target\'b3Target\'b3Target\'ba\par
+\'ba Numb\'b3  (keV)  \'b3   (A)    \'b3  Y Axis  \'b3 Z Axis   \'b3(eV/A) \'b3Hit \'b3Energy(eV)\'b3DISP. \'b3VAC.  \'b3REPLAC\'b3INTER \'ba\par
+\'cc\'cd\'cd\'cd\'cd\'cd\'d8\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'d8\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'d8\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'d8\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'d8\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'d8\'cd\'cd\'cd\'cd\'d8\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'d8\'cd\'cd\'cd\'cd\'cd\'cd\'d8\'cd\'cd\'cd\'cd\'cd\'cd\'d8\'cd\'cd\'cd\'cd\'cd\'cd\'d8\'cd\'cd\'cd\'cd\'cd\'cd\'b9\par
+\'b3    1\'b316.07E+00\'b3    33E+00\'b3 66461E-05\'b3     4E+00\'b3  15.84\'b3  W \'b3    83E+00\'b3 <== Start of New Cascade  \'b3\par
+\'db\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'db\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'db                      \'b3\par
+\'db Recoil\'b3Atom\'b3Energy(eV)\'b3  X (A)  \'b3  Y (A)  \'b3  Z (A)  \'b3Vac\'b3Repl\'dbIon Numb     1\'db                      \'b3\par
+\'db     1   74      83E+00    33E+00     2E+00     6E+00  1    0 \'db<\'c4Prime Recoil\'db                      \'b3\par
+\'db     2   74       5E+00    36E+00     3E+00     9E+00  0    1 \'db                                     \'b3\par
+\'db     3   74      24E+00    36E+00     3E+00     9E+00  1    0 \'db                                     \'b3\par
+\'db     4   74      56E+00    34E+00     3E+00     8E+00  1    0 \'db                                     \'b3\par
+\'db     5   74      19E+00    34E+00     5E+00     7E+00  0    1 \'db                                     \'b3\par
+\'db     6   74      22E+00    34E+00     5E+00     7E+00  1    0 \'db                                     \'b3\par
+\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df                                     \'b3\par
+\'b3                                Summary of Above Cascade ==> \'b3    83E+00\'b3     4\'b3     2\'b3     2\'b3     2\'b3\par
+\'b3    1\'b316.10E+00\'b3    49E+00\'b3    -3E+00\'b3     7E+00\'b3  15.86\'b3  W \'b3    57E+00\'b3 <== Start of New Cascade  \'b3\par
+\'db\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'db\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'db                      \'b3\par
+\'db Recoil\'b3Atom\'b3Energy(eV)\'b3  X (A)  \'b3  Y (A)  \'b3  Z (A)  \'b3Vac\'b3Repl\'dbIon Numb     1\'db                      \'b3\par
+\'db     1   74      57E+00    49E+00    -6E+00     7E+00  1    0 \'db<\'c4Prime Recoil\'db                      \'b3\par
+\'db     2   74      13E+00    49E+00    -8E+00     8E+00  0    1 \'db                                     \'b3\par
+\'db     3   74      45E+00    49E+00    -8E+00     8E+00  1    0 \'db                                     \'b3\par
+\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df                                     \'b3\par
+\'b3                                Summary of Above Cascade ==> \'b3    57E+00\'b3     2\'b3     1\'b3     1\'b3     1\'b3\par
+\'b3    ---------------- Data Omitted  -------------------------- Data Omitted ----------------------   \'b3\par
+\'c7\'c4\'c4\'c4\'c4\'c4\'c1\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c1\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c1\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c1\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c1\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c1\'c4\'c4\'c4\'c4\'c1\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c1\'c4\'c4\'c4\'c4\'c4\'c4\'c1\'c4\'c4\'c4\'c4\'c4\'c4\'c1\'c4\'c4\'c4\'c4\'c4\'c4\'c1\'c4\'c4\'c4\'c4\'c4\'c4\'b6\par
+\'ba For Ion      1:                For All Ions to date :                                              \'ba\par
+\'ba Displacements =    160.0       Average Displacements/Ion =     160.000                             \'ba\par
+\'ba Vacancies     =     48.0       Average Vacancies/Ion     =      48.000                             \'ba\par
+\'ba Replacements  =    112.0       Average Replacements/Ion  =     112.000                             \'ba\par
+\'ba Interstitials =     48.0       Average Interstitials/Ion =      48.000                             \'ba\par
+\'c7\'c4\'c4\'c4\'c4\'c4\'c2\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c2\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c2\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c2\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c2\'c4\'c4\'c4\'c4\'c2\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c2\'c4\'c4\'c4\'c4\'c4\'c4\'c2\'c4\'c4\'c4\'c4\'c4\'c4\'c2\'c4\'c4\'c4\'c4\'c4\'c4\'c2\'c4\'c4\'c4\'c4\'c4\'c4\'b6\par
+\fs20\par
+\cf0\f2\fs22 See the comments for Table A 6 for details about most of this table. The additional information is for the recoil cascades. When the ion is 33 \'c5 into the target it has a collision which transfers 83 eV, and this causes the recoil to start a 6 atom cascade. This cascade is shown in detail in the box between this collision and next ion collision. The first line in this box shows the primary recoil (identified with \b\f0 <- Prime Recoil\b0 ) and then the succeeding recoils. If some of these secondary recoils cause further recoils, the box gets complicated. But each recoil is followed until it reaches zero energy, and then the last recoil it caused is tracked, etc. until the first recoil caused by the prime recoil is tracked. For a monoatomic target, Displacements = Vacancies + Replacements = Replacements + Interstitials. See section \i Physics of Recoil Cascades\i0 .\par
+}
+ 

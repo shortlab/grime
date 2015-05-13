@@ -1,0 +1,51 @@
+{\rtf1\ansi\ansicpg1252\deff0\deflang1033\deflangfe1033{\fonttbl{\f0\froman\fprq2\fcharset0 Times New Roman;}{\f1\fmodern\fprq1\fcharset0 Courier New;}}
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue128;\red255\green0\blue255;\red0\green0\blue0;\red0\green128\blue0;}
+\viewkind4\uc1\pard\nowidctlpar\cf1\b\i\f0\fs36   \tab\tab --- Compound Correction ---\fs28\par
+\cf2\b0\i0\fs22 The stopping of ions in compounds may be different from the weighted stopping of ions in the elemental matter which makes up the compounds. For example, the stopping of ions in water, liquid H\sub 2\nosupersub O, is almost 20% smaller than the equivalent stopping in 2H plus O. This occurs in part because the outer shell electrons (which absorb much of the energy loss of slow ions) have different orbitals in the compound than they have in elemental matter. The difference in energy loss may be approximated using what is called the "Core and Bond" approximation. This approach separates out the stopping contributions from the binding electrons (bonds) from inner shell electrons (core), then alters the stopping for the bonding electrons based on the bonds found in the compound. This correction is automatically included for many compounds included in the \cf3\b Compound Dictionary\cf4\b0\i . \cf2\i0 The Compound Correction is discussed in great detail in the website: www.SRIM.org. See the section "\cf1\b\i Stopping in Compounds\cf4\b0\i0 ". \cf2 For further details see: "The Stopping of Ions in Compounds", J. F. Ziegler and J. M. Manoyan, Nucl. Inst. Methods, B35, 215-228 (1988).\par
+\cf4\par
+\cf5\b\i (Note: If the compound correction window shows random characters, see correction at bottom of this file.)\cf4\b0\i0\par
+\par
+\cf2 The Compound Correction is usually zero for compounds containing heavy atoms, Al(13) or greater. All experiments with compounds such as Al\sub 2\nosupersub O\sub 3\nosupersub , SiO\sub 2\nosupersub , Fe\sub 2\nosupersub O\sub 3\nosupersub , Fe\sub 3\nosupersub O\sub 4\nosupersub , SiC, Si\sub 3\nosupersub N\sub 4\nosupersub , ZnO, and many more, show less than 2% deviation from Bragg's rule which estimates the stopping by the sum of the stopping in the elemental constituents. That is, the stopping in Al\sub 2\nosupersub O\sub 3\nosupersub  is the same as the sum of the stopping in 2 Al + 3 O target atoms. For these compounds there is no need for a Compound Correction.\cf4\par
+\cf2\par
+However, compounds containing mostly H, C, N, O and F will need a Compound Correction. When you access the \cf3\b Compound Dictionary \cf2\b0 you can click through the contents and see corrections up to 20%. Compounds containing H and O are particularly sensitive. \par
+\pard\nowidctlpar\sb120\qj When you select a compound, SRIM will insert a bonding correction in the box "Compound Correction". This box only accounts for the effects of bonding changes and target band-gaps. The value input into this box alters the low velocity ion stopping (below 2 MeV/u). For no correction, the correction value is 1.0 (default). If you change this to 1.10, for example, the stopping will be increased by about 10% for ion energies up to 300 keV/amu (this is the energy of the maximum stopping for light ions). This correction will decrease stopping at higher energies, becoming a zero correction above 5 MeV/u.\par
+NOTE:  The Compound Correction does NOT include the correction for the phase-state (solid or gas) of the target. The experimental stopping powers for atoms like H, N, O and Cl have all been measured for these atoms in gas phase. When these stopping powers are used to determine the stopping in a solid, the condensation of the atoms changes their stopping power. In SRIM, the phase of the target is noted by checking the box called "gas". Depending on whether this box is checked or not, SRIM will assume the target is that phase.  \par
+\par
+A typical entry in the \cf3\b Compound Dictionary \cf2\b0 is shown below, with comments following.\f1\par
+\cf5\b\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?  Ethylene  \u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\par
+  Stopping Correction for Target Chemistry and Phase \par
+*****  Correction assumes Ion = He(2)  *****\par
+       SOLID Target Binding Corr. =  1.058 =  5.80%\par
+       GAS Target Binding Corr.   =  1.064 =  6.42%\par
+       Target PHASE Correction    =  1.049 =  4.90%\par
+                                   -----------------\par
+   TOTAL Target Correction (GAS)  =  1.116 =  11.63%\par
+\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\par
+Density = 0.00125 g/cm3\par
+Chemical          H            H\par
+Formula             \\        /\par
+                      C \u9552?\u9552? C\par
+ C  H               /        \\\par
+  2  4            H            H\par
+\u9552?\u9552?\u9552?\u9552?\u9552?\u9552? TARGET  COMPOSITION \u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\par
+Atom  Atom  Number Molec.  Core\par
+Name  Numb  Atoms  Mass % Stopping\par
+\u9472?\u9472?\u9472?\u9472?  \u9472?\u9472?\u9472?\u9472?  \u9472?\u9472?\u9472?\u9472?\u9472?\u9472? \u9472?\u9472?\u9472?\u9472?\u9472?\u9472? \u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\par
+ H     1     4.00   14.37     0.00\par
+ C     6     2.00   85.63     6.21\par
+\par
+\u9552?\u9552?\u9552?TARGET BONDS  (per molecule)\u9552?\u9552?\u9552?\par
+Bond Type      Number     Stopping\par
+\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?      \u9472?\u9472?\u9472?\u9472?\u9472?\u9472?     \u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\par
+(H-C)          4          7.438\par
+(C=C)          1          10.023\par
+\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\cf2\par
+\b0\f0 The first box, above, shows the final Compound Correction for He ions into Ethylene, C\sub 2\nosupersub H\sub 6\nosupersub . Both the correction for gas phase and solid phase are displayed, however the Total Correction assumes that the target is in gas phase (because its density is .00125). If you accept this correction, then the \cf3 Compound Dictionary \cf2 will both check the "Gas Tgt." box and enter into the Commpound Correction the number: 1.064. The "Gas Tgt." check will introduce an additional stopping correction of 4.9%, as shown above.\par
+The second box gives the details of the Ethylene molecule, so that you can check its structure. Below the diagram is a listing with both the atomic stiochiometry and the mass density of the molecule. The "Core Stopping" is discussed at length on the webpage.\par
+Finally, the target bonds are listed. These contribute most of the compound correction. You can double-check that the listing of (H-C) and (C=C) bonds are the same as the molecular diagram shown above. The relative stopping of each of the bonds is listed in the final column. They are in the same units as the "Core Stopping" shown above, and you can see that these bonds contribute about 87% of the stopping power.\par
+---------------------------------------------------------------\par
+It is not known what is the compound correction for heavy ions (Z > 3). Too few precise experiments have been conducted to allow the evaluation of these stopping powers.\par
+\cf5\b\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\u9552?\cf2\par
+\cf5\b0 If the Compound Correction window shows strange characters such as "@#$%&*" instead of clear explanations, you probably have not installed the font \cf2\b MS LineDraw\cf5\b0 . This Microsoft font is included in the SRIM package and should have automatically been installed in your Windows font directory (usually C:/Windows/Fonts). To correct the Compound Correction windowyou must find this file, copy it to the Windows font directory, and then install it. To install it, use Windows Explorer to display the font directory, and under "File" in the toolbar will be the special command "Install New Font". Click on this command, find \cf2\b MS LineDraw \cf5\b0 in the font list, and press "Install". This font is used in many of the SRIM "Help" explanations, so it is important to install it.\cf4\par
+}
+ 

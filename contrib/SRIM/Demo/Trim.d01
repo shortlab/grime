@@ -1,0 +1,31 @@
+========> SRIM-2006.01 This file controls TRIM Calculations <========
+Ion: Z1, M1, Energy (keV), Angle, Number, Bragg Corr., AutoSave
+      54  131   100           0      999999      0     10000
+Cascades(1=No; 2=Full; 3=Sputt.; 4,5= Neutrons), Random Number Seed, Reminders
+               2                                0			0
+Diskfiles (0=no,1=yes): Ranges, Backscatt, Transmit, Sputtered, Collisions(1=Ion;2=Ion+Recoils), Special EXYZ.txt file
+                          0      0       0       0       0       0
+Target material : Number of Elements & Layers
+"Xe into Si/Pt/Si [Mixing a Marker]      "       2       3
+PlotType (0-4), Plotting Depths: Xmin, Xmax(A) [=0 for Viewing Full Target]
+      0               0    300 
+Target Elements: Z    Mass (amu)
+     Atom 1 =   14     28.00000
+     Atom 2 =   78    195.00000
+LayerÛ Layer Name or Û   Width     Density     Atom 1  Atom 2
+Numb.Û Description   Û    (A)      (g/cm3)     Stoich  Stoich
+   1 "Silicon        " 50000.E-02   2.330E+00 1.00000 0.00000
+   2 "Platinum       " 30000.E-03   2.140E+01 0.00000 1.00000
+   3 "Silicon        " 50000.E-02   2.330E+00 1.00000 0.00000
+0  Target layer phases (0=Solid, 1=Gas)
+	0	0	0
+Target Compound Corrections (Bragg)
+	1	1	1
+Target atom displacement energies (eV)
+      21      22
+Target atom lattice binding energies (eV)
+     2.1     2.2
+Target atom surface binding energies (eV)
+     3.1     3.2
+Stopping Power Version (2=1996, 0=2000, 1=2000 interpolated)
+ 0 

@@ -1,0 +1,41 @@
+{\rtf1\ansi\deff0\deflang1033{\fonttbl{\f0\froman\fprq2 NewCenturySchlbk;}{\f1\froman\fprq2 Symbol;}{\f2\froman Times New Roman;}{\f3\fnil\fcharset0 Calibri;}}
+{\colortbl ;\red128\green0\blue0;\red0\green0\blue255;\red0\green0\blue128;}
+{\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\cf1\b\f0\fs32 Special Applications of TRIM\par
+\cf0\fs18\par
+\cf2\fs26 Straggling in Ion Energy Reducers (Energy Degraders)\par
+\cf0\b0\fs20\par
+\cf3\fs22 TRIM may be used to calculate the energy loss through foils or thick blocks of materials used to lower the energy of a beam of particles. This is often done for light ions, such as protons, to obtain lower energies quickly. For example, if one starts with a beam of monoenergetic protons at 158.6 MeV and introduces a block of plexiglas (called perspex in Europe) 14.1 cm thick, the exiting beam of particles will be at 30 MeV. Degrader blocks made with light atoms can reduce particle energy with a minimum of straggle and little long term radioactivity (plexiglas is C\dn6\fs14 6\up0\fs22 H\dn6\fs14 4\up0\fs22 O\dn6\fs14 2\up0\fs22 ). \par
+\par
+Two problems occur in planning "energy degraders". First is the calculation of the proper block thickness, and secondly is the calculation of the final beam energy spread. Below we illustrate both calculations.\par
+\par
+The calculation of the required degrader thickness consists of four basic steps. We illustrate these steps below using the example of protons being slowed by a block of plexiglas from an initial energy of 158.6 MeV to a final energy of 30 MeV.\par
+\par
+\pard\fi-360\li360\b 1\b0\tab Make a table of proton stopping in plexiglas by executing the program SR (Stopping/Range) using the TRIM Menu, or by typing SR in DOS. In the program SR, select a target of plexiglas in the Table of Compounds and then generate a stopping/range table for protons up to 160 MeV in plexiglas, with the stopping powers specified in units of MeV/mm.\par
+\pard\par
+\pard\fi-360\li360\b 2\b0\tab Using the table generated in (1), find the range of protons for the initial beam energy and estimate the depth at which the protons will be at 30 MeV by looking at the ranges and working backwards. For example, the table will show that 160 MeV protons have a range of 154.54mm in plexiglas, and 30 MeV protons will go 7.63mm. Hence your first guess for the thickness of plexiglas to reduce 160 MeV protons to 30 MeV will be 154.54 - 7.63 = 146.9 mm thick. Further, since the initial proton beam is not 160 MeV but 158.6 MeV, one interpolates the distance protons travel between 160 MeV to 158.6 MeV as 2.30 mm, so the initial block size for an incident 158.6 MeV beam will be 146.9 - 2.30 = 144.6 mm. Set up TRIM for protons in plexiglas at this thickness. Be sure to set the flag to store the energy spectra of the transmitted particles. This can be done with the TRIM setup program, or during the TRIM calculation by typing the hotkey \b T\b0  . When you have collected the data for about 100 particles, exit TRIM.\par
+\pard\par
+\pard\fi-360\li360\b 3\b0\tab In DOS, execute the program \i BASICA TRANSMIT\i0  which will analyze the transmitted particles which TRIM stores in the file TRANSMIT.TXT. This program will give you both the mean final energy and the energy straggling of the transmitted protons. This program is written in BASIC so that you can look at the source code and modify it for your needs. \par
+\pard\par
+\pard\fi-360\li360\b 4\b0\tab Use the difference between your desired final energy (30 MeV) and mean final energy found in step 3 above, along with the stopping power tables, made in step 1 above, to estimate a new target thickness. For example, if the protons exit at 32 MeV and the stopping power for protons at 30 MeV is 2.16 MeV/mm, then you need (2 MeV)/(2.16 MeV/mm) = 0.92 mm more plexiglas in the block to bring the beam down to 30 MeV. Change the file TRIM.IN (or use the TRIM setup program) to make up a new plexiglas target with a width of 144.6 mm (initial estimate) + 0.92 mm (correction) = 145.52 mm. Loop through steps 2-4 until you come get as close as you want to the desired thickness. (Examples of datafile TRIM.IN are shown in the Appendix.)\par
+\pard\par
+The final energy straggle of the beam after it has passed through the energy reducing block is a mixture of two components: (1) the straggle introduced by random collisions in the degrader block and (2) the broadening of any incident beam energy straggle by the block. We calculate the straggle of the incident monoenergetic beam with the TRIM calculations above, steps 1-4, and we find, for example, a straggle of about 2.0 MeV when we degrade protons from 160 MeV to 30 MeV using plexiglas (this comes out of the analysis program BASICA TRANSMIT). To this broadening, we have to add the straggle due to expansion of the initial beam energy spread, which may be the dominant factor in the final energy width. Assuming that the incident beam is not monoenergetic, but has a spread of 1 MeV at 160 MeV, we will find that this spread expands to 3.6 MeV by the time the beam degrades to 30 MeV.  This expansion occurs because of the non-linearity of stopping powers with particle energy as explained below.\par
+\par
+Assume that the energy straggle of the incident beam is \f1 s\f0 . We show below that the final energy straggle of the exiting beam, \f1 s\f0 ', can be estimated as :\par
+\cf1\b\tab\tab\tab\tab\f1 s\f0 '  =  (S'/S) \f1 s\f0  ,\par
+\cf3\b0 where S and S' are the stopping powers, dE/dx,  in the degrader material at the initial and final beam energy. \par
+\par
+Consider two particles of the incident beam with energies E\dn6 1\up0  and E\dn6 2\up0 , separated by the incident beam energy straggle, \f1 s\f0 . The final energy straggle of these two particles, after transiting the energy-lowering block of material, is defined as \cf1\b\f1 s\f0 ' = E\dn6 1\up0 ' - E\dn6 2\up0 '\cf3\b0 . where E\dn6 1\up0 ' and E\dn6 2\up0 ' are the final energies of particles 1 and 2. \par
+\par
+Considering the incident particles, assuming E\dn6 1\up0  > E\dn6 2,\up0  , then particle #1 will travel a short distance into the degrader block before its energy will be reduced to that of particle #2. This distance, x, is about \cf1\b x = \f1 s\f0  / S\cf3\b0 , where S is the particle stopping power (dE/dx) at energy E. After particle #1 reaches depth x, then both particles #1 and #2 will transit through the block similarly until particle #1 reaches the end of the block. Particle #2 will still have more of the block to traverse, an amount \cf1\b x' = \f1 s\f0 ' / S' \cf3\b0 , where \cf1\b\f1 s\f0 ' = E\dn6 1\up0 ' - E\dn6 2\up0 '\cf3\b0 , the final energy difference between the two particles, and S' is the stopping power at the final beam energy, E'. But the block length is the same for both particles, so \cf1\b x =  x'\cf3\b0 , and therefore \cf1\b\f1 s\f0  / S = \f1 s\f0 ' / S' \cf3\b0 . This can be solved for the energy straggle, \cf1\b\f1 s\f0 '  =  (S'/S) \f1 s\f0  \cf3 .\par
+\par
+\b0 Note that several approximations are made in this argument, especially that \cf1\b S(E\dn6 1\up0 ) = S(E\dn6 2\up0 ) \cf3\b0 and \cf1\b S(E\dn6 1\up0 ') = S(E\dn6 2\up0 '), \cf3\b0 and that the total energy loss is much larger than the straggling, \cf1\b (E - E') >> \f1 s\f0  \cf3\b0 .\par
+\par
+For an example, protons at 160 MeV in plexiglas have a stopping power of 0.593 MeV/mm and at 30 MeV have a stopping power of 2.157 MeV/mm. Assuming the initial beam straggle, \f1 s\f0 , is 1 MeV, then the  final beam energy straggle, \cf1\b\f1 s\f0 ' = (1 MeV) (2.157 MeV/mm) / (.593 MeV/mm) = 3.6 MeV\cf3\b0 . \par
+\par
+The total beam spread through the energy-degrader block is the rms total value of the two separate quantities : (1) the beam straggle through the block, 2.0 MeV, and (2) the beam energy broadening due to non-linear stopping powers, 3.6 MeV,  which, when added in quadrature,  gives a total straggle of 4.1 MeV .when protons at 160 MeV are degraded to 30 MeV.\par
+\par
+The above comments come from Dr. Bernard Gottschalk, Harvard Cyclotron Laboratory, Harvard University, USA.\par
+\f2\par
+\cf0\f3\fs16 helpTR26\cf3\f2\fs22\par
+}
+ 

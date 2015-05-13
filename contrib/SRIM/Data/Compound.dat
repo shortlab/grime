@@ -1,0 +1,2389 @@
+# TABLE OF COMPOUNDS AND DATA. Table is organized as shown below.
+#    The left hand character in each line indicates its purpose :
+#        ! = Header for various Tables     (e.g. Nuclear Materials, Gases...)
+#        * = Target Description for Table  (e.g. Air, Bone, Water...)
+#  Next Line = Numerical Data-Line for target. Data Line is :
+#        (Name),(Density g/cm3),(Number of elements),(Atomic No.),(Atom %),...
+#    !!!! Maximum Number of elements in a target = 8,
+#  NOTE: Can use composition by Mass Percent (Indicate by preceding Name by "%")
+#    For example, for BONE in both Atomic percent and Mass percent:
+#        Atomic % = "Bone" ,1.92,6, 1,39.3, 6,15.1, 7,3.5, 8,31.7, 40,6.5, 15,3.9
+#        Mass   % = "%Bone",1.92,6, 1,3.37, 6,1.29, 7,0.3, 8,2.72, 40,0.56,15,0.33
+#  Next Line = Numerical Bond-Structure data for target. Bonding Line is :
+#              (H-H)(H-C)(H-N)(H-O) (C-C)(C=C)(CðC)(C-N)(C-O)(C=O)(C-F)(C-Cl)
+#              (NðN)(N-O)(O=O) (S-H)(S-C)(S-F)
+#        $ = Comments on target (maximum of 8 lines / target)
+#  ***   After the above is input, the next compound starts.
+#  ***   Look at some of the examples below, and this will be clearer.
+#-------------------------------------------------------------------------------
+#  New targets (H.P. 2010): 518 NbPentoxide, 560 PEN, 712 ZrDioxide
+#  Blood, human (H.P., 22 Feb 2011)
+#  SiC (No. 590) density changed to theoretical 3.21 g/cm3 (H.P., 15 Feb 2011)
+#  Silicon Nitride (ICRU 591) added (HP, 7 Mar 2011)
+#  PHB (ICRU-562) added (31 Mar 11), KCl (6 Aug 11), InN (29 Sep 11)
+#  Fluoroform, vinyl fluoride, vinyl chloride added (HP, 11 Oct 11)
+#  Isobutane (HP, 12 Dec 12)
+#-------------------------------------------------------------------------------
+!
+!ßßßßßß   NUCLEAR  PHYSICS  MATERIALS  ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+!                                Density       Atomic Stoichiometry
+!     Common  Name               (g/cm3)       (Atoms/Molecule or Atom Percent)
+!ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ  ÍÍÍÍÍÍÍÍÍÍÍÍÍ   ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ
+*Air, Dry near sea level (ICRU-104)  0.00120484  O-23.2, N-75.5, Ar-1.3
+"%Air, Dry (ICRU-104)", .00120484, 4, 6, .000124, 8, .231781, 7, .755267, 18, .012827
+0 0 0 0   0 0 0 0 0 0 0 0   0 0 0   0 0 0
+$ corrected by H. Paul, Sept. 2004
+$
+*Water  (liquid)                     1.00        H-2, O-1
+"Water_Liquid (ICRU-276)", 1.0, 2, 1, 2, 8, 1
+0 0 0 2   0 0 0 0 0 0 0 0   0 0 0   0 0 0
+$Chemical Formula:      H ÄÄ O ÄÄ H
+$
+$There is about an 8% increase in the peak of the stopping power
+$for ions in water vapour relative to the liquid. (The peak of the
+$stopping occurs at an energy of about 100 keV/amu times the 2/3
+$power of the ion's atomic number.) Above the peak the phase
+$difference begins to disappear. This calculation is for the
+$LIQUID phase.
+*Water  (vapor)                      (gas)       H-2, O-1
+"Water_vapor (ICRU-277)", 0.00125, 2, 1, 2, 8, 1
+0 0 0 2   0 0 0 0 0 0 0 0   0 0 0   0 0 0
+$Chemical Formula:      H ÄÄ O ÄÄ H
+$
+$There is about an 8% increase in the peak of the stopping power
+$for ions in water vapour relative to the liquid. (The peak of the
+$stopping occurs at an energy of about 100 keV/amu times the 2/3
+$power of the ion's atomic number.) Above the peak the phase
+$difference begins to disappear. This calculation is for the
+$GAS phase.
+*Concrete                            2.34(±.15)  C-23,O-40,Si-12,Ca-12,H-10,Mg-2
+"Concrete", 2.34, 6, 6, 23, 8, 40, 14, 12, 20, 12, 1, 10, 12, 2
+0 0 0 0   0 0 0 0 0 0 0 0   0 0 0   0 0 0
+$Concrete has a wide variation in density and composition. The above
+$description is for poured structural concrete with 10% moisture
+$content. Concrete block will have a density of about 2.05 g/cm3.
+$Ranges of concrete composition are : C (8-25%), O (38-60%), Si (8-18%).
+$Concrete composition can be analyzed cheaply by commercial laboratories.
+$
+*Graphite carbon (ICRU-906)          2.26        C-6
+"Graphite carbon (ICRU-906)", 2.26, 1, 6, 6
+0 0 0 0   6 3 0 0 0 0 0 0   0 0 0   0 0 0
+$Chemical       ÄÄ C ÍÍ C ÄÄ
+$Formula         /       \
+$            ÄÄ C         C ÄÄ
+$                \\      //
+$               ÄÄ C ÄÄ C ÄÄ
+$Graphite has a wide variation in density and composition. There are
+$several different layered structures called graphite. The above 
+$formulation is typical.
+*Glass (Pb-Transparent)              4.8(±1.3)   O-59,Si-24,Pb-5,Na-7,K-4
+"Glass_Pb", 4.8, 5, 8, 59, 14, 24, 82, 5, 11, 7, 19, 4
+0 0 0 0   0 0 0 0 0 0 0 0   0 0 0   0 0 0
+$There is a large variation of Lead Glass densities depending on
+$trade-offs of clarity, strength and shielding qualities. Nuclear
+$shielding densities range up to 8 g/cm3 depending on lead content.
+*LiF Crystal                         2.635       Li-1, F-1
+"LiF", 2.635, 2, 3, 1, 9, 1
+0 0 0 0   0 0 0 0 0 0 0 0   0 0 0   0 0 0
+$LiF crystals rapidly become damaged under ion bombardment, and
+$there can be up to 8% density change in the surface region.
+$
+*NaCl Crystal                        2.165       Na-1, Cl-1
+"NaCl", 2.165, 2, 11, 1, 17, 1
+0 0 0 0   0 0 0 0 0 0 0 0   0 0 0   0 0 0
+$NaCl crystals rapidly become damaged under ion bombardment, and
+$there can be up to 5% density change in the surface region.
+$
+*Paraffin                            0.89        H-2, C-1
+"Paraffin", 0.89, 2, 1, 2, 6, 1
+0 2 0 0   1 0 0 0 0 0 0 0   0 0 0   0 0 0
+$Density variation of paraffin is 0.87 - 0.91 g/cm3.
+$Chemical          H    H
+$Formula           ³    ³
+$             ÄÄÄÄ C ÄÄ C ÄÄÄÄ
+$                  ³    ³
+$                  H    H
+*Emulsion - Ilford G-5               3.907       %Ag-47,Br-35,C-7,O-7,H-1.4,N-.1
+"Ilford G_5", 3.907, 7, 47,47.4, 35,34.8, 6,6.9, 8,6.9, 1,1.4, 7,.07, 16,0.2
+0 0 0 0   0 0 0 0 0 0 0 0   0 0 0   0 0 0
+$Ilford G-5 is a proprietary nuclear track emulsion with its
+$chemical details unpublished. No experimental stopping powers are known.
+$
+*P-10 Gas (90%Ar,10%Methane)         (gas)       Ar-90, H-8, C-2
+"P-10 Gas", 0.00156, 3, 18, 90, 1, 8, 6, 2
+0 8 0 0   0 0 0 0 0 0 0 0   0 0 0   0 0 0
+$Chemical Formula
+$  of Methane Part          H
+$                           ³
+$ C-H                  H ÄÄ C ÄÄ H
+$    4                      ³
+$                           H
+*Methane Chloro-Trifluoro (Freon)    (gas)       C-1, F-3, Cl-1
+"Methane Chloro_Trifluoro", 0.00125, 3, 6, 1, 9, 3, 17, 1
+0 0 0 0   0 0 0 0 0 0 3 1   0 0 0   0 0 0
+$Chemical Formula
+$                           F
+$                           ³
+$  C Cl F              F ÄÄ C ÄÄ Cl
+$        3                  ³
+$                           F
+$
+*Scintillator - Anthracene           1.243       H-10, C-14
+"Anthracene", 1.243, 2, 1, 10, 6, 14
+0 10 0 0   9 7 0 0 0 0 0 0   0 0 0   0 0 0
+$Chemical                   C-H     C-H     C-H
+$Formula                 //   \  //   \   /   \\
+$                   H - C       C       C       C - H
+$                       ³       ³       º       ³
+$                   H - C       C       C       C - H
+$ C  H                   \\   /  \\   /   \   //
+$  14 10                    C-H     C-H     C-H
+*Scintillator - CsI                  4.51        Cs-1, I-1
+"CsI", 4.51, 2, 55, 1, 53, 1
+0 0 0 0   0 0 0 0 0 0 0 0   0 0 0   0 0 0
+$
+*Scintillator - Pilot B              1.02        H-11, C-10
+"PilotB", 1.02, 2, 1, 11, 6, 10
+0 0 0 0   0 0 0 0 0 0 0 0   0 0 0   0 0 0
+$
+*Scintillator - KI                   3.13        K-1, I-1
+"KI", 3.13, 2, 19, 1, 53, 1
+0 0 0 0   0 0 0 0 0 0 0 0   0 0 0   0 0 0
+$
+*Scintillator - NaI (ICRU-252)       3.667       Na-1, I-1
+"Scintillator - NaI (ICRU-252)", 3.667, 2, 11, 1, 53, 1
+0 0 0 0   0 0 0 0 0 0 0 0   0 0 0   0 0 0
+$
+*Scintillator-Stilbene (ICRU-255)    0.9707      H-12, C-14
+"Scintillator-Stilbene (ICRU-255)", 0.9707, 2, 1, 12, 6, 14
+0 12 0 0   8 7 0 0 0 0 0 0   0 0 0  0 0 0
+$Chemical Formula   H-C Í C-H            H-C Í C-H
+$  of Stilbene       /     \              /     \
+$               H Ä C       C Ä C ÍÍ C Ä C       C Ä H
+$  C  H              \\   //    ³    ³    \\   //
+$   14 12           H-C - C-H   H    H   H-C - C-H
+$ More than 10% variations in density have been reported.
+$
+*Scintillator-Toluene (ICRU-266)     0.8669      H-8, C-7
+"Scintillator-Toluene (ICRU-266)", 0.8669, 2, 1, 8, 6, 7
+0 8 0 0   4 3 0 0 0 0 0 0   0 0 0   0 0 0
+$Chemical              H-C Í C-H   H
+$Formula                /     \    ³
+$                  H Ä C       C Ä C Ä H
+$  C  H                 \\   //    ³
+$   7  8               H-C - C-H   H
+$
+!
+!ßßß  COMMON  IMPLANTATION  COMPOUNDS ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+!                                 Density      Atomic Stoichiometry
+!     Common  Name               (g/cm3)       (Atoms/Molecule or Percent)
+!ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ  ÍÍÍÍÍÍÍÍÍÍÍÍÍ   ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ
+*GaAs Crystal                        5.32        Ga-1, As-1
+"GaAs", 5.32, 2, 31, 1, 33, 1
+0 0 0 0   0 0 0 0 0 0 0 0   0 0 0   0 0 0
+$The calculation of ion penetration of gallium arsenide materials has
+$been shown to be usually accurate.  However, because of the high atomic
+$numbers of this substrate, there are significant penetration tails due
+$to ion channeling.  Amorphous GaAs may have an increase in density
+$of 2% over crystalline GaAs.
+$
+*Glass (Soda-Lime)                   2.33(±.10)  O-60,Si-25,Na-10,Ca-3,Mg-1,Al-1
+"Glass Soda_Lime", 2.33, 6, 8, 60, 14, 25, 11, 10, 20, 3, 12, 1, 13, 1
+0 0 0 0   0 0 0 0 0 0 0 0   0 0 0   0 0 0
+$Soda Lime glass density may vary from 2.4 - 2.8 g/cm3. All
+$calculations based on target depth will scale directly with density.
+$
+*Glass (Boro-Silicate)               2.58(±.05)  O-60,Si-26,B-9,Na-3,Al-1
+"Glass Boro_Silicate", 2.58, 5, 8, 60, 14, 26, 5, 9, 11, 3, 13, 1
+0 0 0 0   0 0 0 0 0 0 0 0   0 0 0   0 0 0
+$Boro-Silicate glass density may vary from 2.5 - 2.8 g/cm3. All
+$calculations based on target depth will scale directly with density.
+*Glass (Pyrex)                       2.23        O-65,Si-25,B-7 ,Na-2,Al-1
+"Pyrex", 2.23, 5, 8, 65, 14, 25, 5, 7, 11, 2, 13, 1
+0 0 0 0   0 0 0 0 0 0 0 0   0 0 0   0 0 0
+$Pyrex is a trade-name of Corning Glass Co. Similar glasses made by
+$other companies vary in density from 2.1 - 2.5 g/cm2.
+*Glass (Pb-Transparent)              4.8 (±1.3)  O-59,Si-24,Pb-5,Na-7,K-4
+"Pyrex_Pb", 4.8, 5, 8, 59, 14, 24, 82, 5, 11, 7, 19, 4
+0 0 0 0   0 0 0 0 0 0 0 0   0 0 0   0 0 0
+$There is a large variation of Lead Glass densities depending on
+$trade-offs of clarity, strength and shielding qualities. Nuclear
+$shielding densities range up to 8 g/cm3 depending on lead content.
+$
+*Photoresist - PMMA                  0.95(±.13)  H-8, C-5, O-2
+"PMMA", 0.95, 3, 1, 8, 6, 5, 8, 2
+0 8 0 0   4 0 0 0 2 1 0 0   0 0 0   0 0 0
+$                                    H
+$Chemical                        H H-C-H
+$Formula                         ³   ³
+$Polymethyl                ÄÄÄÄÄ C Ä C ÄÄÄÄÄ
+$Methacrylate                    ³   ³       H
+$                                H   C Ä O Ä C-H
+$ C  H  O                            º       H
+$  5  8  2                           O
+*Photoresist - AZ-111                0.92 (±.12) H-8, C-5, O-2
+"AZ_111", 0.92, 3, 1, 8, 6, 5, 8, 2
+0 8 0 0   3 0 0 0 1 1 0 0   0 0 0   0 0 0
+$
+*Photoresist - Siemens               0.92 (±.12) H-34,C-51,N-4,O-9,S-2
+"Photoresist_Siemens", 0.92, 5, 1,34.4, 6,50.9, 7,3.5, 8,9.4, 16,1.8
+0 0 0 0   0 0 0 0 0 0 0 0   0 0 0   0 0 0
+$
+*Si3N4                               3.44        N-4, Si-3
+"Si3N4", 3.44, 2, 14, 3, 7, 4
+0 0 0 0   0 0 0 0 0 0 0 0   0 0 0   0 0 0
+$Silicon nitride density will will vary up to 4% depending on
+$fabrication. The nitrogen content may vary up to 5% from
+$stoichiometry.
+*SiO2 (quartz) (ICRU-245)                      2.32        O-2, Si-1
+"SiO2 - quartz (ICRU-245)", 2.32, 2, 8, 2, 14, 1
+0 0 0 0   0 0 0 0 0 0 0 0   0 0 0   0 0 0
+$The density of SiO2 may vary from 2.3 - 2.5 g/cm3 depending on the
+$method of preparation. Under ion bombardment, the surface density
+$will change towards an equilibrium value of about 2.37.
+*Superconductor YBaCuO (123)         6.54        Y-1, Ba-2, Cu-3, O-7
+"YBaCuO", 6.54, 4, 39, 1, 56, 2, 29, 3, 8, 7
+0 0 0 0   0 0 0 0 0 0 0 0   0 0 0   0 0 0
+$
+*Supercond.   TlCaBaCu (2223)        7.0 ??      Tl-2, Ca-2, Ba-3, Cu-2
+"HiTc TlCaBaCu_2223", 7.0, 4, 81, 2, 20, 2, 56, 3, 29, 2
+0 0 0 0   0 0 0 0 0 0 0 0   0 0 0   0 0 0
+$At the time of this compilation, the density of TlCaBaCu was only
+$approximately known (5/88).
+*Supercond.  BiSrCaCuO (2212)        6.54        Bi-2, Sr-2, Ca-1, Cu-2
+"HiTc BiSrCaCuO_2212", 6.54, 4, 83, 2, 38, 2, 20, 1, 29, 2
+0 0 0 0   0 0 0 0 0 0 0 0   0 0 0   0 0 0
+$Please note that OXYGEN is missing, which shouldn't affect the
+$stopping and range significantly (4 atom limit to TRIM) [2/92].
+*Water                               1.00        H-2, O-1
+"Water_liquid (ICRU-276)", 1.0, 2, 1, 2, 8, 1
+0 0 0 2   0 0 0 0 0 0 0 0   0 0 0   0 0 0
+$Chemical Formula:      H ÄÄ O ÄÄ H
+$There is about an 8% increase in the peak of the stopping power
+$for ions in water vapour than for water liquid. The peak of the
+$stopping occurs at an energy of about 150 keV/amu times the 2/3
+$power of the ion's atomic number. Above this energy the phase
+$difference begins to disappear. The above calculation is for
+$the liquid phase.
+!
+!ßßßß  COMMON  TARGET  MATERIALS  ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+!                                Density       Atomic Stoichiometry
+!     Common  Name               (g/cm3)       (Atoms/Molecule or Percent)
+!ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ  ÍÍÍÍÍÍÍÍÍÍÍÍÍ   ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ
+*Air, Dry near sea level (ICRU-104)  0.00120484  O-23.2, N-75.5, Ar-1.3
+"%Air, Dry (ICRU-104)", .00120484, 4, 6, .000124, 8, .231781, 7, .755267, 18, .012827
+0 0 0 0   0 0 0 0 0 0 0 0   0 0 0   0 0 0
+$ corrected by H. Paul, Sept. 2004
+$
+*Water  (liquid)                     1.00        H-2, O-1
+"Water_Liquid (ICRU-276)", 1.0, 2, 1, 2, 8, 1
+0 0 0 2   0 0 0 0 0 0 0 0   0 0 0   0 0 0
+$Chemical Formula:      H ÄÄ O ÄÄ H
+$
+$There is about an 8% increase in the peak of the stopping power
+$for ions in water vapour relative to the liquid. (The peak of the
+$stopping occurs at an energy of about 100 keV/amu times the 2/3
+$power of the ion's atomic number.) Above the peak the phase
+$difference begins to disappear. This calculation is for the
+$LIQUID phase.
+*Water  (vapor)                      (gas)       H-2, O-1
+"Water_vapor (ICRU-277)", 0.00125, 2, 1, 2, 8, 1
+0 0 0 2   0 0 0 0 0 0 0 0   0 0 0   0 0 0
+$Chemical Formula:      H ÄÄ O ÄÄ H
+$
+$There is about an 8% increase in the peak of the stopping power
+$for ions in water vapour relative to the liquid. (The peak of the
+$stopping occurs at an energy of about 100 keV/amu times the 2/3
+$power of the ion's atomic number.) Above the peak the phase
+$difference begins to disappear. This calculation is for the
+$GAS phase.
+*Concrete                            2.34(±.15)  C-23,O-40,Si-12,Ca-12,H-10,Mg-2
+"Concrete", 2.34, 6, 6, 23, 8, 40, 14, 12, 20, 12, 1, 10, 12, 2
+0 0 0 0   0 0 0 0 0 0 0 0   0 0 0   0 0 0
+$Concrete has a wide variation in density and composition. The above
+$description is for poured structural concrete with 10% moisture
+$content. Concrete block will have a density of about 2.05 g/cm3.
+$Ranges of concrete composition are : C (8-25%), O (38-60%), Si (8-18%).
+$Concrete composition can be analyzed cheaply by commercial laboratories.
+$
+*Aluminum Oxide (alpha)              3.980       Al-2, O-3
+"Al2O3", 3.980,2,13,2,8,3
+0 0 0 0   0 0 0 0 0 0 0 0   0 0 0   0 0 0
+$The density of aluminum oxide will vary by 5% according to the
+$method of preparation.
+*Bakelite                            1.45(±.15)  H-9, C-9, O-1
+"Bakelite", 1.45, 3, 1, 9, 6, 9, 8, 1
+0 8 0 1   7.5 3 0 0 1 0 0 0   0 0 0   0 0 0
+$Chemical                 H - C ÄÄ C - CH ÄÄÄÄÄÄ
+$Formula                     //     \\   2
+$              ÄÄÄÄÄÄ CH ÄÄ C        C ÄÄ O ÄÄ H
+$                       2    \      /
+$  C  H  O                H - C ÍÍ C - CH ÄÄÄÄÄÄ
+$   9  9                                 2
+$Bakelite density varies considerably because of "fillers".
+*Delrin                              1.42        H-2, C-1, O-1
+"Delrin", 1.42, 3, 1, 2, 6, 1, 8, 1
+0 2 0 0   0 0 0 0 2 0 0 0   0 0 0   0 0 0
+$Chemical             H
+$Formula              ³
+$                ÄÄÄÄ C ÄÄ O ÄÄÄÄ
+$ CH O                ³
+$   2                 H
+*Lexan,Makrofol,Polycarbonate (ICRU-219)        1.20        H-14, C-16, O-3
+"Lexan (ICRU-219)", 1.2, 3, 1, 14, 6, 16, 8, 3
+0 14 0 0   10 6 0 0 4 1 0 0   0 0 0   0 0 0
+$                                H
+$Chemical           H-C - C-H  H-C-H  H-C - C-H       O
+$Formula             //    \\    ³     //    \\       º
+$           ÄÄÄ O Ä C       C ÄÄ C ÄÄ C       C - O - C ÄÄÄ
+$ C  H  O            \     /     ³     \     /
+$  16 14 3          H-C Í C-H  H-C-H  H-C Í C-H
+$                                H
+$The density variation is very narrow, from 1.19 - 1.22 g/cm3.
+*Lucite                              1.20        H-8, C-5, O-2
+"Lucite", 1.20, 3, 1, 8, 6, 5, 8, 2
+0 8 0 0   4 0 0 0 2 1 0 0   0 0 0   0 0 0
+$Chemical           H    CH
+$Formula            ³    ³ 3
+$             ÄÄÄÄÄ C ÄÄ C ÄÄÄÄÄ
+$                   ³    ³
+$                   H    C Ä O Ä CH
+$ C  H  O                º         3
+$  5  8  2               O
+*Mylar, Melinex  (ICRU-222)                 1.40       H-8, C-10, O-4
+"Mylar", 1.397, 3, 1, 8, 6, 10, 8, 4
+0 8 0 0   6 3 0 0 4 2 0 0   0 0 0   0 0 0
+$Chemical Formula :  H-C Í C-H            H   H
+$                    /       \            ³   ³
+$      ÄÄÄÄ O Ä C Ä C         C Ä C Ä O Ä C Ä C ÄÄÄÄÄÄÄ
+$               º    \\     //    º       ³   ³
+$ C  H 0        O    H-C - C-H    O       H   H
+$  10 8 4
+*Nylon,Type 6 and Type 6/6(ICRU-209) 1.14        H-9.8, C-63.7, N-12.4, O-14.1
+"Nylon, Type 6 and Type 6 6(ICRU-209)", 1.14, 4, 1, 11, 6, 6, 7, 1, 8, 1
+0 10 1 0   5 0 0 2 0 1 0 0   0 0 0   0 0 0
+$Chemical             H   H   H   H   H   O   H
+$Formula              ³   ³   ³   ³   ³   º   ³
+$of              ÄÄÄÄ C Ä C Ä C Ä C Ä C Ä C Ä N ÄÄÄÄÄ
+$Nylon-6              ³   ³   ³   ³   ³
+$                     H   H   H   H   H
+$C H  O N
+$ 6 11       (Nylon - 6,6 is similar)
+*Paraffin Wax (ICRU-213)             0.93        H-14.86, C-84.14
+"Paraffin Wax (ICRU-213)", 0.93, 2, 1, 2, 6, 1
+0 2 0 0   1 0 0 0 0 0 0 0   0 0 0   0 0 0
+$Density variation of paraffin is 0.87 - 0.91 g/cm3.
+$Chemical            H
+$Formula             ³
+$              ÄÄÄÄÄ C ÄÄÄÄÄ
+$   C H              ³
+$      2             H
+*Plexiglas, Acrylic                  1.17        H-6, C-4, O-2
+"Plexiglas", 1.17, 3, 1, 6, 6, 4, 8, 2
+0 6 0 0   3 0 0 0 2 1 0 0   0 0 0   0 0 0
+$Chemical             H   H
+$Formula              ³   ³
+$               ÄÄÄÄÄ C Ä C ÄÄÄÄÄ
+$                     ³   ³
+$                     H   C Ä O Ä CH
+$ C  H  O                 º         3
+$  6  4  2                O
+$Density variation is very narrow: 1.14-1.19 g/cm3.
+*Teflon (ICRU-227)                   2.20        C-2, F-4
+"Teflon-PolytetraFluoroEthylene(ICRU-227)", 2.20, 2, 6, 2, 9, 4
+0 0 0 0   2 0 0 0 0 0 4 0   0 0 0   0 0 0
+$Chemical              F    F
+$Formula               ³    ³
+$                 ÄÄÄÄ C ÄÄ C ÄÄÄÄ
+$                      ³    ³
+$                      F    F
+!
+!ßßßß  PLASTICS / POLYMERS  ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+!                                                Density    Atomic Stoichiometry
+!      Technical  Name          Common Name      (g/cm3)      (Atomic Percent)
+!ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ  ÍÍÍÍÍÍÍÍÍÍÍÍÍ     ÍÍÍÍÍÍÍÍÍ   ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ
+*Bakelite                            1.45(±.24)  H-9, C-9, O-1
+"Bakelite", 1.45, 3, 1, 9, 6, 9, 8, 1
+0 8 0 1   7.5 3 0 0 1 0 0 0   0 0 0   0 0 0
+$Chemical                  H - C ÄÄ C - CH ÄÄÄÄÄÄ
+$Formula                      //     \\   2
+$               ÄÄÄÄÄÄ CH ÄÄ C        C ÄÄ O ÄÄ H
+$                        2    \      /
+$  C  H  O                 H - C ÍÍ C - CH ÄÄÄÄÄÄ
+$   9  9                                2
+$Bakelite density varies considerably because of "fillers".
+*Epoxy (cast)                        1.18(±.07)  H-19, C-18, O-3
+"Epoxy", 1.18, 3, 1, 19, 6, 18, 8, 3
+0 19 0 0   12 6 0 0 5 0 0 0   0 0 0   0 0 0
+$Chemical           H-C - C-H     CH3  H-C - C-H        H   H   H
+$Formula             //    \\     ³     //    \\        ³   ³   ³
+$         ÄÄÄÄÄ O Ä C        C ÄÄ C ÄÄ C        C - O - C - C - C ÄÄÄ
+$ C  H  0            \     /      ³     \     /         ³   ³   ³
+$  18 19 3          H-C Í C-H     CH3  H-C Í C-H        H   O   H
+$If epoxy has silica filler, density will be in range of 1.6 - 2.0 g/cm3.
+*Epoxy (molded)                      1.85(±.15)  H-19, C-18, O-3
+"Epoxy", 1.85, 3, 1, 19, 6, 18, 8, 3
+0 19 0 0   12 6 0 0 5 0 0 0   0 0 0   0 0 0
+$Chemical           H-C - C-H     CH3  H-C - C-H        H   H   H
+$Formula             //    \\     ³     //    \\        ³   ³   ³
+$         ÄÄÄÄÄ O Ä C        C ÄÄ C ÄÄ C        C - O - C - C - C ÄÄÄ
+$ C  H  0            \     /      ³     \     /         ³   ³   ³
+$  18 19 3          H-C Í C-H     CH3  H-C Í C-H        H   O   H
+$Molded epoxy usually has fillers of glass fiber (1.8 - 2.0 g/cm3) or of
+$mineral fiber (1.6 - 2.06 g/cm3).
+*Formvar, Vinylec, Polyvinyl formal resin (ICRU-760)     1.23        H-8, C-5, O-2
+"Formvar (ICRU-760)", 1.31, 3, 1, 8, 6, 5, 8, 2
+0 8 0 0   4 0 0 0 2 1 0 0   0 0 0   0 0 0
+$                                    H
+$Chemical                        H H-C-H
+$Formula                         ³   ³
+$Polymethyl                ÄÄÄÄÄ C Ä C ÄÄÄÄÄ
+$Methacrylate                    ³   ³       H
+$                                H   C Ä O Ä C-H
+$ C  H  O                            º       H
+$  5  8  2                           O
+*Polycarbonate,Lexan,Makrofol        1.20        H-14, C-16, O-3
+"Lexan (ICRU-219)", 1.2, 3, 1, 14, 6, 16, 8, 3
+0 14 0 0   10 6 0 0 4 1 0 0   0 0 0   0 0 0
+$                                H
+$Chemical           H-C - C-H  H-C-H  H-C - C-H       O
+$Formula             //    \\    ³     //    \\       º
+$           ÄÄÄ O Ä C       C ÄÄ C ÄÄ C       C - O - C ÄÄÄ
+$ C  H  0            \     /     ³     \     /
+$  16 14 3          H-C Í C-H  H-C-H  H-C Í C-H
+$                                H
+$The density variation is very narrow, from 1.19 - 1.22 g/cm3.
+*Polychloro-p-xylylene,Paralene-C    1.289       H-7, C-8, Cl-1
+"Paralene_C", 1.289, 3, 1, 7, 6, 8, 17, 1
+0 7 0 0   6 3 0 0 0 0 0 1   0 0 0   0 0 0
+$Chemical            H   H-C = C-H   Cl
+$Formula             ³    /     \    ³
+$               ÄÄÄÄ C Ä C       C Ä C ÄÄÄÄÄ
+$ C H Cl             ³    \\   //    ³
+$  8 7               H   H-C - C-H   H
+*Poly-p-xylylene, Paralene-N         1.11        H-8, C-8
+"Paralene_N", 1.11, 2, 1, 8, 6, 8
+0 8 0 0   6 3 0 0 0 0 0 0   0 0 0   0 0 0
+$Chemical            H   H-C - C-H   H
+$Formula             ³    //    \\   ³
+$              ÄÄÄÄÄ C Ä C       C Ä C ÄÄÄÄÄ
+$  C H               ³    \     /    ³
+$   8 8              H   H-C Í C-H   H
+$
+*Plexiglas, Acrylic                  1.17        H-6, C-4, O-2
+"Plexiglas", 1.17, 3, 1, 6, 6, 4, 8, 2
+0 6 0 0   3 0 0 0 2 1 0 0   0 0 0   0 0 0
+$Chemical             H   H
+$Formula              ³   ³
+$               ÄÄÄÄÄ C Ä C ÄÄÄÄÄ
+$                     ³   ³
+$                     H   C Ä O Ä CH
+$ C  H  O                 º         3
+$  6  4  2                O
+$Density variation is very narrow: 1.14-1.19 g/cm3.
+*Polyethylene, Marlex                0.93(±.03)  H-4, C-2
+"Polyethylene", 0.93, 2, 1, 4, 6, 2
+0 4 0 0   2 0 0 0 0 0 0 0   0 0 0   0 0 0
+$Density variation of polyethylene is 0.91 - 1.05 g/cm3. "Low" density is
+$ 0.920, "medium" is .93, and "high" is .95. Special polyethelene is made
+$for nuclear shielding, and this has loaded densities up to 1.08.
+$Chemical                    H    H
+$Formula :                   ³    ³
+$          ³C H ³       ÄÄÄÄ C ÄÄ C ÄÄÄÄ
+$          ³ 2 4³n           ³    ³
+$                            H    H
+*Polyethylene Terphthalate ,Mylar,Melinex          1.397       H-8, C-10, O-4
+"Mylar (ICRU-222)", 1.397, 3, 1, 8, 6, 10, 8, 4
+0 8 0 0   6 3 0 0 4 2 0 0   0 0 0   0 0 0
+$Chemical            H-C = C-H            H   H
+$Formula             /       \            ³   ³
+$      ÄÄÄÄ O Ä C Ä C         C Ä C Ä O Ä C Ä C ÄÄÄÄÄÄÄ
+$               º    \\     //    º       ³   ³
+$ C  H 0        O    H-C - C-H    O       H   H
+$  10 8 4
+*Polymethyl Methacrylate,Lucite      1.20        H-8, C-5, O-2
+"Lucite (ICRU-223)", 1.20, 3, 1, 8, 6, 5, 8, 2
+0 8 0 0   4 0 0 0 2 1 0 0   0 0 0   0 0 0
+$                                 H
+$Chemical                   H   H-C-H
+$Formula                    ³     ³
+$Polymethyl           ÄÄÄÄÄ C ÄÄÄ C ÄÄÄÄÄ
+$Methacrylate               ³     ³       H
+$                           H     C Ä O Ä C-H
+$ C  H  O                         º       H
+$  5  8  2                        O
+*Polymethyl Methacrylate,PMMA,Resist 0.95(±.13)  H-8, C-5, O-2
+"PMMA", 0.95, 3, 1, 8, 6, 5, 8, 2
+0 8 0 0   4 0 0 0 2 1 0 0   0 0 0   0 0 0
+$                                    H
+$Chemical                        H H-C-H
+$Formula                         ³   ³
+$Polymethyl                ÄÄÄÄÄ C Ä C ÄÄÄÄÄ
+$Methacrylate                    ³   ³       H
+$                                H   C Ä O Ä C-H
+$ C  H  O                            º       H
+$  5  8  2                           O
+*Polypropylene (ICRU-225)             0.90        H-6, C-3
+"Polypropylene (ICRU-225)", 0.90, 2, 1, 6, 6, 3
+0 6 0 0   3 0 0 0 0 0 0 0   0 0 0   0 0 0
+$Chemical                 H     H
+$Formula                  ³     ³
+$                   ÄÄÄÄÄ C ÄÄÄ C ÄÄÄÄÄ
+$     ³C  H  ³            ³     ³
+$     ³ 3  6 ³n           H   H-C-H
+$                               ³
+$                               H
+*Kapton Polyimide Film (ICRU-179)    1.42        H-10, C-22, N-2, O-5 
+"Kapton Polyimide Film (ICRU-179)", 1.42, 4, 1, 10, 6, 22, 7, 2, 8, 5
+0 10 0 0   13 9 0 6 2 4 0 0   0 0 0   0 0 0
+$Chemical       O Í C    H-C   C Í O
+$Formula           / \   // \ / \      H-C - C-H        H-C - C-H
+$                /     \C    C    \    //     \\        //     \\
+$          ÄÄÄÄ N       ³    º     N - C        C - O - C        C ÄÄÄÄ
+$                \     /C    C    /     \     /          \     /
+$ C  H  N O        \ /   \\ / \ /      H-C Í C-H        H-C Í C-H
+$  22 10 2 5    O Í C    H-C    C Í O
+$
+*Polystyrene (ICRU-226)                        1.06        H-8, C-8
+"Polystyrene (ICRU-226)", 1.06, 2, 1, 8, 6, 8
+0 8 0 0   6 3 0 0 0 0 0 0   0 0 0   0 0 0
+$Chemical              H-C Í C-H    ³
+$Formula                /     \     ³
+$                  H Ä C       C ÄÄ C Ä H
+$    ³C  H ³            \\   //     ³
+$    ³ 8  8³n            C - C    H-C-H
+$                        ³   ³      ³
+$                        H   H      ³
+$The variation in density ranges from 0.98 to 1.075 g/cm3.
+*Polyvinylchloride, Rigid PVC        1.30        H-3, C-2, Cl-1
+"PVC (ICRU-232)", 1.30, 3, 1, 3, 6, 2, 17, 1
+0 3 0 0   2 0 0 0 0 0 0 1   0 0 0   0 0 0
+$Chemical               Cl   H
+$Formula                ³    ³
+$                  ÄÄÄÄ C ÄÄ C ÄÄÄÄ
+$  C H Cl CH            ³    ³
+$           2           H    H
+$
+$There may be a large density variation depending on fabrication.
+*Vinylidene Chloride, Saran foil     1.69        H-2, C-2, Cl-2
+"Saran", 1.69, 3, 1, 2, 6, 2, 17, 2
+0 2 0 0   2 0 0 0 0 0 0 2   0 0 0   0 0 0
+$Chemical               Cl   H
+$Formula                ³    ³
+$                  ÄÄÄÄ C ÄÄ C ÄÄÄÄ
+$  C Cl  C H            ³    ³
+$      2    2           Cl   H
+!
+!ßßßßßßßß  METAL  ALLOYS   ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+!                                Density       Atomic Stoichiometry
+!     Common  Name               (g/cm3)       (Atoms/Molecule or Percent)
+!ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ  ÍÍÍÍÍÍÍÍÍÍÍÍÍ   ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ
+*Beryllium-Copper                    8.27        Be-1.9, Cu-98.1
+"BeCu", 8.27, 2, 4, 1.9, 29, 98.1
+0 0 0 0   0 0 0 0 0 0 0 0   0 0 0   0 0 0
+$
+*Brass (typical)                     8.52        Cu-62, Zn-35, Pb-3
+"Brass", 8.52, 3, 29, 62, 30, 35, 82, 3
+0 0 0 0   0 0 0 0 0 0 0 0   0 0 0   0 0 0
+$Brass can have a wide variation of Cu/Zn content. Pb is not
+$always present.
+*Bronze (typical)                    8.82        Cu-89, Zn-9, Pb-2
+"Bronze", 8.82, 3, 29, 89, 30, 9, 82, 2
+0 0 0 0   0 0 0 0 0 0 0 0   0 0 0   0 0 0
+$Bronze can have a wide variation of Cu/Zn content.
+*Inconel-600                         8.43        Cr-15, Fe-9, Ni-76
+"Inconel_600", 8.43, 3, 24, 15, 26, 9, 28, 76
+0 0 0 0   0 0 0 0 0 0 0 0   0 0 0   0 0 0
+$
+*Monel-400                           8.85        Mn-1, Fe-2, Ni-66, Cu-31
+"Monel_400", 8.85, 4, 25, 1, 26, 2, 28, 66, 29, 31
+0 0 0 0   0 0 0 0 0 0 0 0   0 0 0   0 0 0
+$
+*Stainless-Steel (typical)           8.0         Cr-8, Fe-74, Ni-18
+"Stainless Steel", 8.00, 3, 24, 8, 26, 74, 28, 18
+0 0 0 0   0 0 0 0 0 0 0 0   0 0 0   0 0 0
+$Stainless-Steel is produced with Cr content ranging from
+$4 - 19 Atomic Percent, and with C content from 0 - 4 percent.
+$
+!
+!ßß  NUMBERED COMPOUNDS (99-277) from ICRU Report 49, with Helmut Paul's additions (300-781)ßß
+!Note: For numbers below 300: these are compounds that you find in Table 1.2 of ICRU Report 49. 
+!The numbers are used in programs ESTAR, PSTAR and ASTAR (available from NIST), to define the 
+!compounds. Helmut Paul's additions start from number 300.!
+!        [Note: an unknown density is set equal to 1, or 0.001]
+!                                Density       Atomic Stoichiometry
+!     Common  Name               (g/cm3)       (Atoms/Molecule or Percent)
+!ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ  ÍÍÍÍÍÍÍÍÍÍÍÍÍ   ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ
+*Tiss.Equiv.Plastic A-150 (ICRU-099) 1.1270      H-10, C-78, N-3, O-5, F-2, Ca-2
+"%Tissue Equiv. Plastic A-150 (ICRU-099)", 1.1270, 6, 1, 0.101327, 6, 0.7755, 7, .035057, 8, .052316, 9, .017422, 20, .018378
+0 0 0 0   0 0 0 0 0 0 0 0   0 0 0   0 0 0
+$ICRU ID=099, Type A-150 Tissue Equivalent Plastic
+$
+*Acetylene (ICRU-101)                0.0010967   H-2, C-2
+"Acetylene (ICRU-101)", 0.0010967, 2, 1, 2, 6, 2
+0 2 0 0   0 0 1 0 0 0 0 0   0 0 0   0 0 0
+$Chemical
+$Formula       H ÄÄ C ðð C ÄÄ H
+$  C  H
+$   2  2
+$
+*Adipose Tissue (ICRP ICRU-103)      0.92        H-12,C-64,N-1,O-23,Na-.05,Mg-.002,P-.02,Cl-.12
+"%Adipose Tissue (ICRP ICRU-103)", 0.92, 8, 1,0.119477,6,0.63724,7,0.00797,8,0.232333,11,0.0005,12,0.00002,15,0.00016,17,0.00119
+0 0 0 0   0 0 0 0 0 0 0 0   0 0 0   0 0 0
+$from: ICRU Report #37, 1984, pub. by ICRU, Bethesda, Md, 20814, USA.
+$
+*Air, Dry near sea level (ICRU-104)  0.00120484  O-23.2, N-75.5, Ar-1.3
+"%Air, Dry (ICRU-104)", .00120484, 4, 6, .000124, 8, .231781, 7, .755267, 18, .012827
+0 0 0 0   0 0 0 0 0 0 0 0   0 0 0   0 0 0
+$ corrected by H. Paul, Sept. 2004
+$
+*Aluminum Oxide (ICRU-106)           3.97        0-3, Al-2     
+"Aluminum Oxide (ICRU-106)", 3.97, 2, 8, .60, 13, .40
+0 0 0 0   0 0 0 0 0 0 0 0   0 0 0   0 0 0
+$The density of aluminum oxide will vary by 5% according to the
+$method of preparation.
+$
+*B-100 Bone-Equiv.Plastic(ICRU-111)  1.450       H-6.5,C-53.7,N-2.2,O-3.2,F-16.7,Ca-17.6
+"%B-100, Bone-Equivalent Plastic (ICRU-111)", 1.45, 6, 1, .065471, 6, .536945, 7, .0215, 8, .032085, 9, .167411, 20, .176589
+0 0 0 0   0 0 0 0 0 0 0 0   0 0 0   0 0 0
+$
+*Bone, Compact (ICRU-119)            1.850       H-6.3,C-27.8,N-2.7,O-41,Mg-.2,P-7,S-0.2,Ca-14.7
+"%Bone, Compact (ICRU-119)", 1.85, 8, 1,.063984,6,.278,7,.027,8,.410016,12,.002,15,.07,16,.002,20,.147     
+0 0 0 0   0 0 0 0 0 0 0 0   0 0 0   0 0 0
+$
+*Bone, Cortical (ICRP ICRU-120)       1.850       H-4.7,C-14.4,N-4.2,O-44.6,Mg-0.2,P-10.4,S-0.3,Ca-21
+"%Bone, Compact (ICRP ICRU-120)", 1.85, 8, 1,.047234,6,.14433,7,.04199,8,.446096,12,.0022,15,.10497,16,.00315,20,.20993
+0 0 0 0   0 0 0 0 0 0 0 0   0 0 0   0 0 0
+$
+*C-552 Air Equiv.Plastic (ICRU-126)  1.760       H-2.5,C-50.2,O-0.4,F-46.5,Si-0.4
+"%C-552 Air Equivalent Plastic (ICRU-126)", 1.76, 5, 1,.02468,6,.50161,8,.004527,9,.465209,14,.003973                   
+0 0 0 0   0 0 0 0 0 0 0 0   0 0 0   0 0 0
+$
+*Calcium Fluroide (ICRU-130)         3.180       F-48.7, Ca-.513               
+"%Calcium Fluoride (ICRU-130)", 3.18, 2, 9, .486659, 20, .513341
+0 0 0 0   0 0 0 0 0 0 0 0   0 0 0   0 0 0
+$
+*Carbon Dioxide (ICRU-134)           0.001842    C-1, O-2
+"Carbon Dioxide (ICRU-134)", .001842, 2, 6, 1, 8, 2
+0 0 0 0   0 0 0 0 0 2 0 0   0 0 0   0 0 0
+$ No. of bonds corrected (HP, 24 Jan 05)
+$Chemical
+$Formula           O ÍÍ C ÍÍ O
+$
+*Cellulose Nitrate (ICRU-138)        1.490       H-2.6, C-27.1, N-12.1, O-57.8
+"%Cellulose Nitrate (ICRU-138)", 1.49, 4, 1, .029216, 6, .271296,7,.121276,8,.578212
+0 0 0 0   0 0 0 0 0 0 0 0   0 0 0   0 0 0
+$
+*Ceric Sulfate Dosim.Sol.(ICRU-139)  1.03        H-10.7,N-.08,O-87.5,S-1.1,Ce-2.0
+"%Ceric Sulfate Dosimeter Sol.(ICRU-139)", 1.03, 5, 1, .107596,7,.0008,8,.874976,16,.0114627,58,.002001
+0 0 0 0   0 0 0 0 0 0 0 0   0 0 0   0 0 0
+$
+*Cesium Iodide (ICRU-141)            4.51        I-48.8, Ce-51.2             
+"%Cesium Iodide (ICRU-141)", 1.51, 2, 53, .488451, 55, .511549
+0 0 0 0   0 0 0 0 0 0 0 0   0 0 0   0 0 0
+$
+*Ethylene (ICRU-155)                 0.001175    H-4, C-2
+"Ethylene (ICRU-155)", .001175, 2, 1, 4, 6, 2
+0 4 0 0   0 1 0 0 0 0 0 0   0 0 0   0 0 0
+$Chemical          H            H
+$Formula             \        /
+$                      C ÍÍ C
+$ C  H               /        \
+$  2  4            H            H
+*FerrousSulfateDosim.Sol.(ICRU-160)  1.024       H-10.8,N-.003,O-87.9,Na-.002,S-1.3,Cl-.003,Fe-.005
+"%Ferrous Sulfate Dosimeter Sol.(ICRU-160)", 1.024, 7, 1, .108259,7,.000027,8,.878636,11,.000022,16,.012968,17,.000034,26,.000054
+0 0 0 0   0 0 0 0 0 0 0 0   0 0 0   0 0 0
+$
+*Glass,BoroSilicate Pyrex(ICRU-169)  2.23        B-4.0,O-54.0,Na-2.8,Al-1.16,Si-37.7,K-0.33
+"%Glass, BoroSilicate(Pyrex)(ICRU-169)", 2.23, 6, 5,.040061,8,.539564,11,.028191,13,.011644,14,.37722,19,.003321
+0 0 0 0   0 0 0 0 0 0 0 0   0 0 0   0 0 0
+$
+*Kapton Polyimide Film (ICRU-179)    1.42        H-2.63,C-69.1,N-7.3,O-20.92 
+"Kapton Polyimide Film (ICRU-179)", 1.42, 4, 1, 10, 6, 22, 7, 2, 8, 5
+0 10 0 0   13 9 0 6 2 4 0 0   0 0 0   0 0 0
+$Chemical       O Í C    H-C   C Í O
+$Formula           / \   // \ / \      H-C - C-H        H-C - C-H
+$                /     \C    C    \    //     \\        //     \\
+$          ÄÄÄÄ N       ³    º     N - C        C - O - C        C ÄÄÄÄ
+$                \     /C    C    /     \     /          \     /
+$ C  H  N O        \ /   \\ / \ /      H-C Í C-H        H-C Í C-H
+$  22 10 2 5    O Í C    H-C    C Í O
+$
+*Lithium Fluoride Crystal (ICRU-185)         2.635       Li-1, F-1                  
+"Lithium Fluoride (ICRU-185)", 2.635, 2, 3, 1, 9, 1
+0 0 0 0   0 0 0 0 0 0 0 0   0 0 0   0 0 0
+$LiF crystals rapidly become damaged under ion bombardment, and
+$there can be up to 8% density change in the surface region.
+$
+*Lithium TetraBorate (ICRU-189)      2.44        Li-8.2, B-25.6, O-66.22
+"%Lithium TetraBorate(ICRU-189)", 2.44, 3, 3, .082085, 5, .25568, 8, .662235
+0 0 0 0   0 0 0 0 0 0 0 0   0 0 0   0 0 0
+$
+*M-3 Wax (ICRU-191)                  1.05        H-11.4, C-65.6, O-9.2, Mg-13.5, Ca-2.9
+"%M-3 Wax (ICRU-191)", 1.05, 5, 1, .114318, 6, .655823, 8, .092183, 12, .134792, 20, .002883
+0 0 0 0   0 0 0 0 0 0 0 0   0 0 0   0 0 0
+$
+*Methane (ICRU-197)                  0.000717    H-4, C-1
+"Methane (ICRU-197)", 0.000717, 2,  1, 4, 6, 1
+0 4 0 0   0 0 0 0 0 0 0 0   0 0 0   0 0 0
+$Chemical Formula
+$  of Methane               H
+$                           ³
+$ C  H                 H ÄÄ C ÄÄ H
+$     4                     ³
+$                           H
+*Tissue Substitute MS-20 (ICRU-200)  1.000       H-8.1, C-58.3, N-1.8, O-18.6, Mg-13.0, Cl-.09
+"%Tissue Substitute(ICRU-200)", 1.00, 6, 1, .081192, 6, .583442, 7, .017798, 8, .186381, 12, .130287, 17, .0009
+0 0 0 0   0 0 0 0 0 0 0 0   0 0 0   0 0 0
+$
+*Muscle, Skeletal(ICRP ICRU-201)     1.04        H-10.0,C-10.7,N-2.8,Na-.08,Mg-.02,P-.18,S-.24
+"%Muscle, Skeletal(ICRP ICRU-201)", 1.04, 8, 1, .100637,6,.10783,7,.02768,8,.754773,11,.00075,12,.00019,15,.0018,16,.00241,
+0 0 0 0   0 0 0 0 0 0 0 0   0 0 0   0 0 0
+$
+*Muscle, Striated (ICRU ICRU-202)    1.04        H-10.2,C-12.3,N-.035,O-72.9,Na-.09,Mg-.02,P-.2,S-.5
+"%Muscle, Striated (ICRU ICRU-202)", 1.04, 8, 1, .101997,6,.123,7,.035,8,.729003,11,.0008,12,.0002,15,.002,16,.005
+0 0 0 0   0 0 0 0 0 0 0 0   0 0 0   0 0 0
+$
+*MuscleEquiv.Liq.w Sucrose(ICRU-203) 1.11        H-9.8, C-5.6, N-3.5, O-71.0
+"%Muscle Equiv. Liq. w Sucrose(ICRU-203)", 1.11, 4, 1, .098234, 6, .156214, 7, .035451, 8, .7101
+0 0 0 0   0 0 0 0 0 0 0 0   0 0 0   0 0 0
+$
+*MuscleEquiv.Liq.wo Sucrose(ICRU-204)1.07        H-10.2, C-12., N-3.5, O-74.25
+"%Muscle Equiv. Liq. wo Sucrose(ICRU-204)", 1.07, 4, 1, .101969, 6, .120058, 7, .035451, 8, .742522
+0 0 0 0   0 0 0 0 0 0 0 0   0 0 0   0 0 0
+$
+*Nylon,Type 6 and Type 6 6(ICRU-209) 1.14        H-9.8, C-63.7, N-12.4, O-14.1
+"%Nylon, Type 6 and Type 6 6(ICRU-209)", 1.14, 4, 1, .097976, 6, .636856, 7, .123779, 8, .141389
+0 0 0 0   0 0 0 0 0 0 0 0   0 0 0   0 0 0
+$
+*Paraffin Wax (ICRU-213)             0.93        H-14.86, C-84.14
+"%Paraffin Wax (ICRU-213)", 0.93, 2, 1, .148605, 6, .851395
+0 0 0 0   0 0 0 0 0 0 0 0   0 0 0   0 0 0
+$
+*Photographic Emulsion (ICRU-215)    3.815       H-1.4,C-7.2,N-1.9,O-6.6,S-.2,Br-34.9,Ag-47.4,I-.3
+"%Photographic Emulsion (ICRU-215)", 3.815, 8, 1, .0141, 6, .072261, 7,.01932, 8, .066101, 16, .00189, 35, .349103, 47, .474105, 53, .00312
+0 0 0 0   0 0 0 0 0 0 0 0   0 0 0   0 0 0
+$
+*PlasticScint(Vinyltoluene ICRU-216) 1.032       H-8.5, C-91.5
+"%Plastic Scintillator (Vinyltoluene ICRU-216)", 1.032, 2, 1, .085, 6, .915
+0 0 0 0   0 0 0 0 0 0 0 0   0 0 0   0 0 0
+$
+*Lexan,Makrofol,Polycarbon(ICRU-219) 1.20        H-14, C-16, O-3
+"Polycarbonate,Lexan,Makrofol(ICRU-219)", 1.2, 3, 1, 14, 6, 16, 8, 3
+0 14 0 0   10 6 0 0 4 1 0 0   0 0 0   0 0 0
+$                                H
+$Chemical           H-C - C-H  H-C-H  H-C - C-H       O
+$Formula             //    \\    ³     //    \\       º
+$           ÄÄÄ O Ä C       C ÄÄ C ÄÄ C       C - O - C ÄÄÄ
+$ C  H  O            \     /     ³     \     /
+$  16 14 3          H-C Í C-H  H-C-H  H-C Í C-H
+$                                H
+$The density variation is very narrow, from 1.19 - 1.22 g/cm3.
+*Polyethylene, (ICRU-221)     0.94(±.03)  H-4, C-2
+"Polyethylene (ICRU-221)", 0.94, 2, 1, 4, 6, 2
+0 4 0 0   2 0 0 0 0 0 0 0   0 0 0   0 0 0
+$Density variation of polyethylene is 0.91 - 1.05 g/cm3. "Low" density is
+$ 0.920, "medium" is .93, and "high" is .95. Special polyethelene is made
+$for nuclear shielding, and this has loaded densities up to 1.08.
+$Chemical                    H    H
+$Formula :                   ³    ³
+$          ³C H ³       ÄÄÄÄ C ÄÄ C ÄÄÄÄ
+$          ³ 2 4³n           ³    ³
+$                            H    H
+*Mylar, Melinex  (ICRU-222)          1.400       H-8, C-10, O-4
+"Mylar, Melinex, Polyethylene Terephthalate (ICRU-222)", 1.400, 3, 1, 8, 6, 10, 8, 4
+0 8 0 0   6 3 0 0 4 2 0 0   0 0 0   0 0 0
+$Chemical Formula :  H-C Í C-H            H   H
+$                    /       \            ³   ³
+$      ÄÄÄÄ O Ä C Ä C         C Ä C Ä O Ä C Ä C ÄÄÄÄÄÄÄ
+$               º    \\     //    º       ³   ³
+$ C  H 0        O    H-C - C-H    O       H   H
+$  10 8 4
+*Lucite, Perspex (ICRU-223)          1.19        H-8, C-5, O-2
+"Polymethyl Methacrylate,Lucite,Perspex(ICRU-223)", 1.19, 3, 1, 8, 6, 5, 8, 2
+0 8 0 0   4 0 0 0 2 1 0 0   0 0 0   0 0 0
+$Chemical           H    CH
+$Formula            ³    ³ 3
+$             ÄÄÄÄÄ C ÄÄ C ÄÄÄÄÄ
+$                   ³    ³
+$                   H    C Ä O Ä CH
+$ C  H  O                º         3
+$  5  8  2               O
+*Polypropylene (ICRU-225)             0.90       H-6, C-3
+"Polypropylene (ICRU-225)", 0.90, 2, 1, 6, 6, 3
+0 6 0 0   3 0 0 0 0 0 0 0   0 0 0   0 0 0
+$Chemical                 H     H
+$Formula                  ³     ³
+$                   ÄÄÄÄÄ C ÄÄÄ C ÄÄÄÄÄ
+$     ³C  H  ³            ³     ³
+$     ³ 3  6 ³n           H   H-C-H
+$                               ³
+$                               H
+*Polystyrene (ICRU-226)              1.06        H-8, C-8
+"Polystyrene (ICRU-226)", 1.06, 2, 1, 8, 6, 8
+0 8 0 0   6 3 0 0 0 0 0 0   0 0 0   0 0 0
+$Chemical              H-C Í C-H    ³
+$Formula                /     \     ³
+$                  H Ä C       C ÄÄ C Ä H
+$    ³C  H ³            \\   //     ³
+$    ³ 8  8³n            C - C    H-C-H
+$                        ³   ³      ³
+$                        H   H      ³
+$The variation in density ranges from 0.98 to 1.075 g/cm3.
+*Teflon (ICRU-227)                   2.20        C-2, F-4
+"Teflon-PolytetraFluoroEthylene(ICRU-227)", 2.20, 2, 6, 2, 9, 4
+0 0 0 0   2 0 0 0 0 0 4 0   0 0 0   0 0 0
+$Chemical              F    F
+$Formula               ³    ³
+$                 ÄÄÄÄ C ÄÄ C ÄÄÄÄ
+$                      ³    ³
+$                      F    F
+*Polyvinylchloride PVC (ICRU-232)    1.30        H-3, C-2, Cl-1
+"PVC-Polyvinylchloride (ICRU-232)", 1.30, 3, 1, 3, 6, 2, 17, 1
+0 3 0 0   2 0 0 0 0 0 0 1   0 0 0   0 0 0
+$Chemical               Cl   H
+$Formula                ³    ³
+$                  ÄÄÄÄ C ÄÄ C ÄÄÄÄ
+$  C H Cl CH            ³    ³
+$           2           H    H
+$
+$There are LARGE density variations depending on fabrication.
+*Propane (ICRU-238)                  0.0018794   H-8, C-3
+"Propane (ICRU-238)", 0.0018794, 2, 1, 8, 6, 3
+0 8 0 0   2 0 0 0 0 0 0 0   0 0 0   0 0 0
+$Chemical             H    H    H
+$Formula              ³    ³    ³
+$               H ÄÄÄ C ÄÄ C ÄÄ C ÄÄÄ H
+$ C  H                ³    ³    ³
+$  3  8               H    H    H
+*SiO2 - quartz (ICRU-245)            2.32        O-2, Si-1
+"SiO2 - quartz (ICRU-245)", 2.32, 2, 8, 2, 14, 1
+0 0 0 0   0 0 0 0 0 0 0 0   0 0 0   0 0 0
+$The density of SiO2 may vary from 2.3 - 2.5 g/cm3 depending on the
+$method of preparation. Under ion bombardment, the surface density
+$will change towards an equilibrium value of about 2.37.
+*Scintillator - NaI (ICRU-252)       3.667       Na-1, I-1
+"Scintillator - NaI (ICRU-252)", 3.667, 2, 11, 1, 53, 1
+0 0 0 0   0 0 0 0 0 0 0 0   0 0 0   0 0 0
+$
+*Scintillator-Stilbene (ICRU-255)    0.9707      H-12, C-14
+"Scintillator-Stilbene (ICRU-255)", 0.9707, 2, 1, 12, 6, 14
+0 12 0 0   8 7 0 0 0 0 0 0   0 0 0  0 0 0
+$Chemical Formula   H-C Í C-H            H-C Í C-H
+$  of Stilbene       /     \              /     \
+$               H Ä C       C Ä C ÍÍ C Ä C       C Ä H
+$  C  H              \\   //    ³    ³    \\   //
+$   14 12           H-C - C-H   H    H   H-C - C-H
+$ More than 10% variations in density have been reported.
+*Tissue-Eq.Gas MethaneBased(ICRU-263)0.0010641   C-.54, N-.02, F-.17, C-.18
+"%Tissue-Eq. Gas Methane Based (ICRU-263)", 0.0010641, 4, 1, .101869, 6, .456179, 7, .035172, 8, .40678
+0 0 0 0   0 0 0 0 0 0 0 0   0 0 0   0 0 0
+$
+*Tissue-Eq.Gas PropaneBased(ICRU-264)0.0018263   C-.54, N-.02, F-.17, C-.18
+"%Tissue-Eq. Gas Propane Based(ICRU-264)", 0.0018263, 4, 1, .102672, 6, .56894, 7, .035022, 8, .293366
+0 0 0 0   0 0 0 0 0 0 0 0   0 0 0   0 0 0
+$
+*Scintillator-Toluene (ICRU-266)     0.8669      H-8, C-7
+"Scintillator-Toluene (ICRU-266)", 0.8669, 2, 1, 8, 6, 7
+0 8 0 0   4 3 0 0 0 0 0 0   0 0 0   0 0 0
+$Chemical              H-C Í C-H   H
+$Formula                /     \    ³
+$                  H Ä C       C Ä C Ä H
+$  C  H                 \\   //    ³
+$   7  8               H-C - C-H   H
+$
+*Toluene (ICRU-267)                  0.8669      H-8, C-7
+"Toluene (ICRU-267)", 0.8669, 2, 1, 8, 6, 7
+0 8 0 0   4 3 0 0 0 0 0 0   0 0 0   0 0 0
+$Chemical              H-C Í C-H   H
+$Formula                /     \    ³
+$                  H Ä C       C Ä C Ä H
+$  C  H                 \\   //    ³
+$   7  8               H-C - C-H   H
+$
+*Water liquid (ICRU-276)           1.00        H-2, O-1
+"Water Liquid (ICRU-276)", 1.0, 2, 1, 2, 8, 1
+0 0 0 2   0 0 0 0 0 0 0 0   0 0 0   0 0 0
+$Chemical Formula:      H ÄÄ O ÄÄ H
+$
+$There is about an 8% increase in the peak of the stopping power
+$for ions in water vapour relative to the liquid. (The peak of the
+$stopping occurs at an energy of about 100 keV/amu times the 2/3
+$power of the ion's atomic number.) Above the peak the phase
+$difference begins to disappear. This calculation is for the
+$LIQUID phase.
+*Water vapor (ICRU-277)            0.00075618  H-2, O-1
+"Water vapor (ICRU-277)", 0.00075618, 2, 1, 2, 8, 1
+0 0 0 2   0 0 0 0 0 0 0 0   0 0 0   0 0 0
+$Chemical Formula:      H ÄÄ O ÄÄ H
+$
+$There is about an 8% increase in the peak of the stopping power
+$for ions in water vapour relative to the liquid. (The peak of the
+$stopping occurs at an energy of about 100 keV/amu times the 2/3
+$power of the ion's atomic number.) Above the peak the phase
+$difference begins to disappear. This calculation is for GAS.
+$
+*Acetaldehyde, Ethanal (ICRU-300)     0.7834      H-4, C-2, O-1
+"Acetaldehyde (ICRU-300)", 0.7834, 3, 1, 4, 6, 2, 8, 1
+0 4 0 0   1 0 0 0 0 1 0 0   0 0 0   0 0 0
+$Chemical            H
+$Formula              \
+$                  H ÄÄ C ÄÄ C ÄÄ H
+$  C  H  O            /      º
+$   2  4             H       O
+$
+*Acetone, 2-propanone (ICRU-301)     0.7678      H-6, C-3, O-1
+"Acetone (ICRU-301)", 0.7678, 3, 1, 6, 6, 3, 8, 1
+0 6 0 0   2 0 0 0 0 1 0 0   0 0 0   0 0 0
+$Chemical            H              H
+$Formula              \            /
+$                  H ÄÄ C ÄÄ C ÄÄ C ÄÄ H
+$  C  H  O            /      º     \
+$   3  6             H       O      H
+$
+*Anthracene (ICRU-314)               1.28        H-10, C-14
+"Anthracene (ICRU-314)", 1.28, 2, 1, 10, 6, 14
+0 10 0 0   9 7 0 0 0 0 0 0   0 0 0   0 0 0
+$
+*Barium Chloride (ICRU-320)          3.9         Ba-1, Cl-2    
+"Barium Chloride (ICRU-320)", 3.9, 2, 17, 2, 56, 1
+0 0 0 0   0 0 0 0 0 0 0 0   0 0 0   0 0 0
+$
+*Barium Fluoride (ICRU-322)          4.893       Ba-1, F-2
+"Barium Fluoride (ICRU-322)", 4.893, 2, 9, 2, 56, 1
+0 0 0 0   0 0 0 0 0 0 0 0   0 0 0   0 0 0
+$
+*Butene, 1-butene (ICRU-342)        (gas)       C-4, H-8
+"Butene (ICRU-342)", 0.0024, 2, 1, 8, 6, 4
+0 8 0 0   2 1 0 0 0 0 0 0   0 0 0   0 0 0
+$
+*Butyne (1-butyne) (ICRU-344)        (gas)       C-4, H-6
+"Butyne (ICRU-344)", 0.0023, 2, 1, 6, 6, 4
+0 6 0 0   2 0 1 0 0 0 0 0   0 0 0   0 0 0
+$
+*Cadmium Telluride (ICRU-346)        6.2         Cd-1, Te-1
+"Cadmium Telluride (ICRU-346)", 6.2, 2, 48, 1, 52, 1
+0 0 0 0   0 0 0 0 0 0 0 0   0 0 0   0 0 0
+$
+*Carbon disulfide (ICRU-348)         1.256       C-1, S-2
+"Carbon disulfide (ICRU-348)", 1.256, 2, 6, 1, 16, 2
+0 0 0 0   0 0 0 0 0 0 0 0   0 0 0   0 2 0
+$ Double bonds???
+$
+*Carbon Monoxide (ICRU-350)          0.00117     C-1, O-1  
+"Carbon Monoxide (ICRU-350)", 0.00117, 2, 6, 1, 8, 1
+0 0 0 0   0 0 0 0 0 1 0 0   0 0 0   0 0 0 
+$
+*Chloroform (ICRU-380)               1.483       C-1, H-1, Cl-3
+"Chloroform (ICRU-380)", 1.483, 3, 6, 1, 1, 1, 17, 3
+0 1 0 0   0 0 0 0 0 0 0 3   0 0 0   0 0 0
+$
+*CR-39 Nucl.Track Det.(ICRU-390)     1.0         C-12, H-18, O-7
+"CR-39 PADC (ICRU-390)", 1, 3, 1, 18, 6, 12, 8, 7
+0 0 0 0   0 0 0 0 0 0 0 0   0 0 0   0 0 0
+$  see Rä94a
+$
+*Cycloheptane (ICRU-392)             0.810       C-7, H-14
+"Cycloheptane (ICRU-392)", 0.810, 2, 6, 7, 1, 14
+0 14 0 0   7 0 0 0 0 0 0 3   0 0 0   0 0 0
+$
+*1,3-Cyclohexadiene (ICRU-394)       0.8405      H-8, C-6
+"1,3-Cyclohexadiene (ICRU-394)", 0.8405, 2, 1, 8, 6, 6
+0 8 0 0   4 2 0 0 0 0 0 0   0 0 0   0 0 0
+$                            H   H
+$Chemical                  H-C - C
+$Formula                    /     \\
+$                        H-C-H     C-H
+$   C  H                    \     /
+$    6  8                  H-C Í C-H
+$
+*Cyclohexane (ICRU-400)              0.77855     H-12, C-6
+"Cyclohexane (ICRU-400)", 0.77855, 2, 1, 12, 6, 6
+0 12 0 0   6 0 0 0 0 0 0 0   0 0 0   0 0 0
+$                            H   H
+$Chemical                  H-C Ä C-H
+$Formula                    /     \
+$                        H-C-H   H-C-H
+$   C  H                    \     /
+$    6  12                 H-C - C-H
+$                            H   H
+$
+*Dichloromethane (ICRU-414)          1.327       C-1, H-2, Cl-2
+"Dichloromethane (ICRU-414)", 1.327, 3, 6, 1, 1, 2, 17, 2
+0 2 0 0   0 0 0 0 0 0 0 2   0 0 0   0 0 0
+$ 
+*Dimethylsulfite (ICRU-420)          1.213       C-2, H-6, O-3, S-1
+"Dimethylsulfite (ICRU-420)", 1.213, 4, 6, 2, 1, 6, 8, 3, 16, 1
+0 6 0 0   0 0 0 0 2 0 0 0   0 0 0   0 0 0
+$
+*Erbium oxide (ICRU-422)             8.64        Er-2, O-3
+"Erbium oxide (ICRU-422)", 8.64, 2, 8, 3, 68, 2
+0 0 0 0   0 0 0 0 0 0 0 0   0 0 0   0 0 0 
+$
+*Ethyl Bromide, Bromoethane (ICRU-426) 1.460       C-2, H-5, Br-1
+"Ethyl Bromide, Bromoethane (ICRU-426)", 1.460, 3, 6, 2, 1, 5, 35, 1
+0 5 0 0   1 0 0 0 0 0 0 0   0 0 0   0 0 0
+$  
+*Ethyl cellulose (ICRU-428)          1           C-12, H-22, O-5 
+"Ethyl cellulose (ICRU-428)", 1, 3, 6, 12, 1, 22, 8, 5
+0 0 0 0   0 0 0 0 0 0 0 0   0 0 0   0 0 0 
+$
+*Ethyl Iodide, Iodoethane (ICRU-430)   1.936       C-2, H-5, I-1
+"Ethyl iodide, Iodoethane (ICRU-430)", 1.936, 3, 6, 2, 1, 5, 53, 1  
+0 5 0 0   1 0 0 0 0 0 0 0   0 0 0   0 0 0 
+$
+*Ethylamine, Ethanamine  (ICRU-431)   (gas)       C-2, H-7, N-1
+"Ethylamine, Ethanamine  (ICRU-431)", 0.001, 3, 6, 2, 1, 7, 7, 1  
+0 5 2 0   1 0 0 1 0 0 0 0   0 0 0   0 0 0 
+$
+*Ethylene Oxide, Oxirane  (ICRU-432)   0.8824      H-4, C-2, O
+"Ethylene Oxide, Oxirane (ICRU-432)", .8824, 3, 1, 4, 6, 2, 8, 1
+0 4 0 0   1 0 0 0 2 0 0 0   0 0 0   0 0 0
+$Chemical          H             H
+$Formula             \         /
+$                      C ÄÄÄ C
+$ C  H  O            /   \ /   \
+$  2  4            H      O     H
+*Ethylene Sulfide, Thiirane (ICRU-434) (gas)        H-4, C-2, S-1
+"Ethylene Sulfide, Thiirane (ICRU-434)", 0.00125, 3, 1, 4, 6, 2, 16, 1
+0 4 0 0   1 0 0 0 0 0 0 0   0 0 0   0 2 0
+$ Chemical                H     H
+$ Formula                 ³     ³
+$                   H ÄÄÄ C ÄÄÄ C ÄÄÄ H
+$ C  H  S                  \   /
+$  2  4                      S
+$
+*Ethynylbenzene, Phenylacetylene(ICRU-436) 0.930  C-8, H-6
+"Ethynylbenzene  (ICRU-436)", 0.930, 2, 6, 8, 1, 6  
+0 6 0 0   4 3 1 0 0 0 0 0   0 0 0   0 0 0 
+$
+*Fluoroform, Trifluoromethane(ICRU-437) 0.001     C-1, H-1, F-3
+"Fluoroform  (ICRU-437)", 0.001, 3, 6, 1, 1, 1, 9, 3
+0 1 0 0   0 0 0 0 0 0 3 0   0 0 0   0 0 0 
+$
+*Freon-114-B2, Dibromotetrafluoroethane 2.149     C-2, Br-2, F-4
+"Freon-114-B2  (ICRU-438)", 2.149, 3, 6, 2, 35, 2, 9, 4
+0 0 0 0   1 0 0 0 0 0 4 0   0 0 0   0 0 0 
+$
+*Freon-116, Hexafluoroethane(ICRU-441) 0.00901    C-2, F-6
+"Freon-116 (ICRU-441)", 0.00901, 2, 6, 2, 9, 6
+0 0 0 0   1 0 0 0 0 0 6 0   0 0 0   0 0 0 
+$
+*Freon-12 (Dichlorodifluoromethane) 0.00518     C-1, Cl-2, F-2
+"Freon-12 (ICRU-444)", 0.00518, 3, 6, 1, 17, 2, 9, 2
+0 0 0 0   0 0 0 0 0 0 2 2   0 0 0   0 0 0 
+$
+*Freon-013 (Chlorotrifluoromethane)  0.00701     C-1, Cl-1, F-3
+"Freon-13 (ICRU-448)", 0.00701, 3, 6, 1, 17, 1, 9, 3
+0 0 0 0   0 0 0 0 0 0 3 1   0 0 0   0 0 0 
+$
+*Freon-13B1 (Bromotrifluoromethane)  0.0061      C-1, F-3, Br-1
+"Freon-13B1 (ICRU-452)", 0.0061, 3, 6, 1, 9, 3, 35, 1
+0 0 0 0   0 0 0 0 0 0 3 0   0 0 0   0 0 0 
+$
+*Freon-C-318 (Octafluorocyclobutane) 0.0089      C-4, F-8
+"Freon-C-318 (ICRU-455)", 0.0089, 2, 6, 4, 9, 8
+0 0 0 0   4 0 0 0 0 0 8 0   0 0 0   0 0 0 
+$
+*Gallium antimonide (ICRU-458)       5.614       Ga-1, Sb-1
+"Gallium antimonide (ICRU-458)", 5.614, 2, 31, 1, 51, 1
+0 0 0 0   0 0 0 0 0 0 0 0   0 0 0   0 0 0 
+$
+*Gallium Arsenide (ICRU-460)         5.3176      Ga-1, As-1
+"Gallium arsenide (ICRU-460)", 5.3176, 2, 31, 1, 33, 1
+0 0 0 0   0 0 0 0 0 0 0 0   0 0 0   0 0 0
+$
+*Gallium Nitride (ICRU-462)          6.1         Ga-1, N-1
+"Gallium Nitride (ICRU-462)", 6.1, 2, 7, 1, 31, 1
+0 0 0 0   0 0 0 0 0 0 0 0   0 0 0   0 0 0
+$
+*Gallium Phosphide (ICRU-465)        4.138       Ga-1, P-1
+"Gallium Phosphide (ICRU-465)", 4.138, 2, 15, 1, 31, 1
+0 0 0 0   0 0 0 0 0 0 0 0   0 0 0   0 0 0
+$
+*Genetron-21 (Dichlorofluoromethane) 0.00421     C-1, H-1, Cl-2, F-1
+"Genetron-21 (ICRU-468)", 0.00421, 4, 6, 1, 1, 1, 17, 2, 9, 1
+0 1 0 0   0 0 0 0 0 0 1 2   0 0 0   0 0 0 
+$
+*Glycerol (1,2,3-Propanetriol)       1.475       H-8, C-3, O-3
+"Glycerol (ICRU-469)", 1.475, 3, 1, 8, 6, 3, 8, 3
+0 5 0 3   2 0 0 0 3 0 0 0   0 0 0   0 0 0
+$
+*Havar (ICRU-470)                    8.3         Mostly Co(42%),Cr(20%),(Fe(17%),Ni(13%)
+"%Havar (ICRU-470)", 8.3, 8, 6, 0.2, 24, 20, 25, 1.6, 26, 17.46, 27, 42.5, 28, 13, 42, 2.4, 74, 2.8
+0 0 0 0   0 0 0 0 0 0 0 0   0 0 0   0 0 0
+$ see Porter, NIM 89 (1970) 237; Goodfellow (via Google)
+$ 0.04% Be contribution omitted
+$
+*Heptane (ICRU-471)                  0.684       C-7, H-16
+"Heptane (ICRU-471)", 0.684, 2, 6, 7, 1, 16
+0 16 0 0   6 0 0 0 0 0 0 0   0 0 0   0 0 0 
+$
+*Heptyne, 1-heptyne (ICRU-473)        0.733       C-7, H-12
+"Heptyne (ICRU-473)", 0.733, 2, 6, 7, 1, 12
+0 12 0 0   5 0 1 0 0 0 0 0   0 0 0   0 0 0 
+$
+*Hexane (ICRU-474)                   0.655       C-6, H-14
+"Hexane (ICRU-474)", 0.655, 2, 6, 6, 1, 14
+0 14 0 0   5 0 0 0 0 0 0 0   0 0 0   0 0 0 
+$
+*Hexene (ICRU-478)                   0.673       C-6, H-12
+"Hexene (ICRU-478)", 0.673, 2, 6, 6, 1, 12
+0 12 0 0   4 1 0 0 0 0 0 0   0 0 0   0 0 0 
+$
+*Hexyne 1-hexyne (ICRU-482)          0.716       C-6, H-10
+"Hexyne (ICRU-482)", 0.716, 2, 6, 6, 1, 10
+0 10 0 0   4 0 1 0 0 0 0 0   0 0 0   0 0 0 
+$
+*Indium nitride (ICRU-488)           6.81        In-1, N-1
+"Indium nitride (ICRU-488)", 6.81, 2, 7, 1, 49, 1
+0 0 0 0   0 0 0 0 0 0 0 0   0 0 0   0 0 0
+$ 
+*Indium oxide (ICRU-490)             7.18        In-2, O-3
+"Indium oxide (ICRU-490)", 7.18, 2, 8, 3, 49, 2
+0 0 0 0   0 0 0 0 0 0 0 0   0 0 0   0 0 0
+$ 
+*Indium Phosphide (ICRU-492)         4.81        In-1, P-1
+"Indium Phosphide (ICRU-492)", 4.81, 2, 15, 1, 49, 1
+0 0 0 0   0 0 0 0 0 0 0 0   0 0 0   0 0 0
+$
+*Iso-Butane, (ICRU-493)         (gas)       H-10, C-4
+"Iso-Butane (ICRU-493)", 0.00125, 2, 1, 10, 6, 4
+0 10 0 0   3 0 0 0 0 0 0 0   0 0 0   0 0 0
+$Chemical           
+$Formula           
+$               
+$ C  H              
+$  4  10             
+$
+*Iso-octane (ICRU-494)               0.688       C-8, H-18
+"Iso-octane (ICRU-494)", 0.688, 2, 6, 8, 1, 18
+0 18 0 0   7 0 0 0 0 0 0 0   0 0 0   0 0 0 
+$
+*Lithium Niobate (ICRU-500)          4.30        Li-1, Nb-1, O-3
+"Lithium Niobate (ICRU-500)", 4.30, 3, 3, 1, 8, 3, 41, 1
+0 0 0 0   0 0 0 0 0 0 0 0   0 0 0   0 0 0
+$
+*Decene, 1-decene (ICRU-502)          0.741       C-10, H-20
+"Decene (ICRU-502)", 0.741, 2, 6, 10, 1, 20
+0 20 0 0   8 1 0 0 0 0 0 0   0 0 0   0 0 0 
+$
+*Heptene, 1-heptene(ICRU-503)         0.697       C-7, H-14
+"Heptene (ICRU-503)", 0.697, 2, 6, 7, 1, 14
+0 14 0 0   5 1 0 0 0 0 0 0   0 0 0   0 0 0 
+$
+*Octene, 1-octene (ICRU-504)          0.715       C-8, H-16
+"Octene (ICRU-504)", 0.715, 2, 6, 8, 1, 16
+0 16 0 0   6 1 0 0 0 0 0 0   0 0 0   0 0 0 
+$
+*LR-115 Nucl.TrackDetector(ICRU-510) 1.48        C-6, H-8, O-9, N-2
+"LR-115 Nuclear track detector (ICRU-510)", 1.48, 4, 1, 8, 6, 6, 7, 2, 8, 9
+0 0 0 0   0 0 0 0 0 0 0 0   0 0 0   0 0 0
+$
+*Methylamine, Methanamine (ICRU-512)  (gas)       C-1, H-5, N-1
+"Methylamine (ICRU-512)", 0.001, 3, 1, 5, 6, 1, 7, 1
+0 3 2 0   0 0 0 1 0 0 0 0   0 0 0   0 0 0
+$
+*Mu metal (ICRU-514)                 8.7
+"%Mu metal (ICRU-514)", 8.7, 4, 24, 2, 29, 5, 26, 18, 28, 75
+0 0 0 0   0 0 0 0 0 0 0 0   0 0 0   0 0 0 
+$ Shepard and Porter, PRB 12 (1975) 1649
+$
+*Niobium pentoxide (ICRU-518)        4.60        Nb-2, O-5
+"Niobium pentoxide (ICRU-518)", 4.60, 2, 41, 2, 8, 5
+0 0 0 0   0 0 0 0 0 0 0 0   0 0 0   0 0 0
+$
+*Nonane, n-nonane (ICRU-522)          0.718       C-9, H-20
+"Nonane, (ICRU-522)", 0.718, 2, 6, 9, 1, 20
+0 20 0 0   8 0 0 0 0 0 0 0   0 0 0   0 0 0 
+$
+*Octane, n-octane (ICRU-524)          0.699       C-8, H-18
+"Octane (ICRU-524)", 0.699, 2, 6, 8, 1, 18
+0 18 0 0   7 0 0 0 0 0 0 0   0 0 0   0 0 0 
+$
+*Pentadecane, n-pentadecane(ICRU-527) 0.769       C-15, H-32
+"Pentadecane (ICRU-527)", 0.769, 2, 6, 15, 1, 32
+0 32 0 0   14 0 0 0 0 0 0 0   0 0 0   0 0 0 
+$
+*Pentyne, 1-pentyne (ICRU-533)        0.690       C-5, H-8
+"Pentyne (ICRU-533)", 0.690, 2, 6, 5, 1, 8
+0 8 0 0   3 0 1 0 0 0 0 0   0 0 0   0 0 0 
+$
+*Perfluoropropane(Octafluoropropane, Freon-218) 0.00797     C-3, F-8
+"Perfluoropropane (ICRU-535)", 0.00797, 2, 6, 3, 9, 8
+0 0 0 0   2 0 0 0 0 0 8 0   0 0 0   0 0 0 
+$
+*Permalloy 4750 (ICRU-540)           8.25        Fe-26, Ni-49 
+"%Permalloy 4750 (ICRU-540)", 8.25, 2, 26, 51, 28, 49 
+0 0 0 0   0 0 0 0 0 0 0 0   0 0 0   0 0 0 
+$ Approximate composition according to Shepard and Porter, PRB 12 (1975) 1649
+$ There are other types of permalloy with very different compositions (see Google)
+$
+*Pliolite S-5A (ICRU-550)            1           C-12, H-14
+"Pliolite S-5A (ICRU-550)", 1, 2, 1, 14, 6, 12
+0 0 0 0   0 0 0 0 0 0 0 0   0 0 0   0 0 0
+$ Lorents, PR 113 (1959) 1199 and Sautter, PR 140 (1965) A490
+$ 
+*PEN (Polyethylene Naphthalate)      1.35        C-14, H-10, O-4
+"PEN Polyethylene Naphthalate (ICRU-560)", 1.35, 3, 6, 14, 1, 10, 8, 4
+1 8 0 2   8 5 0 0 1 2 0 0   0 0 0   0 0 0
+$
+*PHB (Polyhydroxybutyrate, ICRU-562)  1          C-4,  H-6,  O-2
+"PHB Polyhydroxybutyrate, (ICRU-562)", 1, 3, 6, 4, 1, 6, 8, 2
+0 6 0 0   1 0 0 0 1 1 0 0   0 0 0   0 0 0
+$
+*Polysulfone (ICRU-564)              1.24        C-26, H-22, O-4, S-1
+"Polysulfone (ICRU-564)", 1.24, 4, 1, 22, 6, 26, 8, 4, 16, 1
+0 22 0 0   16 12 0 0 4 0 0 0   0 0 0   0 2 0
+$
+*Polyvinyltoluene (ICRU-570)         1.03        C-9, H-10
+"Polyvinyltoluene (ICRU-570)", 1.03, 2, 1, 10, 6, 9
+0 0 0 0   0 0 0 0 0 0 0 0   0 0 0   0 0 0
+$
+*Potassium Chloride (ICRU-571)       1.984       K-1, Cl-1
+"Potassium Chloride (ICRU-571)", 1.984, 2, 19, 1, 17, 1
+0 0 0 0   0 0 0 0 0 0 0 0   0 0 0   0 0 0
+$
+*PotassiumTitanylArsenate (ICRU-572) 3.45        K-1, Ti-1, O-5, As-1
+"Potassium titanyl arsenate (ICRU-572)", 3.45, 4, 19, 1, 22, 1, 8, 5, 33, 1
+0 0 0 0   0 0 0 0 0 0 0 0   0 0 0   0 0 0
+$ 
+*Propyne, 1-propyne (ICRU-576)        (gas)       C-3, H-4
+"Propyne (ICRU-576)", 0.00165, 2, 1, 4, 6, 3
+0 4 0 0   1 0 1 0 0 0 0 0   0 0 0   0 0 0
+$
+*Scandium oxide  (ICRU-580)          3.864       Sc-2, O-3
+"Scandium oxide  (ICRU-580)", 3.864, 2, 8, 3, 21, 2
+0 0 0 0   0 0 0 0 0 0 0 0   0 0 0   0 0 0
+$
+*Silicon carbide  (ICRU-590)         3.21        Si-1, C-1
+"Silicon Carbide  (ICRU-590)", 3.21, 2, 6, 1, 14, 1
+0 0 0 0   0 0 0 0 0 0 0 0   0 0 0   0 0 0
+$
+*Silicon Nitride  (ICRU-591) (see also Si3N4!) 3.1  Si-3, N-3.1
+"Silicon Nitride  (ICRU-591)", 3.1, 2, 7, 3.1, 14, 3
+0 0 0 0   0 0 0 0 0 0 0 0   0 0 0   0 0 0
+$
+*Silver gallium diselenide(ICRU-593) 1           Ag-1, Ga-1, Se-2
+"Silver gallium disulfide  (ICRU-593)", 1, 3, 47, 1, 31, 1, 34, 2
+0 0 0 0   0 0 0 0 0 0 0 0   0 0 0   0 0 0
+$
+*Silver gallium disulfide (ICRU-594) 1           Ag-1, Ga-1, S-2
+"Silver gallium disulfide  (ICRU-594)", 1, 3, 47, 1, 31, 1, 16, 2
+0 0 0 0   0 0 0 0 0 0 0 0   0 0 0   0 0 0
+$
+*Sulfur dioxide  (ICRU-610)          0.00262     S-1, O-2
+"Sulfur dioxide (ICRU-610)", 0.00262, 2, 16, 1, 8, 2
+0 0 0 0   0 0 0 0 0 0 0 0   0 0 0   0 0 0 
+$
+*Tantalum pentoxide (Ta2O5)          8.2         Ta-2, O-5
+"Tantalum pentoxide  (ICRU-620)", 8.2, 2, 73, 2, 8, 5
+0 0 0 0   0 0 0 0 0 0 0 0   0 0 0   0 0 0 
+$
+*Terphenyl  (ICRU-630)               1.23        C-18, H-14
+"Terphenyl (ICRU-630)", 1.23, 2, 6, 18, 1, 14
+0 14 0 0   11 9 0 0 0 0 0 0   0 0 0   0 0 0 
+$
+*Tetradecane, n-tetradecane(ICRU-632) 0.763       C-14, H-30
+"Tetradecane  (ICRU-632)", 0.763, 2, 6, 14, 1, 30
+0 30 0 0   13 0 0 0 0 0 0 0   0 0 0   0 0 0 
+$
+*Titanium nitrogen oxide (ICRU-650)  1           Ti-1, N-1.1, O-0.27
+"Titanium nitrogen oxide  (ICRU-650)", 1, 3, 7, 1.1, 8, 0.27, 22, 1
+0 0 0 0   0 0 0 0 0 0 0 0   0 0 0   0 0 0
+$
+*Titanium oxide  (ICRU-652)          4.23        Ti-1, O-2
+"Titanium oxide  (ICRU-652)", 4.23, 2, 8, 2, 22, 1
+0 0 0 0   0 0 0 0 0 0 0 0   0 0 0   0 0 0
+$
+*Trimethylamine(N,N-dimethyl-methanamine) (gas)  C-3, H-9, N-1
+"Trimethylamine  (ICRU-656)", 0.001, 3, 6, 3, 1, 9, 7, 1
+0 9 0 0   0 0 0 3 0 0 0 0   0 0 0   0 0 0
+$
+*Tridecane, n-tridecane  (ICRU-659)   0.756       C-13, H-28
+"Tridecane  (ICRU-659)", 0.756, 2, 6, 13, 1, 28
+0 28 0 0   12 0 0 0 0 0 0 0   0 0 0   0 0 0 
+$
+*Tungsten trioxide (ICRU-660)        7.2         W-1, O-3
+"Tungsten trioxide (ICRU-660)", 7.2, 2, 8, 3, 74, 1
+0 0 0 0   0 0 0 0 0 0 0 0   0 0 0   0 0 0
+$
+*Undecane, n-undecane  (ICRU-662)     0.740       C-11, H-24
+"Undecane (ICRU-662)", 0.740, 2, 6, 11, 1, 24
+0 24 0 0   10 0 0 0 0 0 0 0   0 0 0   0 0 0 
+$
+*Uranium oxide  (ICRU-670)           10.97       U-1, O-2
+"Uranium oxide (ICRU-670)", 10.97, 2, 92, 1, 8, 2
+0 0 0 0   0 0 0 0 0 0 0 0   0 0 0   0 0 0 
+$
+*VinylBromide, Bromo ethene(ICRU-680) 0.0046      C-2, H-3, Br-1
+"Vinyl bromide (ICRU-680)", 0.0046, 3, 6, 2, 1, 3, 35, 1
+0 3 0 0   0 1 0 0 0 0 0 0   0 0 0   0 0 0 
+$
+*Vinyl chloride, Chloro ethene(ICRU-681) 0.001      C-2, H-3, Cl-1
+"Vinyl chloride (ICRU-681)", 0.001, 3, 6, 2, 1, 3, 17, 1
+0 3 0 0   0 1 0 0 0 0 0 1   0 0 0   0 0 0 
+$
+*Vinyl fluoride, Fluoro ethene(ICRU-682) 0.001      C-2, H-3, F-1
+"Vinyl fluoride (ICRU-682)", 0.001, 3, 6, 2, 1, 3, 9, 1
+0 3 0 0   0 1 0 0 0 0 1 0   0 0 0   0 0 0 
+$ 
+*Vyns  (ICRU-690)                    1.36           H-5, C-41, O-5, Cl-49
+"%Vyns (ICRU-690)", 1.36, 4, 1, 5.13, 6, 40.75, 8, 4.94, 17, 49.18
+0 0 0 0   0 0 0 0 0 0 0 0   0 0 0   0 0 0
+$
+*Zinc selenide  (ICRU-700)           5.65        Zn-1, Se-1
+"Zinc selenide (ICRU-700)", 5.65, 2, 30, 1, 34, 1
+0 0 0 0   0 0 0 0 0 0 0 0   0 0 0   0 0 0
+$
+*Zinc silicon diphosphide (ICRU-704) 1           Zn-1, Si-1, P-2
+"Zinc silicon diphosphide (ICRU-704)", 1, 3, 14, 1, 15, 2, 30, 1
+0 0 0 0   0 0 0 0 0 0 0 0   0 0 0   0 0 0
+$
+*Zinc telluride  (ICRU-710)          5.9         Zn-1, Te-1
+"Zinc telluride (ICRU-710)", 5.9, 2, 30, 1, 52, 1
+0 0 0 0   0 0 0 0 0 0 0 0   0 0 0   0 0 0 
+$Note: values from 5.72 to 6.34 are given for the density in the literature; see, e.g.,
+$Landolt-Börnstein 6/II/1/580; Princeton Scientific Corp.; J of Electrochem. Soc. 150 (5) 
+$C342 (2003)
+$  
+*Zirconium dioxide  (ICRU-712)       5.68        Zr-1, O-2
+"Zirconium dioxide (ICRU-712)", 5.68, 2, 40, 1, 8, 2
+0 0 0 0   0 0 0 0 0 0 0 0   0 0 0   0 0 0
+$
+*p-Dioxane  1,4-Dioxane                    1.0337      H-8, C-4, O-2
+"p_Dioxane (ICRU-740)", 1.0337 , 3, 1, 8, 6, 4, 8, 2
+0 8 0 0   2 0 0 0 4 0 0 0   0 0 0   0 0 0
+$                            H   H
+$Chemical                  H-C Ä C-H
+$Formula                    /     \
+$                          O       O
+$   C  H  O                 \     /
+$    4  8  2               H-C - C-H
+$                            H   H
+$
+*Dimethyl amine, n-methylmethanamine  (gas)       H-7, C-2, N-1
+"Dimethyl amine (ICRU-748)", .001, 3, 1, 7, 6, 2, 7, 1
+0 6 1 0   0 0 0 2 0 0 0 0   0 0 0   0 0 0
+$
+*Dimethyl disulfide  (ICRU-750)      1.063       H-6, C-2, S-2
+"Dimethyl disulfide (ICRU-750)", 1.063, 3, 1, 6, 6, 2, 16, 2
+0 6 0 0   0 0 0 0 0 0 0 0   0 0 0   0 2 0
+$
+*Dimethyl sulfide (thiobismethane)   0.848       H-6, C-2, S-1
+"Dimethyl sulfide (ICRU-754)", 0.848, 3, 1, 6, 6, 2, 16, 1
+0 6 0 0   0 0 0 0 0 0 0 0   0 0 0   0 2 0
+$
+*Dodecane, n-dodecane  (ICRU-756)     0.749       C-12, H-26
+"Dodecane (ICRU-756)", 0.749, 2, 6, 12, 1, 26
+0 26 0 0   11 0 0 0 0 0 0 0   0 0 0   0 0 0 
+$
+*Alcohol-Isopropyl, 2-Propanol        0.781       H-8, C-3, O-1
+"Alcohol_Isopropyl (ICRU-765)", 0.781, 3, 1, 8, 6, 3, 8, 1
+0 7 0 1   2 0 0 0 1 0 0 0   0 0 0   0 0 0
+$
+*Alcohol-Butyl, 1-Butanol (ICRU-767)  0.810       H-10, C-4, O-1
+"Alcohol_Butyl (ICRU-767)", 0.810, 3, 1, 10, 6, 4, 8, 1
+0 9 0 1   3 0 0 0 1 0 0 0   0 0 0   0 0 0
+$
+*Alcohol-Amyl, 1-Pentanol (ICRU-769)  0.814       H-12, C-5, O-1
+"No. 769 Alcohol_Amyl", 0.814, 3, 1, 12, 6, 5, 8, 1
+0 11 0 1   4 0 0 0 1 0 0 0   0 0 0   0 0 0
+$
+*Hexanol, 1-Hexanol  (ICRU-771)       0.814       H-14, C-6, O-1
+"Hexanol (ICRU-771)", 0.814, 3, 1, 14, 6, 6, 8, 1
+0 13 0 1   5 0 0 0 1 0 0 0   0 0 0   0 0 0
+$
+*Alcohol-Heptyl, 1-Heptanol(ICRU-773) 0.822       H-16, C-7, O-1
+"Alcohol_Heptyl (ICRU-773)", 0.822, 3, 1, 16, 6, 7, 8, 1
+0 15 0 1   6 0 0 0 1 0 0 0   0 0 0   0 0 0
+$
+*Octanol, 1-Octanol  (ICRU-775)       0.826       H-18, C-8, O-1
+"Octanol (ICRU-775)", 0.826, 3, 1, 18, 6, 8, 8, 1
+0 17 0 1   7 0 0 0 1 0 0 0   0 0 0   0 0 0
+$
+*Alcohol-Nonyl, 1-Nonanol (ICRU-777)  0.827       H-20, C-9, O-1
+"Alcohol_Nonyl (ICRU-777)", 0.827, 3, 1, 20, 6, 9, 8, 1
+0 19 0 1   8 0 0 0 1 0 0 0   0 0 0   0 0 0
+$
+*Decanol, 1-Decanol (ICRU-779)        0.830       H-22, C-10, O-1
+"Decanol (ICRU-779)", 0.8035, 3, 1, 22, 6, 10, 8, 1
+0 21 0 1   9 0 0 0 1 0 0 0   0 0 0   0 0 0
+$
+*Undecanol, 1-Undecanol (ICRU-781)    0.830       H-24, C-11, O-1
+"Undecanol (ICRU-781)", 0.8035, 3, 1, 24, 6, 11, 8, 1
+0 23 0 1   10 0 0 0 1 0 0 0   0 0 0   0 0 0
+$
+!
+!ßßßßßßßßßßß  BIOLOGICAL MATERIALS (Human) ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+!  Compositions from: Woodward & White, Brit.J. Radiology, 59, 1209-19(1986).
+!      Select any target to get more accurate details of its composition.
+!
+!                             Density          Mass Stoichiometry
+!      Body Tissue Name       (g/cm3)      ( Elemental Percent by Mass )
+!    ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ  ÍÍÍÍÍÍÍÍÍÍÍ ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ
+*Blood, human (ICRU)                 1.06        H-10,C-11,N-3,O-75,S-.2,Cl-.3,Na-.2,K-.2  
+"%Blood_Human (ICRU)",   1.06, 8, 1, 10.2, 6, 11.0, 7, 3.3, 8, 74.5, 11, 0.1, 16, 0.2, 17, 0.3, 19, 0.2
+0 0 0 0   0 0 0 0 0 0 0 0   0 0 0   0 0 0
+$from: ICRU Report 44 (1989) Table 4.4
+$
+*Skin, human (W&W type 1)            1.09(±.05)  H-10,C-25,N-5,O-59,S-.3,Cl-.3,Na-.2,K-.1
+"%Skin_Human (W&W type 1)", 1.09, 8, 1,10, 6,25, 7,4.6, 8,59.4, 16,0.3, 17,0.3, 11,.2, 19,0.1
+0 0 0 0   0 0 0 0 0 0 0 0   0 0 0   0 0 0
+$from: Woodward & White, Brit. J. Radiology, vol. 59, 1216 (1986).
+$
+*Skin, human (W&W type 2)            1.09(±.05)  H-10,C-20,N-4,O-65,S-.2,Cl-.3,Na-.2,K-.1
+"%Skin_Human (W&W type 2)", 1.09, 8, 1,10, 6,20.4, 7,4.2, 8,64.5, 16,0.2, 17,0.3, 11,.2, 19,0.1
+0 0 0 0   0 0 0 0 0 0 0 0   0 0 0   0 0 0
+$from: Woodward & White, Brit. J. Radiology, vol. 59, 1216 (1986).
+$
+*Skin, human (W&W type 3)            1.09(±.05)  H-10,C-16,N-4,O-70,S-.2,Cl-.3,Na-.2,K-.1
+"%Skin_Human (W&W type 3)",   1.09, 8, 1,10.1, 6,15.8, 7,3.7, 8,69.5, 16,0.2, 17,0.3, 11,.2, 19,0.1
+0 0 0 0   0 0 0 0 0 0 0 0   0 0 0   0 0 0
+$from: Woodward & White, Brit. J. Radiology, vol. 59, 1216 (1986).
+$
+*Skeletal Muscle(W&W type 1)         1.05(±.05)  H-10,C-17,N-4,O-68,K-.4,S-.3,P-.2,Cl-.1
+"%Skeletal Muscle (W&W Type 1)", 1.05, 8, 1,10.1, 6,17.1, 7,3.6, 8,68.1, 19,0.4, 16,0.3, 15,.2, 17,0.1
+0 0 0 0   0 0 0 0 0 0 0 0   0 0 0   0 0 0
+$from: Woodward & White, Brit. J. Radiology, vol. 59, 1216 (1986).
+$
+*Skeletal Muscle(W&W type 2)         1.05(±.05)  H-10,C-14,N-3,O-71,K-.4,S-.3,P-.2,Cl-.1
+"%Skeletal Muscle (W&W type 2)", 1.05, 8, 1,10.2, 6,14.3, 7,3.4, 8,71.0, 19,0.4, 16,0.3, 15,.2, 17,0.1
+0 0 0 0   0 0 0 0 0 0 0 0   0 0 0   0 0 0
+$from: Woodward & White, Brit. J. Radiology, vol. 59, 1216 (1986).
+$
+*Skeletal Muscle(W&W type 3)         1.05(±.05)  H-10,C-11,N-3,O-75,K-.4,S-.3,P-.2,Cl-.1
+"%Skeletal Muscle (W&W Type 3)", 1.05, 8, 1,10.2, 6,11.2, 7,3.0, 8,74.5, 19,0.4, 16,0.3, 15,.2, 17,0.1
+0 0 0 0   0 0 0 0 0 0 0 0   0 0 0   0 0 0
+$from: Woodward & White, Brit. J. Radiology, vol. 59, 1216 (1986).
+$
+*Skeleton-Cartilage                  1.10(±.05)  H-10,C-10,N-2,O-74,Na-.5,P-2,S-.9,Cl-.3
+"%Skeleton_Cartilage (W&W)", 1.10, 8, 1,09.6, 6,09.9, 7,2.2, 8,74.4, 11,0.5, 15,2.2, 16,0.9, 17,0.3
+0 0 0 0   0 0 0 0 0 0 0 0   0 0 0   0 0 0
+$from: Woodward & White, Brit. J. Radiology, vol. 59, 1216 (1986).
+$
+*Skeleton-Spongiosa                  1.18(±.05)  Ca-7,H-9,C-40,N-3,O-37,P-3,S-.2,Fe-.1
+"%Skeleton_Spongiosa (W&W)", 1.18, 8, 20,7.4, 1,8.5, 6,40.4, 8,36.7, 7,2.8, 15,3.4, 16,0.2, 26,0.1
+0 0 0 0   0 0 0 0 0 0 0 0   0 0 0   0 0 0
+$from: Woodward & White, Brit. J. Radiology, vol. 59, 1216 (1986).
+$
+*Skeleton-Red Marrow                 1.03(±.05)  H-11,C-41,N-3,O-44,S-.2,Cl-.2,K-.2,Fe-.1
+"%Skeleton_Red Marrow (W&W)", 1.03, 8, 1,10.5, 6,41.1, 7,3.4, 8,43.9, 16,0.2, 17,0.2, 19,0.2, 26,0.1
+0 0 0 0   0 0 0 0 0 0 0 0   0 0 0   0 0 0
+$from: Woodward & White, Brit. J. Radiology, vol. 59, 1216 (1986).
+$
+*Skeleton-YellowMarrow               0.98(±.05)  H-12,C-64,N-1,O-23,Na-.1,S-.1,Cl-.1
+"%Skeleton_Yellow Marrow (W&W)", 0.98, 7, 1,11.5, 6,64.4, 7,0.7, 8,23.1, 11,0.1, 16,0.1, 17,0.1
+0 0 0 0   0 0 0 0 0 0 0 0   0 0 0   0 0 0
+$from: Woodward & White, Brit. J. Radiology, vol. 59, 1216 (1986).
+$
+*Cortical Bone  Adult                1.92(±.05)  Ca-23,P-10,H-3,C-16,N-4,O-44,S-.3,Mg-.2
+"%Cortical Bone  Adult (W&W)", 1.92, 8, 20,22.5, 15,10.3, 1,3.4, 6,15.5, 7,4.2, 8,43.5, 16,0.3, 12,0.2
+0 0 0 0   0 0 0 0 0 0 0 0   0 0 0   0 0 0
+$from: Woodward & White, Brit. J. Radiology, vol. 59, 1216 (1986).
+$
+*Cort. Bone  Ages 6-13               1.83(±.05)  Ca-21,P-10,H-4,C-16,N-4,O-45,Mg-.2
+"%Cortical Bone  Ages 6_13 (W&W)", 1.83, 7, 20,20.9, 15,09.8, 1,3.9, 6,15.8, 7,4.4, 8,45.0, 12,0.2
+0 0 0 0   0 0 0 0 0 0 0 0   0 0 0   0 0 0
+$from: Woodward & White, Brit. J. Radiology, vol. 59, 1216 (1986).
+$
+*Cort. Bone  Ages 2-5                1.80(±.05)  Ca-20,P-10,H-4,C-16,N-5,O-45,Mg-.2
+"%Cortical Bone  Ages 2_5 (W&W)", 1.80, 7, 20,20.1, 15,10.1, 1,4.0, 6,15.7, 7,4.5, 8,45.4, 12,0.2
+0 0 0 0   0 0 0 0 0 0 0 0   0 0 0   0 0 0
+$from: Woodward & White, Brit. J. Radiology, vol. 59, 1216 (1986).
+$
+*Perinatal Rhesus Monk               1.40(±.05)  Ca-11,P-5,H-7,C-15,N-5,O-57,Mg-.1
+"%Perinatal Rhesus Monkey (W&W)" 1.40, 7, 20,11.4, 15,5.0, 1,6.7, 6,15.2, 7,4.9, 8,56.7, 12,0.1
+0 0 0 0   0 0 0 0 0 0 0 0   0 0 0   0 0 0
+$from: Woodward & White, Brit. J. Radiology, vol. 59, 1216 (1986).
+$
+*Mammary Gland, #1                   0.99(±.05)  H-11,C-51,N-2,O-36,Na-.1,P-.1,S-.1,Cl-.1
+"%Mammary Gland (W&W  Type 1)", 0.99, 8, 1,10.9, 6,50.6, 7,2.3, 8,35.8, 11,0.1, 15,0.1, 16,0.1, 17,0.1
+0 0 0 0   0 0 0 0 0 0 0 0   0 0 0   0 0 0
+$from: Woodward & White, Brit. J. Radiology, vol. 59, 1216 (1986).
+$
+*Mammary Gland, #2                   1.02(±.05)  H-11,C-33,N-3,O-53,Na-.1,P-.1,S-.2,Cl-.1
+"%Mammary Gland (W&W  Type 2)", 1.02, 8, 1,10.6, 6,33.2, 7,3.0, 8,52.7, 11,0.1, 15,0.1, 16,0.2, 17,0.1
+0 0 0 0   0 0 0 0 0 0 0 0   0 0 0   0 0 0
+$from: Woodward & White, Brit. J. Radiology, vol. 59, 1216 (1986).
+$
+*Mammary Gland, #3                   1.06(±.05)  H-10,C-16,N-4,O-70,Na-.1,P-.1,S-.2,Cl-.1
+"%Mammary Gland (W&W  Type 3)", 1.06, 8, 1,10.2, 6,15.8, 7,3.7, 8,69.8, 11,0.1, 15,0.1, 16,0.2, 17,0.1
+0 0 0 0   0 0 0 0 0 0 0 0   0 0 0   0 0 0
+$from: Woodward & White, Brit. J. Radiology, vol. 59, 1216 (1986).
+$
+*Spleen                              1.09(±.05)  H-10,C-16,N-4,O-70,P-.3,S-.2,Cl-.2,K-.3
+"%Spleen (W&W)", 1.09, 8, 1,10.3, 6,11.3, 7,3.2, 8,74.1, 15,0.3, 16,0.2, 17,0.2, 19,0.3
+0 0 0 0   0 0 0 0 0 0 0 0   0 0 0   0 0 0
+$from: Woodward & White, Brit. J. Radiology, vol. 59, 1216 (1986).
+$
+*Testis                              1.04(±.05)  H-11,C-10,N-2,O-77,Na-.2,S-.2,Cl-.2,K-.2
+"%Testis (W&W)", 1.04, 8, 1,10.6, 6,09.9, 7,2.0, 8,76.6, 11,0.2, 16,0.2, 17,0.2, 19,0.2
+0 0 0 0   0 0 0 0 0 0 0 0   0 0 0   0 0 0
+$from: Woodward & White, Brit. J. Radiology, vol. 59, 1216 (1986).
+$
+*Thyroid                             1.05(±.05)  H-10,C-12,N-2,O-75,Na-.2,Cl-.2,K-.2,I-.1
+"%Thyroid (W&W)", 1.05, 8, 1,10.4, 6,11.9, 7,2.4, 8,74.5, 11,0.2, 17,0.2, 19,0.1, 53,0.1
+0 0 0 0   0 0 0 0 0 0 0 0   0 0 0   0 0 0
+$from: Woodward & White, Brit. J. Radiology, vol. 59, 1216 (1986).
+$
+*Trachea                             1.06(±.05)  H-10,C-14,N-3,O-71,P-.4,S-.4,Cl-.1,K-.4
+"%Trachea (W&W)", 1.06, 8, 1,10.1, 6,13.9, 7,3.3, 8,71.3, 15,0.4, 16,0.4, 17,0.1, 19,0.4
+0 0 0 0   0 0 0 0 0 0 0 0   0 0 0   0 0 0
+$from: Woodward & White, Brit. J. Radiology, vol. 59, 1216 (1986).
+$
+*Ovary                               1.05(±.05)  H-11,C-9,N-2,O-77,P-.2,S-.2,Cl-.2,K-.2
+"%Ovary (W&W)", 1.05, 8, 1,10.5, 6,09.3, 7,2.4, 8,76.8, 15,0.2, 16,0.2, 17,0.2, 19,0.2
+0 0 0 0   0 0 0 0 0 0 0 0   0 0 0   0 0 0
+$from: Woodward & White, Brit. J. Radiology, vol. 59, 1216 (1986).
+$
+*Pancreas                            1.04(±.05)  H-11,C-17,N-2,O-69,P-.4,S-.4,Cl-.2,K-.2
+"%Pancreas (W&W)", 1.05, 8, 1,10.6, 6,16.9, 7,2.2, 8,69.4, 15,0.2, 16,0.1, 17,0.2, 19,0.2
+0 0 0 0   0 0 0 0 0 0 0 0   0 0 0   0 0 0
+$from: Woodward & White, Brit. J. Radiology, vol. 59, 1216 (1986).
+$
+*Prostate                            1.04(±.05)  H-11,C-9,N-3,O-77,Na-.2,P-.1,S-.2,K-.2
+"%Prostate (W&W)", 1.04, 8, 1,10.5, 6,08.9, 7,2.5, 8,77.4, 11,0.2, 15,0.1, 16,0.2, 19,0.2
+0 0 0 0   0 0 0 0 0 0 0 0   0 0 0   0 0 0
+$from: Woodward & White, Brit. J. Radiology, vol. 59, 1216 (1986).
+$
+*Urinary Bladder-Urine               1.02(±.05)  H-11,C-.5,N-1,O-86,Na-.4,P-.1,Cl-.6,K-.2
+"%Urinary Bladder_Urine (W&W)", 1.02, 8, 1,11.0, 6,00.5, 7,1.0, 8,86.2, 11,0.4, 15,0.1, 17,0.6, 19,0.2
+0 0 0 0   0 0 0 0 0 0 0 0   0 0 0   0 0 0
+$from: Woodward & White, Brit. J. Radiology, vol. 59, 1216 (1986).
+$
+*Urinary Bladder-Empty               1.04(±.05)  H-11,C-10,N-3,O-76,P-.2,S-.2,Cl-.3,K-.3
+"%Urinary Bladder_Empty (W&W)", 1.04, 8, 1,10.5, 6,09.6, 7,2.6, 8,76.1, 15,0.2, 16,0.2, 17,0.3, 19,0.3
+0 0 0 0   0 0 0 0 0 0 0 0   0 0 0   0 0 0
+$from: Woodward & White, Brit. J. Radiology, vol. 59, 1216 (1986).
+$
+*Urinary Bladder-Full                1.03 (±.05) H-11,C-4,N-2,O-83,Na-.3,S-.1,Cl-.5,K-.2
+"%Urinary Bladder_Filled (W&W)", 1.03, 8, 1,10.8, 6,3.5, 7,1.5, 8,83.0, 11,0.3, 16,0.1, 17,0.5, 19,0.2
+0 0 0 0   0 0 0 0 0 0 0 0   0 0 0   0 0 0
+$from: Woodward & White, Brit. J. Radiology, vol. 59, 1216 (1986).
+$
+!
+!ßßßßßßßßßßß  BIOLOGICAL MATERIALS (Misc.) ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+!  Compositions from: Intn'l. Comm. on Radiation Units and Measurements (1984).
+!      Select any target to get more accurate details of its composition.
+!
+!                                Density          Mass Stoichiometry
+!    Target/Tissue Name          (g/cm3)     ( Elemental Percent by Mass )
+!    ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ ÍÍÍÍÍÍ ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ
+*A-150 Tissue-Eqiv. Plastic (ICRU-099)      1.127       H-10,C-78,N-4,O-5,F-2,Ca-2
+"%A-150 Tissue-Eqiv. Plastic (ICRU-099)" , 1.127, 6, 1,10.13, 6,77.55, 7,3.51, 8,5.23, 9,1.742, 20,1.838
+0 0 0 0   0 0 0 0 0 0 0 0   0 0 0   0 0 0
+$from: ICRU Report #37, 1984, pub. by ICRU, Bethesda, Md, 20814, USA.
+$
+*Adipose Tissue (ICRP ICRU-103)      0.92        H-12,C-64,N-1,O-23,Na-.05,Mg-.002,P-.02,Cl-.12
+"%Adipose Tissue (ICRP ICRU-103)", 0.92, 8, 1,0.119477,6,0.63724,7,0.00797,8,0.232333,11,0.0005,12,0.00002,15,0.00016,17,0.00119
+0 0 0 0   0 0 0 0 0 0 0 0   0 0 0   0 0 0
+$from: ICRU Report #37, 1984, pub. by ICRU, Bethesda, Md, 20814, USA.
+$
+*B-100 Bone-Equiv.Plastic(ICRU-111)  1.450       H-6.5,C-53.7,N-2.2,O-3.2,F-16.7,Ca-17.6
+"%B-100, Bone-Equivalent Plastic (ICRU-111)", 1.45, 6, 1, .065471, 6, .536945, 7, .0215, 8, .032085, 9, .167411, 20, .176589
+0 0 0 0   0 0 0 0 0 0 0 0   0 0 0   0 0 0
+$
+*Bone, Compact (ICRU-119)            1.850       H-6.3,C-27.8,N-2.7,O-41,Mg-.2,P-7,S-0.2,Ca-14.7
+"%Bone, Compact (ICRU-119)", 1.85, 8, 1,.063984,6,.278,7,.027,8,.410016,12,.002,15,.07,16,.002,20,.147     
+0 0 0 0   0 0 0 0 0 0 0 0   0 0 0   0 0 0
+$
+*Bone, Cortical (ICRP)               1.85        H-5,C-14,N-4,O-45,Mg-.2,P-10,S-.3,Ca-21
+"%Bone, Compact (ICRP)", 1.85, 8,  20,21, 1,4.723, 6,14.43, 7,4.20, 8,44.61, 12,0.22, 15,10.5, 16,.3
+0 0 0 0   0 0 0 0 0 0 0 0   0 0 0   0 0 0
+$from: ICRU Report #37, 1984, pub. by ICRU, Bethesda, Md, 20814, USA.
+$
+*MS-20 Tissue Substitute             1.00        H-8,C-58,N-2,O-19,Mg-13,Cl-.09
+"%MS_20 Tissue Substitute (ICRU)", 1.00, 6,  1,8.12, 6,58.34, 7,1.78, 8,18.63, 12,13.03, 17,0.09
+0 0 0 0   0 0 0 0 0 0 0 0   0 0 0   0 0 0
+$from: ICRU Report #37, 1984, pub. by ICRU, Bethesda, Md, 20814, USA.
+$
+*Muscle, Skeletal (ICRP)             1.04        H-10,C-11,N-3,O-76,Na-.1,P-.2,S-.2,K-.3
+"%Muscle, Skeletal (ICRP)", 1.04, 8,  1,10.06, 6,10.78, 7,2.77, 8,75.48, 11,.075, 15,.18, 16,.24, 19,.3
+0 0 0 0   0 0 0 0 0 0 0 0   0 0 0   0 0 0
+$from: ICRU Report #37, 1984, pub. by ICRU, Bethesda, Md, 20814, USA.
+$
+*Muscle, Striated (ICRU)             1.04        H-10,C-12,N-4,O-73,Na-.1,P-.2,S-.5,K-.3
+"%Muscle, Striated (ICRU)", 1.04, 8,  1,10.20, 6,12.30, 7,3.50, 8,72.90, 11,.080, 15,.20, 16,.50, 19,.3
+0 0 0 0   0 0 0 0 0 0 0 0   0 0 0   0 0 0
+$from: ICRU Report #37, 1984, pub. by ICRU, Bethesda, Md, 20814, USA.
+$
+*Muscle-Eqiv.Liquid w sucrose        1.11        H-10,C-16,N-4,O-71
+"%Muscle_Eqiv.Liquid w_sucrose (ICRU)", 1.11, 4,  1,09.98, 6,15.62, 7,3.55, 8,71.01
+0 0 0 0   0 0 0 0 0 0 0 0   0 0 0   0 0 0
+$from: ICRU Report #37, 1984, pub. by ICRU, Bethesda, Md, 20814, USA.
+$
+*Muscle-Eqiv.Liqd. wo sucrose        1.07        H-10,C-12,N-4,O-74
+"%Muscle_Eqiv.Liquid wo_sucrose (ICRU)", 1.07, 4,  1,10.20, 6,12.01, 7,3.55, 8,74.25
+0 0 0 0   0 0 0 0 0 0 0 0   0 0 0   0 0 0
+$from: ICRU Report #37, 1984, pub. by ICRU, Bethesda, Md, 20814, USA
+!
+!ßßßßßßß  LIQUIDS / GASES   ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+!                                Density       Atomic Stoichiometry
+!     Common  Name               (g/cm3)       (Atoms/Molecule or Percent)
+!ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ  ÍÍÍÍÍÍÍÍÍÍÍÍÍ   ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ
+*Acetaldehyde,Ethanal (ICRU-300)     0.7834      H-4, C-2, O-1
+"Acetaldehyde (ICRU-300)",0.7834, 3, 1, 4, 6, 2, 8, 1
+0 4 0 0   1 0 0 0 0 1 0 0   0 0 0   0 0 0
+$Chemical            H
+$Formula              \
+$                  H ÄÄ C ÄÄ C ÄÄ H
+$  C  H  O            /      º
+$   2  4             H       O
+*Acetic Acid                         1.0492      H-4, C-2, O-2
+"AceticAcid", 1.0492, 3, 1, 4, 6, 2, 8, 2
+0 3 0 1   1 0 0 0 1 1 0 0   0 0 0   0 0 0
+$Chemical               H
+$Formula                ³
+$                  H ÄÄ C ÄÄ C ÄÄ O ÄÄ H
+$  CH -CO-OH            ³    º
+$    3                  H    O
+*Acetone, 2-propanone (ICRU-301)      0.7678      H-6, C-3, O-1
+"Acetone (ICRU-301)", 0.7678, 3, 1, 6, 6, 3, 8, 1
+0 6 0 0   2 0 0 0 0 1 0 0   0 0 0   0 0 0
+$Chemical            H              H
+$Formula              \            /
+$                  H ÄÄ C ÄÄ C ÄÄ C ÄÄ H
+$  C  H  O            /      º     \
+$   3  6             H       O      H
+*Acetylene (ICRU-101)                0.0010967   H-2, C-2
+"Acetylene (ICRU-101)", 0.0010967, 2, 1, 2, 6, 2
+0 2 0 0   0 0 1 0 0 0 0 0   0 0 0   0 0 0
+$Chemical
+$Formula       H ÄÄ C ðð C ÄÄ H
+$  C  H
+$   2  2
+$
+*Alcohol-Methyl,Methanol (ICRU-305)  0.7914      H-4, C-1, O-1
+"Alcohol-Methyl (ICRU-305)", 0.7914, 3, 1, 4, 6, 1, 8, 1
+0 3 0 1   0 0 0 0 1 0 0 0   0 0 0   0 0 0
+$Chemical                  H
+$Formula                   ³
+$                     H ÄÄ C ÄÄ O ÄÄ H
+$  C H  O H                ³
+$     3                    H
+*Alcohol-Ethyl,Ethanol (ICRU-303)    0.7893      H-6, C-2, O-1
+"Alcohol_Ethyl (ICRU-303)", 0.7893, 3, 1, 6, 6, 2, 8, 1
+0 5 0 1   1 0 0 0 1 0 0 0   0 0 0   0 0 0
+$Chemical                H    H
+$Formula                 ³    ³
+$                   H ÄÄ C ÄÄ C ÄÄ O ÄÄ H
+$  C H O H               ³    ³
+$   2 5                  H    H
+*Alcohol-Propyl,Propanol (ICRU-307)  0.8035      H-8, C-3, O-1
+"Alcohol_Propyl (ICRU-307)", 0.8035, 3, 1, 8, 6, 3, 8, 1
+0 7 0 1   2 0 0 0 1 0 0 0   0 0 0   0 0 0
+$Chemical                H    H    H
+$Formula                 ³    ³    ³
+$                   H ÄÄ C ÄÄ C ÄÄ C ÄÄ O ÄÄ H
+$ C H O H                ³    ³    ³
+$  3 7                   H    H    H
+*Alcohol-Undecanol                   0.8298      H-24, C-11, O-1
+"Alcohol_Undecanol", 0.8298, 3, 1, 24, 6, 11, 8, 1
+0 23 0 1   10 0 0 0 1 0 0 0   0 0 0   0 0 0
+$Chemical                H    ÚÄÄÄÄÄÄÄÄÄÄÄ¿    H
+$Formula                 ³    ³ Nine more ³    ³
+$                   H ÄÄ C ÄÄ ³ CH go here³ ÄÄ C ÄÄ O ÄÄ H
+$ C   H   O H            ³    ³   2       ³    ³
+$  11  23                H    ÀÄÄÄÄÄÄÄÄÄÄÄÙ    H
+*Allene/Propadiene/ (ICRU-309)       (gas)       H-4, C-3
+"Allene (ICRU-309)", 0.00125, 2, 1, 4, 6, 3
+0 4 0 0   0 2 0 0 0 0 0 0   0 0 0   0 0 0
+$Chemical             H               H
+$Formula               \            /
+$                        C ÍÍ C ÍÍ C
+$ C H                  /            \
+$  3 4                H               H
+*Ammonia  (ICRU-310)                 (gas)       H-3, N-1
+"Ammonia (ICRU-310)", .00125, 2, 1, 3, 7, 1
+0 0 3 0   0 0 0 0 0 0 0 0   0 0 0   0 0 0
+$Chemical                     H
+$Formula : N H                ³
+$             3          H ÄÄ N ÄÄ H
+*Aniline                             1.026       H-7, C-6, N-1
+"Aniline", 1.026, 3, 1, 7, 6, 6, 7, 1
+0 5 2 0   3 3 0 1 0 0 0 0   0 0 0   0 0 0
+$Chemical                  H-C Ä C-H     H
+$Formula                   //     \\    /
+$                      H - C       C - N
+$   C H N                   \     /     \
+$    6 7                   H-C Í C-H     H
+*Benzene  (ICRU-329)                 0.87865     H-6, C-6
+"Benzene (ICRU-329)", 0.87865, 2, 1, 6, 6, 6
+0 6 0 0   3 3 0 0 0 0 0 0   0 0 0   0 0 0
+$Chemical                  H-C Ä C-H
+$Formula                   //     \\
+$                      H - C       C - H
+$   C  H                    \     /
+$    6  6                  H-C Í C-H
+*Bicylo[2,2,1]-Hepta-2,5diene        0.9064      H-8, C-7
+"Bicylo 2_2_1", 0.9064, 2, 1, 8, 6, 7
+0 8 0 0   6 2 0 0 0 0 0 0   0 0 0   0 0 0
+$Chemical
+$Formula       H - C ÍÍÍÍÍÍÍ C - H
+$                  ³         ³
+$ C  H             ³    H    ³
+$  7  8        H - C ÄÄ C ÄÄ C - H
+$                  ³    H    ³
+$                  ³         ³
+$              H - C ÍÍÍÍÍÍÍ C - H
+*Butane, n-Butane (ICRU-340)         (gas)       H-10, C-4
+"Butane, n-Butane (ICRU-340)", 0.00125, 2, 1, 10, 6, 4
+0 10 0 0   3 0 0 0 0 0 0 0   0 0 0   0 0 0
+$Chemical             H    H    H    H
+$Formula              ³    ³    ³    ³
+$               H ÄÄÄ C ÄÄ C ÄÄ C ÄÄ C ÄÄÄ H
+$ C  H                ³    ³    ³    ³
+$  4  10              H    H    H    H
+*1,3-Butadiene (ICRU-334)            (gas)       H-6, C-4
+"1-3 Butadiene (ICRU-334)", 0.00125, 2, 1, 6, 6, 4
+0 6 0 0   1 2 0 0 0 0 0 0   0 0 0   0 0 0
+$Chemical          H                      H
+$Formula             \                  /
+$                      C ÍÍ C ÄÄ C ÍÍ C
+$ C  H               /      ³    ³      \
+$  4  6            H        H    H        H
+$
+*2-Butanone (Methyl ethyl ketone)    0.8054      H-8, C-4, O-1
+"2_Butanone (ICRU-716)", 0.8054 , 3, 1, 8, 6, 4, 8, 1
+0 8 0 0   3 0 0 0 0 1 0 0   0 0 0   0 0 0
+$Chemical             H    H    O    H
+$Formula              ³    ³    º    ³
+$               H ÄÄÄ C ÄÄ C ÄÄ C ÄÄ C ÄÄÄ H
+$ C  H  O             ³    ³         ³
+$  4  8               H    H         H
+*Butyraldehyde/Butanal (ICRU-718)    0.8170      H-8, C-4, O-1
+"Butyraldehyde (ICRU-718)", 0.8170, 3, 1, 8, 6, 4, 8, 1
+0 8 0 0   3 0 0 0 0 1 0 0   0 0 0   0 0 0
+$Chemical               H    H    H    O
+$Formula                ³    ³    ³    º
+$                  H ÄÄ C ÄÄ C ÄÄ C ÄÄ C ÄÄ H
+$ C H O                 ³    ³    ³
+$  4 8                  H    H    H
+*Carbon Dioxide (ICRU-134)           0.001842    C-1, O-2
+"Carbon Dioxide (ICRU-134)", .001842, 2, 6, 1, 8, 2
+0 0 0 0   0 0 0 0 0 2 0 0   0 0 0   0 0 0
+$ No. of bonds corrected (HP, 24 Jan 05)
+$Chemical
+$Formula           O ÍÍ C ÍÍ O
+$
+*Carbon Tetrachloride (ICRU-360)     1.5940      C-1, Cl-4
+"Carbon Tetrachloride (ICRU-360)", 1.5940 , 2, 6, 1, 17, 4
+0 0 0 0   0 0 0 0 0 0 0 4   0 0 0   0 0 0
+$Chemical Formula
+$                           Cl
+$                           ³
+$ C  Cl               Cl ÄÄ C ÄÄ Cl
+$      4                    ³
+$                           Cl
+*Carbon Tetrafluoride (ICRU-370)     (gas)       C-1, F-4
+"Carbon Tetrafluoride (ICRU-370)", 0.00125, 2, 6, 1, 9, 4
+0 0 0 0   0 0 0 0 0 0 4 0   0 0 0   0 0 0
+$Chemical Formula
+$                           F
+$                           ³
+$ C  F                 F ÄÄ C ÄÄ F
+$     4                     ³
+$                           F
+*1-Chlorobutane                      0.8862      H-9, C-4, Cl-1
+"1_Chlorobutane", 0.8862 , 3, 1, 9, 6, 4, 17, 1
+0 9 0 0   3 0 0 0 0 0 0 1   0 0 0   0 0 0
+$Chemical             H    H    H    H
+$Formula              ³    ³    ³    ³
+$              Cl ÄÄÄ C ÄÄ C ÄÄ C ÄÄ C ÄÄÄ H
+$ C  H  Cl            ³    ³    ³    ³
+$  4  9               H    H    H    H
+*1-Chloro Hexadecane                 0.8652      H-33, C-16, Cl-1
+"1_Chloro Hexadecane", 0.8652 , 3, 1, 33, 6, 16, 17, 1
+0 33 0 0   15 0 0 0 0 0 0 1   0 0 0   0 0 0
+$Chemical             H    ÚÄÄÄÄÄÄÄÄÄ¿     H
+$Formula              ³    ³ 14 more ³     ³
+$              Cl ÄÄÄ C ÄÄ ³   CH    ³  ÄÄ C ÄÄÄ H
+$ C   H   Cl          ³    ³     2   ³     ³
+$  16  33             H    ÀÄÄÄÄÄÄÄÄÄÙ     H
+*1-Chloro Hexane                     0.8785      H-13, C-6, Cl-1
+"1_Chloro Hexane", 0.8785 , 3, 1, 13, 6, 6, 17, 1
+0 13 0 0   5 0 0 0 0 0 0 1   0 0 0   0 0 0
+$Chemical             H    ÚÄÄÄÄÄÄÄÄÄ¿     H
+$Formula              ³    ³  4 more ³     ³
+$              Cl ÄÄÄ C ÄÄ ³   CH    ³  ÄÄ C ÄÄÄ H
+$ C  H   Cl           ³    ³     2   ³     ³
+$  6  13              H    ÀÄÄÄÄÄÄÄÄÄÙ     H
+*2-Chloro-2-Methylpropane            0.8420      H-9, C-4, Cl-1
+"2_Chloro_2_Methylpropane", 0.8420 , 3, 1, 9, 6, 4, 17, 1
+0 9 0 0   3 0 0 0 0 0 0 1   0 0 0   0 0 0
+$Chemical             H    Cl   H
+$Formula              ³    ³    ³
+$               H ÄÄÄ C ÄÄ C ÄÄ C ÄÄÄ H
+$ C  H  Cl            ³    ³    ³
+$  4  9               H   CH    H
+$                           3
+*1-Chloro Propane                    0.8909      H-7, C-3, Cl-1
+"1_Chloro Propane", 0.8909 , 3, 1, 7, 6, 3, 17, 1
+0 7 0 0   2 0 0 0 0 0 0 1   0 0 0   0 0 0
+$Chemical             H    H    H
+$Formula              ³    ³    ³
+$              Cl ÄÄÄ C ÄÄ C ÄÄ C ÄÄÄ H
+$ C  H  Cl            ³    ³    ³
+$  3  7               H    H    H
+*Cyclobutane                         (gas)       H-8, C-4
+"Cyclobutane", 0.00125, 2, 1, 8, 6, 4
+0 8 0 0   4 0 0 0 0 0 0 0   0 0 0   0 0 0
+$Chemical                 H      H
+$Formula                  ³      ³
+$                   H ÄÄÄ C ÄÄÄÄ C ÄÄÄ H
+$ C  H                    ³      ³
+$  4  8             H ÄÄÄ C ÄÄÄÄ C ÄÄÄ H
+$                         ³      ³
+$                         H      H
+*1,3,5 - Cyclo-Heptatriene           0.8875      H-8, C-7
+"1_3_5 CycloHeptatriene", 0.8875, 2, 1, 8, 6, 7
+0 8 0 0   4 3 0 0 0 0 0 0   0 0 0   0 0 0
+$                            H     H
+$                              \ /
+$Chemical               H-C ÄÄÄ C ÄÄÄ C-H
+$Formula                  º           º
+$                       H-C           C-H
+$ C  H                      \        /
+$  7  8                    H-C ÍÍÍÍ C-H
+*1,3-Cyclohexadiene  (ICRU-394)      0.8405      H-8, C-6
+"1_3 Cyclohexadiene (ICRU-394)", 0.8405, 2, 1, 8, 6, 6
+0 8 0 0   4 2 0 0 0 0 0 0   0 0 0   0 0 0
+$                            H   H
+$Chemical                  H-C - C
+$Formula                    /     \\
+$                        H-C-H     C-H
+$   C  H                    \     /
+$    6  8                  H-C Í C-H
+*Cyclohexane (ICRU-400)              0.77855     H-12, C-6
+"Cyclohexane (ICRU-400)", 0.77855, 2, 1, 12, 6, 6
+0 12 0 0   6 0 0 0 0 0 0 0   0 0 0   0 0 0
+$                            H   H
+$Chemical                  H-C Ä C-H
+$Formula                    /     \
+$                        H-C-H   H-C-H
+$   C  H                    \     /
+$    6  12                 H-C - C-H
+$                            H   H
+*Cyclohexanone (ICRU-728)            0.9478      H-10, C-6, O-1
+"Cyclohexanone (ICRU-728)", 0.9478 , 3, 1, 10, 6, 6, 8, 1
+0 10 0 0   6 0 0 0 0 1 0 0   0 0 0   0 0 0
+$                            H   H
+$Chemical                  H-C Ä C-H
+$Formula                    /     \
+$                      O Í C     H-C-H
+$   C  H   O                \     /
+$    6  10                 H-C - C-H
+$                            H   H
+*Cyclohexene (ICRU-729)              0.8102      H-10, C-6
+"Cyclohexene (ICRU-729)", 0.8102, 2, 1, 10, 6, 6
+0 10 0 0   5 1 0 0 0 0 0 0   0 0 0   0 0 0
+$                            H   H
+$Chemical                  H-C Ä C-H
+$Formula                    /     \
+$                        H-C-H   H-C-H
+$   C  H                    \     /
+$    6  10                 H-C Í C-H
+*Cyclooctane  (ICRU-731)             0.8349      H-16, C-8
+"Cyclooctane (ICRU-731)", 0.8349, 2, 1, 16, 6, 8
+0 16 0 0   8 0 0 0 0 0 0 0   0 0 0   0 0 0
+$Chemical         ÚÄÄÄ CH ÄÄÄ CH ÄÄÄ¿
+$Formula          ³      2      2   ³
+$                 CH                CH
+$ C  H            ³ 2               ³ 2
+$  8  16          CH                CH
+$                 ³ 2               ³ 2
+$                 ÀÄÄÄ CH ÄÄÄ CH  ÄÄÙ
+$                        2      2
+*Cyclooctene                         0.8472      H-14, C-8
+"Cyclooctene", 0.8472, 2, 1, 14, 6, 8
+0 14 0 0   7 1 0 0 0 0 0 0   0 0 0   0 0 0
+$Chemical            ÚÄÄÄ CH ÄÄÄ CH ÄÄÄ¿
+$Formula             ³      2      2   ³
+$               H ÄÄ C                 CH
+$ C  H               º                 ³ 2
+$  8  14        H ÄÄ C                 CH
+$                    ³                 ³ 2
+$                    ÀÄÄÄ CH ÄÄÄ CH  ÄÄÙ
+$                           2      2
+*Cyclopentane (ICRU-403)             0.7457      H-10, C-5
+"Cyclopentane (ICRU-403)", 0.7457, 2, 1, 10, 6, 5
+0 10 0 0   5 0 0 0 0 0 0 0   0 0 0   0 0 0
+$Chemical            H    H
+$Formula           H C ÄÄ C
+$                    ³    H \ H
+$ C  H               ³        C
+$  5  10             ³    H / H
+$                  H C ÄÄ C
+$                    H    H
+*Cyclopentene (ICRU-405)             0.7720      H-8, C-5
+"Cyclopentene (ICRU-405)", 0.7720, 2, 1, 8, 6, 5
+0 8 0 0   4 1 0 0 0 0 0 0   0 0 0   0 0 0
+$Chemical                 H
+$Formula         H - C ÄÄ C
+$                    º    H \ H
+$ C  H               º        C
+$  5  8              º    H / H
+$                H - C ÄÄ C
+$                         H
+*Cyclopropane (ICRU-410)             (gas)       H-6, C-3
+"Cyclopropane (ICRU-410)", 0.00174, 2, 1, 6, 6, 3
+0 6 0 0   3 0 0 0 0 0 0 0   0 0 0   0 0 0
+$                         H     H
+$                         ³     ³
+$Chemical           H ÄÄÄ C ÄÄÄ C ÄÄÄ H
+$Formula                   \   /
+$                            C
+$ C  H                     /   \
+$  3  6                  H       H
+*Cyclopropene                        (gas)       H-4, C-3
+"Cyclopropene", 0.00125, 2, 1, 4, 6, 3
+0 4 0 0   2 1 0 0 0 0 0 0   0 0 0   0 0 0
+$Chemical           H ÄÄÄ C ÍÍÍ C ÄÄÄ H
+$Formula                   \   /
+$                            C
+$ C  H                     /   \
+$  3  4                  H       H
+*n-Decane (ICRU-411)                 0.7300      H-22, C-10
+"n_Decane (ICRU-411)", .7300 , 2, 1, 22, 6, 10
+0 22 0 0   9 0 0 0 0 0 0 0   0 0 0   0 0 0
+$Chemical              H    ÚÄÄÄÄÄÄÄÄ¿    H
+$Formula               ³    ³ 8 more ³    ³
+$                 H ÄÄ C ÄÄ ³  CH    ³ ÄÄ C ÄÄ H
+$ C   H                ³    ³    2   ³    ³
+$  10  22              H    ÀÄÄÄÄÄÄÄÄÙ    H
+*1-Decene                            0.7408      H-20, C-10
+"1 Decene", .7408 , 2, 1, 20, 6, 10
+0 20 0 0   8 1 0 0 0 0 0 0   0 0 0   0 0 0
+$Chemical        H        H    ÚÄÄÄÄÄÄÄÄ¿    H
+$Formula           \      ³    ³ 7 more ³    ³
+$                    C ÍÍ C ÄÄ ³  CH    ³ ÄÄ C ÄÄ H
+$ C   H            /           ³    2   ³    ³
+$  10  20        H             ÀÄÄÄÄÄÄÄÄÙ    H
+*1,2 Dichloroethane                  1.2351      H-4, C-2, Cl-2
+"1_2 Dichloroethane", 1.2351 , 3, 1, 4, 6, 2, 17, 2
+0 4 0 0   1 0 0 0 0 0 0 2   0 0 0   0 0 0
+$Chemical                 H    H
+$Formula                  ³    ³
+$                  Cl ÄÄÄ C ÄÄ C ÄÄÄ Cl
+$ C  H  Cl                ³    ³
+$  2  4   2               H    H
+*1,2 Difluoroethane (ICRU-418)       (gas)       H-4, C-2, F-2
+"1_2 Difluoroethane (ICRU-418)", 0.00125, 3, 1, 4, 6, 2, 9, 2
+0 4 0 0   1 0 0 0 0 0 2 0   0 0 0   0 0 0
+$Chemical                 H    H
+$Formula                  ³    ³
+$                   F ÄÄÄ C ÄÄ C ÄÄÄ F
+$ C  H  F                 ³    ³
+$  2  4  2                H    H
+*1,2 Difluoroethene (ICRU-417)       (gas)       H-2, C-2, F-2
+"1_2 Difluoroethene (ICRU-417)", 0.00125, 3, 1, 2, 6, 2, 9, 2
+0 2 0 0   0 1 0 0 0 0 2 0   0 0 0   0 0 0
+$Chemical                 H     H
+$Formula                  ³     ³
+$                   F ÄÄÄ C ÍÍÍ C ÄÄÄ F
+$ C  H  F
+$  2  2  2
+*p-Dioxane  1,4-Dioxane                    1.0337      H-8, C-4, O-2
+"p_Dioxane (ICRU-740)", 1.0337 , 3, 1, 8, 6, 4, 8, 2
+0 8 0 0   2 0 0 0 4 0 0 0   0 0 0   0 0 0
+$                            H   H
+$Chemical                  H-C Ä C-H
+$Formula                    /     \
+$                          O       O
+$   C  H  O                 \     /
+$    4  8  2               H-C - C-H
+$                            H   H
+*Ethane (ICRU-424)                   (gas)       H-6, C-2
+"Ethane (ICRU-424)", 0.00125, 2, 1, 6, 6, 2
+0 6 0 0   1 0 0 0 0 0 0 0   0 0 0   0 0 0
+$Chemical          H    H
+$Formula           ³    ³
+$            H ÄÄÄ C ÄÄ C ÄÄÄ H
+$ C  H             ³    ³
+$  2  6            H    H
+*1,2 - Ethanediol                    1.1088      H-6, C-2, O-2
+"1_2 Ethanediol",1.1088 , 3, 1, 6, 6, 2, 8, 2
+0 4 0 2   1 0 0 0 2 0 0 0   0 0 0   0 0 0
+$Chemical                 H    H
+$Formula                  ³    ³
+$               H ÄÄ O ÄÄ C ÄÄ C ÄÄ O ÄÄ H
+$ (CH OH)                 ³    ³
+$    2   2                H    H
+*Ethane - Hexafluoride               (gas)       C-2, F-6
+"Ethane Hexafluoride", 0.00125, 2, 6, 2, 9, 6
+0 0 0 0   1 0 0 0 0 0 6 0   0 0 0   0 0 0
+$Chemical          F    F
+$Formula           ³    ³
+$            F ÄÄÄ C ÄÄ C ÄÄÄ F
+$ C  F             ³    ³
+$  2  6            F    F
+*Ether/Dimethyl (ICRU-752)           (gas)       H-6, C-2, O-1
+"Ether Dimethyl (ICRU-752)", .00125, 3, 1, 6, 6, 2, 8, 1
+0 6 0 0   0 0 0 0 2 0 0 0   0 0 0   0 0 0
+$Chemical            H         H
+$Formula             ³         ³
+$               H ÄÄ C ÄÄ O ÄÄ C ÄÄ H
+$ C  H  O            ³         ³
+$  2  6              H         H
+*Ether(Vinyl-Methyl/Methoxy ethene)  0.7725      H-6, C-3, O-1
+"Ether Vinyl_Methyl (ICRU-684)", 0.7725, 3, 1, 6, 6, 3, 8, 1
+0 6 0 0   0 1 0 0 2 0 0 0   0 0 0   0 0 0
+$Chemical          H      H         H
+$Formula            \     ³         ³
+$                    C ÍÍ C ÄÄ O ÄÄ C ÄÄ H
+$ C  H  O           /               ³
+$  3  6            H                H
+*Ether/Diethyl (ICRU-735)            0.71378     H-10, C-4, O-1
+"Ether Diethyl (ICRU-735)", .71378, 3, 1, 10, 6, 4, 8, 1
+0 10 0 0   2 0 0 0 2 0 0 0   0 0 0   0 0 0
+$Chemical            H    H         H    H
+$Formula             ³    ³         ³    ³
+$               H ÄÄ C ÄÄ C ÄÄ O ÄÄ C ÄÄ C ÄÄ H
+$ C  H   O           ³    ³         ³    ³
+$  4  10             H    H         H    H
+*Ethylene (ICRU-155)                 0.001175    H-4, C-2
+"Ethylene (ICRU-155)", .001175, 2, 1, 4, 6, 2
+0 4 0 0   0 1 0 0 0 0 0 0   0 0 0   0 0 0
+$Chemical          H            H
+$Formula             \        /
+$                      C ÍÍ C
+$ C  H               /        \
+$  2  4            H            H
+*Ethylene Oxide, Oxirane (ICRU-432)   0.8824      H-4, C-2, O
+"Ethylene Oxide (ICRU-432)", .8824, 3, 1, 4, 6, 2, 8, 1
+0 4 0 0   1 0 0 0 2 0 0 0   0 0 0   0 0 0
+$Chemical          H             H
+$Formula             \         /
+$                      C ÄÄÄ C
+$ C  H  O            /   \ /   \
+$  2  4            H      O     H
+*Ethylene Sulfide/Thiirane(ICRU-434) (gas)       H-4, C-2, S-1
+"Ethylene Sulfide (ICRU-434)", 0.00125, 3, 1, 4, 6, 2, 16, 1
+0 4 0 0   1 0 0 0 0 0 0 0   0 0 0   0 2 0
+$ Chemical                H     H
+$ Formula                 ³     ³
+$                   H ÄÄÄ C ÄÄÄ C ÄÄÄ H
+$ C  H  S                  \   /
+$  2  4                      S
+*Formic Acid                         1.220       H-2, C-1, O-2
+"FormicAcid", 1.220 , 3, 1, 2, 6, 1, 8, 2
+0 1 0 1   0 0 0 0 1 1 0 0   0 0 0   0 0 0
+$Chemical
+$Formula              H ÄÄÄ C ÍÍ O
+$                           ³
+$  H CO OH            H ÄÄÄ O
+*Formaldehyde                        0.815       H-2, C-1, O-1
+"Formaldehyde", 0.815, 3, 1, 2, 6, 1, 8, 1
+0 2 0 0   0 0 0 0 0 1 0 0   0 0 0   0 0 0
+$Chemical          H
+$Formula             \
+$                      C ÍÍ O
+$ C  H  O            /
+$     2            H
+*Glycerol (1,2,3-Propanetriol)       1.261      H-8, C-3, O-3
+"Glycerol (ICRU-469)", 1.261, 3, 1, 8, 6, 3, 8, 3
+
+0 5 0 3   2 0 0 0 3 0 0 0   0 0 0   0 0 0
+$Chemical          H    H    H
+$Formula           ³    ³    ³
+$            H ÄÄÄ C ÄÄ C ÄÄ C ÄÄÄ H
+$ C  H  O          ³    ³    ³
+$  3  8  3         O-H  O-H  O-H
+*Hydrogen Sulfide (ICRU-485)         (gas)       H-2, S-1
+"Hydrogen Sulfide (ICRU-485)", 0.00125, 2, 1, 2, 16, 1
+0 0 0 0   0 0 0 0 0 0 0 0   0 0 0   2 0 0
+$Chemical
+$Formula : S H         H ÄÄ S ÄÄ H
+$             2
+*Methyl Sulfide                      0.8483      H-6, C-2, S-1
+"Methyl Sulfide", .8483 , 3, 1, 6, 6, 2, 16, 1
+0 6 0 0   0 0 0 0 0 0 0 0   0 0 0   0 2 0
+$Chemical            H         H
+$Formula             ³         ³
+$               H ÄÄ C ÄÄ S ÄÄ C ÄÄ H
+$ C  H  S            ³         ³
+$  2  6              H         H
+*Methane (ICRU-197)                  0.000717    H-4, C-1
+"Methane (ICRU-197)", 0.000717, 2,  1, 4, 6, 1
+0 4 0 0   0 0 0 0 0 0 0 0   0 0 0   0 0 0
+$Chemical Formula
+$  of Methane               H
+$                           ³
+$ C  H                 H ÄÄ C ÄÄ H
+$     4                     ³
+$                           H
+*Methane Chloro-Trifluoro      (Freon gas)       C-1, F-3, Cl-1
+"Methane Chloro_Trifluoro", 0.00125, 3, 6, 1, 9, 3, 17, 1
+0 0 0 0   0 0 0 0 0 0 3 1   0 0 0   0 0 0
+$Chemical Formula
+$                           F
+$                           ³
+$  C Cl F              F ÄÄ C ÄÄ Cl
+$        3                  ³
+$                           F
+*Methane Dichloro-DiFluoro  (Freon-12 gas)       C-1, F-2, Cl-2
+"Methane Dichloro_Difluoro", 0.00518, 3, 6, 1, 9, 2,17, 2
+0 0 0 0   0 0 0 0 0 0 2 2   0 0 0   0 0 0
+$Chemical              Cl
+$Formula               ³
+$                 F ÄÄ C ÄÄ F
+$  C Cl  F             ³
+$      2  2            Cl
+*Methane Dichloro-Fluoro    (Freon-21 gas)       H-1, C-1, F-1, Cl-2
+"Methane Dichloro_Fluoro", 0.00125, 4, 1, 1, 6, 1, 9, 1, 17, 2
+0 1 0 0   0 0 0 0 0 0 1 2   0 0 0   0 0 0
+$Chemical               Cl
+$Formula                ³
+$                  H ÄÄ C ÄÄ F
+$  C H Cl  F            ³
+$        2              Cl
+*2-Methyl - 1,3-Butadiene            0.6810      H-8, C-5
+"2 Methy l_1_3 Butadiene", 0.6810 , 2, 1, 8, 6, 5
+0 8 0 0   2 2 0 0 0 0 0 0   0 0 0   0 0 0
+$Chemical          H                      H
+$Formula             \                  /
+$                      C ÍÍ C ÄÄ C ÍÍ C
+$ C  H               /      ³    ³      \
+$  5  8            H      H-C-H  H        H
+$                           H
+*Nitric Oxide (ICRU-520)             (gas)       N, O
+"Nitric Oxide (ICRU-520)", 0.00125, 2, 7, 1, 8, 1
+0 0 0 0   0 0 0 0 0 0 0 0   0 0 0   0 0 0
+$Chemical
+$Formula          N ÍÍ O
+$  N O
+$
+*Nitrous Oxide (ICRU-521)            (gas)       N-2, O-1
+"Nitrous Oxide (ICRU-521)", 0.00125, 2, 7, 2, 8, 1
+0 0 0 0   0 0 0 0 0 0 0 0   0 2 0   0 0 0
+$Chemical
+$Formula          N ÄÄ O ÄÄ N
+$  N  0
+$   2
+*Octanoic Acid                       0.9088      H-16, C-8, O-2
+"Octanoic Acid", 0.9088, 3, 1, 16, 6, 8, 8, 2
+0 15 0 1   7 0 0 0 1 1 0 0   0 0 0   0 0 0
+$Chemical               H    ÚÄÄÄÄÄÄÄÄ¿
+$Formula                ³    ³ 6 more ³
+$                  H ÄÄ C ÄÄ ³  CH    ³ ÄÄ C ÄÄ O ÄÄ H
+$  C  H  -CO-OH         ³    ³    2   ³    º
+$   7  15               H    ÀÄÄÄÄÄÄÄÄÙ    O
+*n-Pentane (ICRU-528)                0.6262      H-12, C-5
+"n_Pentane (ICRU-528)", 0.6262, 2, 1, 12, 6, 5
+0 12 0 0   4 0 0 0 0 0 0 0   0 0 0   0 0 0
+$Chemical             H    H    H    H    H
+$Formula              ³    ³    ³    ³    ³
+$                H ÄÄ C ÄÄ C ÄÄ C ÄÄ C ÄÄ C ÄÄ H
+$ C  H                ³    ³    ³    ³    ³
+$  5  12              H    H    H    H    H
+*n-Pentadecane                       0.7865      H-32, C-15
+"n_Pentadecane", 0.7865, 2, 1, 32, 6, 15
+0 32 0 0  14 0 0 0 0 0 0 0   0 0 0   0 0 0
+$Chemical             H    ÚÄÄÄÄÄÄÄÄÄ¿    H
+$Formula              ³    ³ 13 more ³    ³
+$                H ÄÄ C ÄÄ ³   CH    ³ ÄÄ C  ÄÄ H
+$ C   H               ³    ³     2   ³    ³
+$  15  32             H    ÀÄÄÄÄÄÄÄÄÄÙ    H
+*1,5 - Pentanediol                   0.9939      H-12, C-5, O-2
+"1_5 Pentanediol", .9939 , 3, 1, 12, 6, 5, 8, 2
+0 10 0 2   4 0 0 0 2 0 0 0   0 0 0   0 0 0
+$Chemical                 H    ÚÄÄÄÄÄÄÄÄ¿    H
+$Formula                  ³    ³ 3 more ³    ³
+$               H ÄÄ O ÄÄ C ÄÄ ³  CH    ³ ÄÄ C ÄÄ O ÄÄ H
+$  C  H   O               ³    ³    2   ³    ³
+$   5  12  2              H    ÀÄÄÄÄÄÄÄÄÙ    H
+*3-Pentanone (ICRU-742)              0.8138      H-10, C-5, O-1
+"3-Pentanone (ICRU-742)", 0.8138, 3, 1, 10, 6, 5, 8, 1
+0 10 0 0   4 0 0 0 0 1 0 0   0 0 0   0 0 0
+$Chemical             H    H    O    H    H
+$Formula              ³    ³    º    ³    ³
+$                H ÄÄ C ÄÄ C ÄÄ C ÄÄ C ÄÄ C ÄÄ H
+$ C  H   O            ³    ³         ³    ³
+$  5  10              H    H         H    H
+*1-Pentene (ICRU-532)                0.6405      H-10, C-5
+"1_Pentene (ICRU-532)", 0.6405, 2, 1, 10, 6, 5
+0 10 0 0   3 1 0 0 0 0 0 0   0 0 0   0 0 0
+$Chemical          H       H    H    H    H
+$Formula             \     ³    ³    ³    ³
+$                     C ÍÍ C ÄÄ C ÄÄ C ÄÄ C ÄÄÄ H
+$ C  H               /          ³    ³    ³
+$  5  10           H            H    H    H
+*Phenylacetylene                     0.9281      H-6, C-8
+"Phenylacetylene", 0.9281 , 2, 1, 6, 6, 8
+0 6 0 0   4 3 1 0 0 0 0 0   0 0 0   0 0 0
+$Chemical              H-C Í C-H
+$Formula                /     \
+$                  H Ä C       C Ä C ð C Ä H
+$  C  H                 \\   //
+$   8  6               H-C - C-H
+*Propane (ICRU-238)                  0.0018794   H-8, C-3
+"Propane (ICRU-238)", 0.0018794, 2, 1, 8, 6, 3
+0 8 0 0   2 0 0 0 0 0 0 0   0 0 0   0 0 0
+$Chemical             H    H    H
+$Formula              ³    ³    ³
+$               H ÄÄÄ C ÄÄ C ÄÄ C ÄÄÄ H
+$ C  H                ³    ³    ³
+$  3  8               H    H    H
+*1,3-Propanediol                     1.0597      H-8, C-3, O-2
+"1_3 Propanediol", 1.0597 , 3, 1, 8, 6, 3, 8, 2
+0 6 0 2   2 0 0 0 2 0 0 0   0 0 0   0 0 0
+$Chemical             H    H    H
+$Formula              ³    ³    ³
+$                H ÄÄ C ÄÄ C ÄÄ C ÄÄ H
+$ C  H  O             ³    ³    ³
+$  3  8  2       H ÄÄ O    H    O ÄÄ H
+*2-Propanol                          0.7855      H-8, C-3, O
+"2_Propanol", 0.7855 , 3, 1, 8, 6, 3, 8, 1
+0 7 0 1   2 0 0 0 1 0 0 0   0 0 0   0 0 0
+$Chemical             H    H    H
+$Formula              ³    ³    ³
+$               H ÄÄÄ C ÄÄ C ÄÄ C ÄÄÄ H
+$ C  H  O H           ³    ³    ³
+$  3  7               H    O-H  H
+*Propylamine                         0.7173      H-9, C-3, N-1
+"Propylamine", 0.7173 , 3, 1, 9, 6, 3, 7, 1
+0 7 2 0   2 0 0 1 0 0 0 0   0 0 0   0 0 0
+$Chemical             H    H    H    H
+$Formula              ³    ³    ³    ³
+$               H ÄÄÄ C ÄÄ C ÄÄ C ÄÄ N
+$ C  H  N H           ³    ³    ³    ³
+$  3  7    2          H    H    H    H
+*Propylene (ICRU-574)                0.514       H-6, C-3
+"Propylene (ICRU-574)", 0.514, 2, 1, 6, 6, 3
+0 6 0 0   1 1 0 0 0 0 0 0   0 0 0   0 0 0
+$Chemical Formula
+$  of Propylene       H         H
+$                     ³         ³
+$ C H                 C ÍÍ C ÄÄ C ÄÄ H
+$  3 6                ³    ³    ³
+$                     H    H    H
+$
+*Propylene Oxide(Methyl oxirane)     0.859       H-6, C-3, O
+"Propylene Oxide (ICRU-800)", 0.859 , 3, 1, 6, 6, 3, 8, 1
+0 6 0 0   2 0 0 0 2 0 0 0   0 0 0   0 0 0
+$Chemical             H            H
+$Formula               \           ³
+$                       C ÄÄÄ C ÄÄ C ÄÄ H
+$ C  H  O              / \   /     ³
+$  3  6               H    O       H
+$
+*Propylene Sulfide (ICRU-802)        0.941       H-6, C-3, S-1
+"Propylene Sulfide (ICRU-802)", 0.941, 3, 1, 6, 6, 3, 16, 1
+0 6 0 0   2 0 0 0 0 0 0 0   0 0 0   0 2 0
+$ Chemical                H     H     H
+$ Formula                 ³     ³     ³
+$                   H ÄÄÄ C ÄÄÄ C ÄÄÄ C ÄÄÄ H
+$ C  H  S                  \   /      ³
+$  3  6                      S        H
+*Sulfur Hexafluoride (ICRU-614)      (gas)       F-6, S-1
+"Sulfur Hexafluoride (ICRU-614)", 0.00125, 2, 9, 6, 16, 1
+0 0 0 0   0 0 0 0 0 0 0 0   0 0 0   0 0 6
+$ Chemical      F       F
+$ Formula         \   /
+$              F ÄÄ S ÄÄ F
+$   S F           /   \
+$      6        F       F
+*Styrene (ICRU-600)                  0.906       H-8, C-8
+"Styrene (ICRU-600)", 0.906, 2, 1, 8, 6, 8
+0 8 0 0   4 4 0 0 0 0 0 0   0 0 0   0 0 0
+$Chemical              H-C Í C-H         H
+$Formula                /     \          ³
+$                  H Ä C       C ÄÄ C ÍÍ C
+$  C  H                 \\   //     ³    ³
+$   8  8                 C - C      H    H
+$                        ³   ³
+$                        H   H
+*Thiophene/Thiofuran (ICRU-640)      1.0649      H-4, C-4, S-1
+"Thiophene (ICRU-640)", 1.0649, 3, 1, 4, 6, 4, 16, 1
+0 4 0 0   1 2 0 0 0 0 0 0   0 0 0   0 2 0
+$Chemical
+$Formula        H ÄÄ C ÍÍ C ÄÄ H
+$                    ³      \
+$ C  H  S            ³        S
+$  4  4              ³      /
+$               H ÄÄ C ÍÍ C ÄÄ H
+*Toluene (ICRU-267)                  0.8669      H-8, C-7
+"Toluene (ICRU-267)", 0.8669, 2, 1, 8, 6, 7
+0 8 0 0   4 3 0 0 0 0 0 0   0 0 0   0 0 0
+$Chemical              H-C Í C-H   H
+$Formula                /     \    ³
+$                  H Ä C       C Ä C Ä H
+$  C  H                 \\   //    ³
+$   7  8               H-C - C-H   H
+$
+*Trimethylene Sulfide(Thietane)      1.0200      H-6, C-3, S-1
+"Trimethylene Sulfide (ICRU-658)", 1.0200 , 3, 1, 6, 6, 3, 16, 1
+0 6 0 0   2 0 0 0 0 0 0 0   0 0 0   0 2 0
+$ Chemical                H     H
+$ Formula                 ³     ³
+$                   H ÄÄÄ C ÄÄÄ C ÄÄÄ H
+$ C  H  S                 ³     ³
+$  3  6             H ÄÄÄ C ÄÄÄ S
+$                         ³
+$                         H
+*Xylene                              0.8611      H-10, C-8
+"Xylene", 0.8611, 2, 1, 10, 6, 8
+0 10 0 0   5 3 0 0 0 0 0 0   0 0 0   0 0 0
+$Chemical            H    H-C ÄÄ C-H    H
+$Formula             ³     //     \\    ³
+$               H ÄÄ C ÄÄ C        C ÄÄ C ÄÄ H
+$  C  H              ³     \      /     ³
+$   8  10            H    H-C ÍÍ C-H    H
+$
+*Water  (liquid)                     1.00        H-2, O-1
+"Water_Liquid (ICRU-276)", 1.0, 2, 1, 2, 8, 1
+0 0 0 2   0 0 0 0 0 0 0 0   0 0 0   0 0 0
+$Chemical Formula:      H ÄÄ O ÄÄ H
+$
+$There is about an 8% increase in the peak of the stopping power
+$for ions in water vapour relative to the liquid. (The peak of the
+$stopping occurs at an energy of about 150 keV/amu times the 2/3
+$power of the ion's atomic number.) Above the peak the phase
+$difference begins to disappear. This calculation is for the
+$LIQUID phase.
+*Water  (vapor)                      (gas)       H-2, O-1
+"Water_vapor (ICRU-277)", 0.00125, 2, 1, 2, 8, 1
+0 0 0 2   0 0 0 0 0 0 0 0   0 0 0   0 0 0
+$Chemical Formula:      H ÄÄ O ÄÄ H
+$
+$There is about an 8% increase in the peak of the stopping power
+$for ions in water vapour relative to the liquid. (The peak of the
+$stopping occurs at an energy of about 150 keV/amu times the 2/3
+$power of the ion's atomic number.) Above the peak the phase
+$difference begins to disappear. This calculation is for the
+$GAS phase.
+*Hydrogen Gas                        0.00009     H-2
+"Hydrogen", 0.0000899, 1, 1, 2
+1 0 0 0   0 0 0 0 0 0 0 0   0 0 0  0 0 0
+$Chemical
+$Formula           H ÄÄ H
+$
+*Helium   Gas                        0.00018     He
+"Helium", 0.0001785, 1, 2, 1
+0 0 0 0   0 0 0 0 0 0 0 0   0 0 0   0 0 0
+$Chemical
+$Formula           He     (No Bonds)
+$
+*Carbon Solid                        2.0        C-6
+"Carbon", 2.0, 1, 6, 6
+0 0 0 0   6 3 0 0 0 0 0 0   0 0 0   0 0 0
+$Chemical
+$Formula        ÄÄ C ÍÍ C ÄÄ
+$                /       \
+$            ÄÄ C         C ÄÄ
+$                \\      //
+$               ÄÄ C ÄÄ C ÄÄ
+*Nitrogen Gas                        0.00125     N-2
+"Nitrogen", 0.001251, 1, 7, 2
+0 0 0 0   0 0 0 0 0 0 0 0   1 0 0   0 0 0
+$Chemical
+$Formula           N ðð N (Triple Bond)
+$
+*Oxygen Gas                          0.00143     O-2
+"Oxygen", 0.001429, 1, 8, 2
+0 0 0 0   0 0 0 0 0 0 0 0   0 0 1  0 0 0
+$Chemical
+$Formula           O ÍÍ O
+$
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!

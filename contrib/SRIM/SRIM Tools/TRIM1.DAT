@@ -1,0 +1,16 @@
+€ﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂ TRIM with various Incident Ion Energies/Angles and Depths ﬂﬂﬂﬂﬂﬂﬂﬂ€
+€ Top  10 lines are user comments,  with  line  #8 describing experiment.     €
+€ Line #8 will be written into all TRIM output files ( various files:  *.TXT).€
+€ Data Table line consist of: EventName(5 char)+8 numbers separated by spaces.€
+€ The Event Name consists of any 5  characters  to identify that line.        €
+€ Cos(X) = 1 for normal incidence, and Cos(X) = -1  for backwards.            €
+ﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂ Typical Data File is shown below  ﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂ
+…Õ Ar Plasma Ions into Si (1000A thick) (Energies 20-80 keV, Various Angles) Õª
+Event  Atom  Energy  Depth   Lateral-Position   ----- Atom Direction ----
+Name   Numb   (eV)    _X_(A)   _Y_(A)  _Z_(A)   Cos(X)   Cos(Y)   Cos(Z)
+A-1    18    12345    0        0       0        1.00000  .000000 -.000000
+abcde  18    54321    0        0       0        0.62344 -.295513  .003415
+AA#1   18    1.31E4   123      0      -154      0.34234 -.336437 -.017437
+C-3    18    123.55   1230     432     12.3E2  -0.23258 -.543453  .443483
+A-1    18    0.123E2  0       -10     -12       0.99998  .000012 -.000017
+

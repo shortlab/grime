@@ -1,0 +1,17 @@
+€ﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂ  TRIM - Recoil Cascade Data File ﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂ€
+€ Top  10 lines are user comments,  with  line  #8 describing experiment.     €
+€ Line #8 will be written into all TRIM output files ( various files:  *.TXT).€
+€ Data Table line consist of: EventName(5 char)+9 numbers separated by spaces.€
+€ The Event Name consists of any 5  characters  to identify that line.        €
+€ Cos(X) = 1 for normal incidence, and Cos(X) = -1  for backwards.            €
+ﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂ Typical Data File is shown below  ﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂ
+…ÕÕÕ  Recoils from 1670000eV electrons in SiO2(1200A)+GaAs(10000A) ÕÕÕÕÕÕÕÕÕÕÕª
+Event  Atom  Energy  Depth   Lateral-Position   ----- Atom Direction ----
+Name   Numb   (eV)    _X_(A)   _Y_(A)  _Z_(A)   Cos(X)   Cos(Y)   Cos(Z)
+A-1     8    59.2     322      24      12.34    0.99998  .000012 -.000017
+C-3    33    1259.    10.3E3   432     12.3E2  -0.23258 -.543453  .443483
+AA-1    8    9876.    522     -24.3   -12       0.99998  .000012 -.000017
+123C   14    1.56E4   2222    -33     -69       0.62344 -.295513  .003415
+9875   33    7.31E4   3322    -82.9    154      0.34234 -.336437 -.017437
+asd    14    0.28E5   0.882E2 -206     588      0.03754  .032936 -.334616
+

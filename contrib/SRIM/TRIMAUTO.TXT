@@ -1,0 +1,33 @@
+TRIM Monte Carlo calculations can be run without any keyboard inputs. This allows TRIM to be run with sequential calculations for a group of related results (sometimes called "running in a batch mode").
+
+INSTRUCTIONS:
+Look at the file: TRIMAUTO which contains one number.
+If the number is 0, then TRIM runs normally.
+If the number is 1, then TRIM runs without keyboard input.
+If the number is 2, then TRIM resumes running its last saved calculation.
+
+The second line of TRIMAUTO sets the path to the data (blank if default SRIM directory)
+
+Running TRIM in batch mode:
+(1) Edit TRIM.IN to for the desired calculation.
+    Be sure to edit line #3, Ion Number, to the total ions to be calculated.
+    Be sure to edit line #7 to obtain the desired output files.
+    Be sure to edit line #13 to Plot Type = 5 (no plots) for the fastest calculation.
+       Set Plot Type = 1-4 to monitor plots during the calculation.
+(2) Copy TRIM.EXE from the "Programs" sub-directory to the main SRIM directory.
+        Execute TRIM.EXE. 
+	NOTE: You must reset your Batch Software default directory the SRIM directory so that 
+	TRIM may find its data files. Various codes do this in different ways. For example, 
+	in Visual Basic you would execute TRIM from your Batch Software using the lines:
+	ChDir "C:\Program Files\SRIM 2003\"
+	Shell "C:\Program Files\SRIM 2003\TRIM.exe"
+(3) You may view any plots during the TRIM calculation.
+(4) When TRIM is completed, save or rename all the *.TXT files which contain the output.
+(5) Repeat as needed
+
+You will obtain all output files requested in TRIM.IN, line #7, plus two special groups:
+  *.TXT = Files containing all the data shown in the available plots
+  *.SAV = Files allowing the restart of TRIM where the last calculation stopped.
+
+You will have to alter file TDATA.SAV, Line #10, "Ion Number Total" to a bigger number
+in order to continue calculations with TRIM using old data.

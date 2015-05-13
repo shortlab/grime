@@ -1,0 +1,92 @@
+{\rtf1\ansi\ansicpg1252\deff0\deflang1033\deflangfe1033{\fonttbl{\f0\froman\fprq2\fcharset0 Poster Bodoni;}{\f1\fnil\fcharset0 Courier New;}{\f2\fmodern\fprq1\fcharset0 Courier New;}{\f3\fswiss\fprq2\fcharset0 Arial Black;}{\f4\froman\fprq2\fcharset0 Times New Roman;}}
+{\colortbl ;\red0\green0\blue128;\red255\green0\blue0;\red0\green128\blue0;\red0\green255\blue0;\red0\green0\blue0;\red0\green0\blue255;\red0\green128\blue128;\red255\green0\blue255;}
+{\*\generator Msftedit 5.41.15.1507;}\viewkind4\uc1\pard\qc\cf1\b\f0\fs44 ----   SRIM 2003    ----\par
+\cf2\b0 SR - Module\par
+\pard\qj\cf3\b\i\fs28   Introduction\par
+\pard\cf0\b0\i0\f1\fs20 "\cf1\b\i SR Module.exe\cf0\b0\i0 " is a program that can run under the control of other programs that needs stopping powers and ranges. When it is executed, it reads a control file and then outputs a new file containing stopping powers and ranges. This output can then be used by the other programs. Since it has no user interface, it is invisible to the user.\par
+\par
+SR-Module uses the same controls as the \cf1\b\i "Tables of Stopping and Ranges"\cf0\b0\i0  which you can activate from the SRIM Title Page. When \cf1\b\i "Tables of Stopping and Ranges"\cf0\b0\i0  is run, it creates a file called "\cf1\b\i SR.IN\cf0\b0\i0 " in SRIM directory. It then calculates the stopping powers and ranges and places them in a separate file in the directory \cf1\b\i "/SRIM Outputs".\cf0\b0\i0\par
+\par
+To use SR-Module, first look in its subdirectory \cf1\b\i "/SR Module". \cf0\b0\i0 You will find a program "\cf1\b\i SR Module.exe\cf0\b0\i0 ", and data files: \cf1\b\i SCOEF03.dat\cf0\b0\i0 , \cf1\b\i SNUC03.dat\cf0\b0\i0  and \cf1\b\i VERSION\cf0\b0\i0 . The first two are datafiles for the stopping and range program and the third contains the current version of SRIM.\par
+\par
+You will also find a copy of the control file "\cf1\b\i SR.IN\cf0\b0\i0 ". It contains information such as:\par
+\par
+\cf4\b 1\tab\cf3 ---Stopping/Range Input Data (Number-format: Period = Decimal Point)\par
+\cf4 2\cf3\tab ---Output File Name\par
+\cf4 3\cf3\tab "Hydrogen in Water_Liquid"\par
+\cf4 4\cf3\tab ---Ion(Z), Ion Mass(u)\par
+\cf4 5\cf3\tab 1   1.008\par
+\cf4 6\cf3\tab ---Target Data: (Solid=0,Gas=1), Density(g/cm3), Compound Corr.\par
+\cf4 7\cf3\tab 0    1    1\par
+\cf4 8\tab\cf3 ---Number of Target Elements\par
+\cf4 9\cf3\tab  2 \par
+\cf4 10\cf3\tab ---Target Elements: (Z), Target name, Stoich, Target Mass(u)\par
+\cf4 11\cf3\tab 1   "Hydrogen    "           2             1.008\par
+\cf4 12\cf3\tab 8   "Oxygen      "           1             15.999\par
+\cf4 13\cf3\tab ---Output Stopping Units (1-8)\par
+\cf4 14\cf3\tab  5\par
+\cf4 15\cf3\tab ---Ion Energy : E-Min(keV), E-Max(keV)\par
+\cf4 16\cf3\tab  10    10000\cf0\b0\par
+\par
+\cf1\b\i SR Module \cf0\b0\i0 reads this file and generates a file called "Hydrogen in Water_Liquid" containing the stopping and range of H ions into water from 10 keV to 10 MeV. The lines of this file are:\par
+\cf4\b 1\tab\cf3 Title line. Note that all numbers MUST use a period as a decimal point.\par
+\cf4 2\cf3\tab Comment describing the next input line.\par
+\cf4\b0\f2 3\cf3\b\f3\fs24\tab\cf5 Name of the Output File\cf3\fs20\par
+\cf4\f1 4\cf3\tab Comment describing the next input line.\par
+\cf4 5\cf3\tab\cf5\f3\fs24 Ion Atomic Number and Mass\cf3\f1\fs20\par
+\cf4 6\cf3\tab Comment describing the next input line.\par
+\cf4 7\cf3\tab\cf5\f3\fs24 Target Data: [Target is a solid or gas], [Target Density- g/cm3], [Compound Correction]\cf3\f1\fs20\par
+\cf4 8\tab\cf3 Comment describing the next input line.\par
+\cf4 9\cf3\tab\cf5\f3\fs24 Number of target atoms (up to 100)\cf3\f1\fs20\par
+\cf4 10\cf3\tab Comment describing the next input line.\par
+\cf4 11\cf3\tab\cf5\f3\fs24 Tgt Atom #1: Atomic Number, Name, Atomic Mass\cf3\f1\fs20\par
+\cf4 12\cf3\tab\cf5\f3\fs24 Tgt Atom #2: Atomic Number, Name, Atomic Mass\cf3\f1\fs20\par
+\cf4 13\cf3\tab Comment describing the next input line.\par
+\cf4 14\cf3\tab\cf5\f3\fs24 Output Stopping Units (1-8)      \cf3\f1\fs20\par
+\cf4 15\cf3\tab Comment describing the next input line.\par
+\cf4 16\cf3\tab\cf5\f3\fs24 Ion Energy Range, keV, of output tables (2 numbers) \par
+\cf0\b0\f1\fs20\par
+To understand the details of this file, go to the SRIM program \cf1\b\i "Tables of Stopping and Ranges"\cf0\b0\i0  and read the various HELP files. Execute this SRIM program to calculate a new Table, and then exit and look at the file \cf1\b\i "SR.IN\cf0\b0\i0 ". You can copy this control file into the subdirectory \cf1\b\i "/SR Module" \cf0\b0\i0 and then execute "\cf1\b\i SR Module.exe\cf0\b0\i0 ". You will find that it generates the same table, but with no input from the user. This new file will be saved into the current directory of \cf1\b\i "SR Module.exe".\cf0\b0\i0\par
+\par
+In the input file, the next to last item is "Output Stopping Units (1-8)":\par
+\cf6\b\i (1) - eV / Angstrom \par
+(2) - keV / micron  \par
+(3) - MeV / mm      \par
+(4) - keV / (ug/cm2)\par
+(5) - MeV / (mg/cm2) = keV / (ug/cm2)\par
+(6) - keV / (mg/cm2) = eV / (ug/cm2) = MeV / (g/cm2)\par
+(7) - eV / (1E15 atoms/cm2)\par
+(8) - L.S.S. reduced units\cf0\par
+\b0\i0 Use the SRIM program to generate several Tables, and look at each of the \cf1\b\i "SR.IN"\cf0\b0\i0  files. These will guide you to make new control \cf1\b\i SR.IN \cf0\b0\i0 files.\par
+-----------------------------------------------------\par
+\pard\qj\cf3\b\i\f0\fs28 Using "SR Module" to generate special tables.\par
+\cf5\b0\i0\f4\fs24 First you must rename four files used by SR Module by omitting the initial underline character:\par
+\cf2\tab _SCOEF03.dat -> \b SCOEF03.dat \b0\par
+\tab _SNUC03.dat \tab -> \b SNUC03.dat \b0\par
+\tab _SR.IN \tab -> \b SR.IN\b0\par
+\tab _VERSION \tab -> \b VERSION\cf3\i\f0\fs28\par
+\pard\cf0\b0\i0\f1\fs20 When you produce the Tables, you specify the starting and final ion energy, but you do not control the spacing of the energy increments. However, you can generate stopping powers for any list of energies using "\cf1\b\i SR Module.exe\cf0\b0\i0 " by using the following change to the above "\cf1\b\i SR.IN\cf0\b0\i0 " file.      \par
+\cf4\b\tab 15\cf3\tab ---Ion Energy : E-Min(keV), E-Max(keV)\par
+\cf4\tab 16\cf3\tab  0    0\par
+\cf4\tab 17\cf3\tab  1.02 \par
+\cf4\tab 18\cf3\tab  2.55 \par
+\cf4\tab 19\cf3\tab  3.98 \par
+\cf4\tab 20\cf3\tab  0\par
+\cf0\b0 The line containing the lowest and highest ion energies now contains " 0  0 ". This indicates that the following lines contain a list of specific energies. Enter your list of energies (up to 1000) and terminate the list with a " 0 " as shown above. This will generate a simple Output File that will look like:\par
+\cf7\b\tab Ion = Hydrogen    , Mass = 1.008\par
+\tab Tgt =  H +  O (Solid), Density = 1 g/cm3\par
+\tab Stopping Units = MeV/(mg/cm2) \par
+\tab Energy(keV)  S(Elec)    S(Nuc)\par
+\tab 1.020E+00   1.751E-01  3.921E-02 \par
+\tab 2.550E+00   2.694E-01  2.391E-02 \par
+\tab 3.980E+00   3.264E-01  1.681E-02\cf0  \b0\par
+The top four lines of this output file allows a check of the input values. Then there is a list with three values on each line: [Energy (keV)], [Electronic Stopping Power], [Nuclear Stopping Power]. This file can then be read into another program which requires stopping powers for specific ion energies. \par
+\pard\qj\cf3\b\i\f0\fs28 Special Nuclear Stopping Powers\par
+\pard\cf0\b0\i0\f1\fs20 The nuclear stopping powers of \cf1\b\i SR Module\cf0\b0\i0  will be slightly different from those in the full tables since these are improved values which will later be incorporated into SRIM. The Table \cf1\b\i SNUC03.dat\cf0\b0\i0  contains individually calculated nuclear stopping powers for all possible combinations of ion/targets, i.e. it contains 92 x 92 individual nuclear stopping powers. The nuclear stopping used in SRIM is a scaled stopping power, often called "ZBL" in the literature. This approximation is quite good for the interaction of atoms of approximately the same mass. However, it is rather poor for ion / target atoms with quite different masses, especially H or He ions. \par
+\cf5\b\par
+\fs28 LEGAL NOTICE: \fs20\par
+The software described in this file \cf6 "\i SR Module.exe\i0 "\cf1  \cf5 is covered by the same legal notice as SRIM. It may be freely copied and used for any non-commercial application. Its inclusion in any commercial software requires a license from SRIM.org. See the legal notice \cf6\i "/Data/Legal.rtf" \cf5\i0 in the SRIM directory for full details.\cf0\b0\par
+\pard\qj -----------------------------------------------------\par
+\pard\cf8\b\f0\fs24 (This file is: HELP- SR Module.rtf)\cf0\b0\f2\fs20\par
+}
+ 

@@ -1,0 +1,43 @@
+==================  Input  Data  File  for  TRIM  ==================
+Ion: Z1 ,  M1,  Energy (keV), Angle,Number,Bragg Corr,AutoSave Number.
+       1    1.01     50000       0   99999       0   10000
+Cascades(1=No;2=Full;3=Sputt.;4,5=Neutrons), Random Number Seed, Reminders
+                      1                                   0       0
+Diskfiles (0=no,1=yes): Ranges, Backscatt, Transmit, Sputtered, Collisions(1=Ion;2=Ion+Recoils), Special EXYZ.txt file
+                               0       0       0       0       0       0
+Target material : Number of Elements & Layers
+"Proton Irradiation of Thyroid Tumor     "      12       5
+PlotType (0-5); Plot Depths: Xmin, Xmax(Ang.) [=0 0 for Viewing Full Target]
+       0                         0               0
+Target Elements:    Z   Mass(amu)
+Atom 1 =  H =        1 1.00800
+Atom 2 =  C =        6 12.0110
+Atom 3 =  N =        7 14.0070
+Atom 4 =  O =        8 15.9990
+Atom 5 = Na =       11 22.9900
+Atom 6 = Mg =       12 24.3050
+Atom 7 =  P =       15 30.9740
+Atom 8 =  S =       16 32.0660
+Atom 9 = Cl =       17 35.4530
+Atom10 =  K =       19 39.0980
+Atom11 = Ca =       20 40.0800
+Atom12 = Fe =       26 54.0800
+Layer   Layer Name/                Width Density   H( 1)   C( 6)   N( 7)   O( 8)  Na(11)  Mg(12)   P(15)   S(16)  Cl(17)   K(19)  Ca(20)  Fe(26)
+Numb.   Description                  (A) (g/cm3)  Stoich  Stoich  Stoich  Stoich  Stoich  Stoich  Stoich  Stoich  Stoich  Stoich  Stoich  Stoich
+   1    "Skin-Human#3  "      12000.E+03 1.090E+0 .62744 0.08237 0.01654 0.27202 0.00054 0.00000 0.00000 0.00039 0.00053 0.00016 0.00000 0.00000
+   2    "AdiposeTissue "      40000.E+03 9.200E-1 .63482 0.28408 0.00306 0.07775 0.00012 0.00000 0.00000 0.00000 0.00018 0.00000 0.00000 0.00000
+   3    "Skel.Muscle #2"      60000.E+03 1.050E+0 .63169 0.07432 0.01515 0.27703 0.00000 0.00000 0.00040 0.00058 0.00018 0.00064 0.00000 0.00000
+   4    "Thyroid (W&W) "      14000.E+04 1.050E+0 .63870 0.06133 0.01061 0.28826 0.00054 0.00000 0.00000 0.00000 0.00035 0.00016 0.00000 0.00000
+   5    "Skel.Muscle #1"      20000.E+03 1.050E+0 .63169 0.07432 0.01515 0.27703 0.00000 0.00000 0.00040 0.00058 0.00018 0.00064 0.00000 0.00000
+0  Target layer phases (0=Solid, 1=Gas)
+       0       0       0	0	0	
+Target Compound Corrections (Bragg)
+	1	1	1	1	1
+Target atom displacement energies (eV)
+      10	11	12	13	14	15	16	17	18	19	20	21
+Target atom lattice binding energies (eV)
+      1.90	1.92	1.94	1.96	1.98	2.0	2.1	2.2	2.3	2.4	2.5	2.6
+Target atom surface binding energies (eV)
+      2		2.5	3	3.5	4	4.5	5	5.5	6	6.5	7	7.5
+Stopping Power Version (2=1996, 0=2000, 1=2000 interpolated)
+ 0 

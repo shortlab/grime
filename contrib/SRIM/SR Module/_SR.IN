@@ -1,0 +1,22 @@
+---Stopping/Range Input Data (Number-format: Period = Decimal Point)
+---Output File Name
+"Uranium      in Skeletal Muscle (W&W Type 1)"
+---Ion(Z), Ion Mass(u)
+92   238.051
+---Target Data: (Solid=0,Gas=1), Density(g/cm3), Compound Corr.
+0    1.05    0
+---Number of Target Elements
+ 8 
+---Target Elements: (Z), Target name, Stoich, Target Mass(u)
+1   "Hydrogen    "           10.1          1.008
+6   "Carbon      "           17.1          12.011
+7   "Nitrogen    "           3.6           14.007
+8   "Oxygen      "           68.1          15.999
+19   "Potassium   "          .4            39.098
+16   "Sulfur      "          .3            32.066
+15   "Phosphorus  "          .2            30.974
+17   "Chlorine    "          .1            35.453
+---Output Stopping Units (1-8)
+ 5
+---Ion Energy : E-Min(keV), E-Max(keV)
+ 10    10000

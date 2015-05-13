@@ -1,0 +1,12 @@
+1
+
+TRIMAUTO allows the running of TRIM in batch mode (without any keyboard inputs).
+This feature is controlled by the number in line #1 (above).
+  0 = Normal TRIM - New Calculation based on TRIM.IN made by setup program.
+  1 = Auto TRIM - TRIM based on TRIM.IN. No inputs required. Terminates after all ions.
+  2 = RESUME - Resume old TRIM calculation based on files: SRIM Restore\*.SAV.
+
+  Line #2 of this file is the Directory of Resumed data, e.g. A:\TRIM2\
+  If empty, the default is the ''SRIM\SRIM Restore'' directory.
+
+See the file TRIMAUTO.TXT for more details.

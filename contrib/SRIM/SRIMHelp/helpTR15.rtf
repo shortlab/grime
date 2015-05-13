@@ -1,0 +1,196 @@
+{\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\froman\fprq2 Times New Roman;}{\f1\froman\fprq2\fcharset0 Times New Roman;}{\f2\fmodern\fcharset2 MS LineDraw;}{\f3\froman NewCenturySchlbk;}{\f4\froman Times New Roman;}{\f5\froman\fcharset0 Times New Roman;}{\f6\fnil\fcharset2 Symbol;}}
+{\colortbl ;\red0\green0\blue128;\red255\green0\blue0;\red128\green0\blue0;\red0\green128\blue0;\red128\green0\blue128;}
+{\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\cf1\b\f0\fs36               Ion-Atom Collision Kinetics\par
+\b0\fs24\par
+The datafile \f1 SRIM Outputs/\f0 COLLISON.TXT contains the kinetic data of all Ion-Atom collisions.\par
+\par
+\pard{\pntext\f6\'B7\tab}{\*\pn\pnlvlblt\pnf6\pnindent360{\pntxtb\'B7}}\fi-360\li360 The datafile is opened when the button is pressed, and then atom data is added for every subsequent ion/atom collision.\par
+\pard\par
+Three types of files may be generated, which vary in the amount of detail stored:\par
+\par
+\pard{\pntext\f6\'B7\tab}{\*\pn\pnlvlblt\pnf6\pnindent360{\pntxtb\'B7}}\fi-360\li360 (A) For a "Quick Damage" calculation, the damage details for each ion are summarized.\par
+{\pntext\f6\'B7\tab}(B) For a "Full Recoils" calculation, the details of every ion/atom collision which leads to a displacement are itemized.\par
+{\pntext\f6\'B7\tab}(C) For a "Full Recoils" calculation, the details of every ion/atom collision may be itemized.\par
+\pard  \par
+\cf2\b\i\fs28 Caution: The file COLLISON.TXT may grow very rapidly in size.\cf1\b0\i0\fs24\par
+\par
+\cf3\b\fs32 ================================================\par
+COLLISON.TXT from a "Quick Damage" TRIM calculation\cf1\b0\fs24\par
+\par
+This variation on COLLISON.TXT will be called type "A". This COLLISON.TXT contains information any ion/target collision which results in a recoil cascade. For the "Quick Damage" calculation, TRIM uses the Kinchin-Pease approximation to predict damage based on the ion, its energy at collision, the atom hit and the target matrix. It allows for the very rapid calculation of damage, but may be in error by up to a factor of two. This approximation can be chosen in the setup program of TRIM.\par
+\par
+\f1 This output is for a calculation of Boron ions (17 keV) into Tungsten (300 \'c5 thick).\f0\par
+\par
+\cf4\f2\fs16\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\par
+\'df\'df\'df\'df\'df\'df TRIM Calc.=  B( 17 keV) ==> Tungsten(  300A ) \'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\par
+\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\par
+\'c9\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'bb\par
+\'ba     Ion Name   =      B                                  \'ba\par
+\'ba     Ion Mass   =     11.010 amu                          \'ba\par
+\'ba     Ion Energy =       17.0 keV                          \'ba\par
+\'c7\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'b6\par
+\'ba     Displacement Energy=    20 eV  ( Tgt. Atom =  W )    \'ba\par
+\'ba     Binding Energy     =     2 eV                        \'ba\par
+\'c8\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'bc\par
+\'da\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'bf\par
+\'b3=> Recoils Calculated with Kinchin-Pease Theory (Only Vacancies Calc) <=\'b3\par
+\'c0\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'d9\par
+ \par
+\'c9\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd  COLLISION HISTORY  \'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'bb\par
+\'ba NOTES: Only Ion Collisions which produce Displacements are tabulated.                              \'ba\par
+\'ba        Atom Sums and Averages are Incomplete if Recoil Cascades Leave Target.                      \'ba\par
+\'ba        Target DISPlacements = VACancies + REPLACement Collisions.                                  \'ba\par
+\'ba        Target VACancies = INTERstitial Atoms + (Atoms Leave Target Volume).                        \'ba\par
+\'c7\'c4\'c4\'c4\'c4\'c4\'c2\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c2\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c2\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c2\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c2\'c4\'c4\'c4\'c4\'c2\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c2\'c4\'c4\'c4\'c4\'c4\'c4\'c2\'c4\'c4\'c4\'c4\'c4\'c4\'c2\'c4\'c4\'c4\'c4\'c4\'c4\'c2\'c4\'c4\'c4\'c4\'c4\'c4\'b6\par
+\'ba Ion \'b3  Energy \'b3  Depth   \'b3 Lateral Distance (A)\'b3  Se   \'b3Atom\'b3 Recoil   \'b3Target\'b3Target\'b3Target\'b3Target\'ba\par
+\'ba Numb\'b3  (keV)  \'b3   (A)    \'b3  Y Axis  \'b3 Z Axis   \'b3(eV/A) \'b3Hit \'b3Energy(eV)\'b3DISP. \'b3VAC.  \'b3REPLAC\'b3INTER \'ba\par
+\'cc\'cd\'cd\'cd\'cd\'cd\'d8\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'d8\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'d8\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'d8\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'d8\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'d8\'cd\'cd\'cd\'cd\'d8\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'d8\'cd\'cd\'cd\'cd\'cd\'cd\'d8\'cd\'cd\'cd\'cd\'cd\'cd\'d8\'cd\'cd\'cd\'cd\'cd\'cd\'d8\'cd\'cd\'cd\'cd\'cd\'cd\'b9\par
+\'b3    1\'b316.07E+00\'b3    33E+00\'b3    12E-02\'b3     4E+00\'b3  15.84\'b3  W \'b3    83E+00\'b3        1.496\'b3      \'b3      \'b3\par
+\'b3    1\'b316.10E+00\'b3    49E+00\'b3    -3E+00\'b3     7E+00\'b3  15.86\'b3  W \'b3    57E+00\'b3        1.029\'b3      \'b3      \'b3\par
+\'b3    1\'b316.28E+00\'b3    65E+00\'b3    -6E+00\'b3     6E+00\'b3  15.93\'b3  W \'b3    94E+00\'b3        1.700\'b3      \'b3      \'b3\par
+\'b3    1\'b316.06E+00\'b3   111E+00\'b3   -12E+00\'b3    -8E+00\'b3  15.85\'b3  W \'b3    48E+00\'b3        1.000\'b3      \'b3      \'b3\par
+\'b3    ---------------- Data Omitted  -------------------------- Data Omitted ----------------------   \'b3\par
+\'b3    1\'b311.15E+00\'b3   293E+00\'b3  -163E+00\'b3     4E+00\'b3  13.35\'b3  W \'b3    27E+00\'b3        1.000\'b3      \'b3      \'b3\par
+\'c7\'c4\'c4\'c4\'c4\'c4\'c1\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c1\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c1\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c1\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c1\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c1\'c4\'c4\'c4\'c4\'c1\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c1\'c4\'c4\'c4\'c4\'c4\'c4\'c1\'c4\'c4\'c4\'c4\'c4\'c4\'c1\'c4\'c4\'c4\'c4\'c4\'c4\'c1\'c4\'c4\'c4\'c4\'c4\'c4\'b6\par
+\'ba For Ion      1:                For All Ions to date :                                              \'ba\par
+\'ba Displacements =      0.0       Average Displacements/Ion =       0.000                             \'ba\par
+\'ba Vacancies     =     67.9       Average Vacancies/Ion     =      67.925                             \'ba\par
+\'ba Replacements  =      0.0       Average Replacements/Ion  =       0.000                             \'ba\par
+\'ba Interstitials =      0.0       Average Interstitials/Ion =       0.000                             \'ba\par
+\'c7\'c4\'c4\'c4\'c4\'c4\'c2\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c2\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c2\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c2\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c2\'c4\'c4\'c4\'c4\'c2\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c2\'c4\'c4\'c4\'c4\'c4\'c4\'c2\'c4\'c4\'c4\'c4\'c4\'c4\'c2\'c4\'c4\'c4\'c4\'c4\'c4\'c2\'c4\'c4\'c4\'c4\'c4\'c4\'b6\par
+\'ba Ion \'b3  Energy \'b3  Depth   \'b3 Lateral Distance (A)\'b3  Se   \'b3Atom\'b3 Recoil   \'b3Target\'b3Target\'b3Target\'b3Target\'ba\par
+\'ba Numb\'b3  (keV)  \'b3   (A)    \'b3  Y Axis  \'b3 Z Axis   \'b3(eV/A) \'b3Hit \'b3Energy(eV)\'b3DISP. \'b3VAC.  \'b3REPLAC\'b3INTER \'ba\par
+\'cc\'cd\'cd\'cd\'cd\'cd\'d8\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'d8\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'d8\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'d8\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'d8\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'d8\'cd\'cd\'cd\'cd\'d8\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'d8\'cd\'cd\'cd\'cd\'cd\'cd\'d8\'cd\'cd\'cd\'cd\'cd\'cd\'d8\'cd\'cd\'cd\'cd\'cd\'cd\'d8\'cd\'cd\'cd\'cd\'cd\'cd\'b9\par
+\'b3    2\'b317.00E+00\'b3    37E+00\'b3    -2E+00\'b3   -89E-02\'b3  16.09\'b3  W \'b3   476E+00\'b3        8.333\'b3      \'b3      \'b3\par
+\'b3    2\'b317.00E+00\'b3    50E+00\'b3     8E+00\'b3    -2E+00\'b3  16.29\'b3  W \'b3    24E+00\'b3        1.000\'b3      \'b3      \'b3\par
+\'b3    2\'b315.63E+00\'b3    65E+00\'b3    16E+00\'b3    -2E+00\'b3  15.63\'b3  W \'b3    77E+00\'b3        1.392\'b3      \'b3      \'b3\par
+\'b3    ---------------- Data Omitted  -------------------------- Data Omitted ----------------------   \'b3\par
+\'b3    2\'b3 5.67E+00\'b3   297E+00\'b3    80E+00\'b3   -83E+00\'b3   9.60\'b3  W \'b3   161E+00\'b3        2.867\'b3      \'b3      \'b3\par
+\'c7\'c4\'c4\'c4\'c4\'c4\'c1\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c1\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c1\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c1\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c1\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c1\'c4\'c4\'c4\'c4\'c1\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c1\'c4\'c4\'c4\'c4\'c4\'c4\'c1\'c4\'c4\'c4\'c4\'c4\'c4\'c1\'c4\'c4\'c4\'c4\'c4\'c4\'c1\'c4\'c4\'c4\'c4\'c4\'c4\'b6\par
+\'ba For Ion      2:                For All Ions to date :                                              \'ba\par
+\'ba Displacements =      0.0       Average Displacements/Ion =       0.000                             \'ba\par
+\'ba Vacancies     =     93.7       Average Vacancies/Ion     =      80.817                             \'ba\par
+\'ba Replacements  =      0.0       Average Replacements/Ion  =       0.000                             \'ba\par
+\'ba Interstitials =      0.0       Average Interstitials/Ion =       0.000                             \'ba\par
+\'c7\'c4\'c4\'c4\'c4\'c4\'c2\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c2\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c2\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c2\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c2\'c4\'c4\'c4\'c4\'c2\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c2\'c4\'c4\'c4\'c4\'c4\'c4\'c2\'c4\'c4\'c4\'c4\'c4\'c4\'c2\'c4\'c4\'c4\'c4\'c4\'c4\'c2\'c4\'c4\'c4\'c4\'c4\'c4\'b6\par
+\cf0\f3\par
+\cf1\f1\fs24 Unlike the detailed damage and recoil data shown in the COLLISON.TXT files below, for the Kinchin-Pease approximation there is only a single estimate of the target vacancies produced. This calculation is made with the same random numbers as that of the more detailed tables of the "Full Recoils" calculation, so there is a direct correspondence in collisions. The first collision in all three tables occurs at 33 \'c5 and transfers 83 eV, and similarly with the other collisions. Instead of the 48 total vacanci\f0 es for ion #1, the Kinchin-Pease estimate is 67.9. For ion #2, the detailed recoil calculation gives 54, while K-P gives 80.8, etc.\cf0\fs22\par
+\cf3\b\fs32 ================================================\par
+COLLISON.TXT from a "Full Recoils" TRIM calculation.\par
+(Type "B" - Displacement collisions only)\cf1\b0\fs24\par
+\par
+This variation on COLLISON.TXT will be called type "B". This version of COLLISON.TXT shows only those collisions which result in a recoiling target atom are shown, i. e. only those collisions in which the ion transfers to the target atom an energy greater than its displacement energy (which was entered in the setup program). Additionally, it contains the following information:\par
+\b\i\par
+\f1 Se (eV/\'c5)\b0\i0\f0  is the electronic stopping power of the ion in the target at its current energy. This energy is modified by including a straggling component (random variation) in the calculation, so that the actual ion electronic energy loss between specific collisions can not be directly obtained from this number. Because of statistical fluctuations, the ion energy may actually increase between collisions.\par
+\par
+Target \b\i Displacements, Vacancies, Replacement Collisions, and Interstitial Atoms\b0\i0  are described in the section \i Physics of Recoil Cascades\i0 . These constitute the changes introduced into the target by each collision.\par
+\par
+After each ion, there is a summary of the target damage by that ion, and the damage averages from all ions up to that point. For ion #1, shown above, the individual ion damage and the summary total damage are identical.\par
+\cf0\f3\fs22\par
+\fs8\par
+\cf4\f2\fs16\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\par
+\'df\'df\'df\'df\'df\'df TRIM Calc.=  B( 17 keV) ==> Tungsten(  300A ) \'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\par
+\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\par
+\'c9\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'bb\par
+\'ba     Ion Name   =      B                                  \'ba\par
+\'ba     Ion Mass   =     11.010 amu                          \'ba\par
+\'ba     Ion Energy =       17.0 keV                          \'ba\par
+\'c7\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'b6\par
+\'ba     Displacement Energy=    20 eV  ( Tgt. Atom =  W )    \'ba\par
+\'ba     Binding Energy     =     2 eV                        \'ba\par
+\'c8\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'bc\par
+ \par
+\'c9\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd  COLLISION HISTORY  \'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'bb\par
+\'ba NOTES: Only Ion Collisions which produce Displacements are tabulated.                              \'ba\par
+\'ba        Atom Sums and Averages are Incomplete if Recoil Cascades Leave Target.                      \'ba\par
+\'ba        Target DISPlacements = VACancies + REPLACement Collisions.                                  \'ba\par
+\'ba        Target VACancies = INTERstitial Atoms + (Atoms Leave Target Volume).                        \'ba\par
+\'c7\'c4\'c4\'c4\'c4\'c4\'c2\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c2\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c2\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c2\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c2\'c4\'c4\'c4\'c4\'c2\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c2\'c4\'c4\'c4\'c4\'c4\'c4\'c2\'c4\'c4\'c4\'c4\'c4\'c4\'c2\'c4\'c4\'c4\'c4\'c4\'c4\'c2\'c4\'c4\'c4\'c4\'c4\'c4\'b6\par
+\'ba Ion \'b3  Energy \'b3  Depth   \'b3 Lateral Distance (A)\'b3  Se   \'b3Atom\'b3 Recoil   \'b3Target\'b3Target\'b3Target\'b3Target\'ba\par
+\'ba Numb\'b3  (keV)  \'b3   (A)    \'b3  Y Axis  \'b3 Z Axis   \'b3(eV/A) \'b3Hit \'b3Energy(eV)\'b3DISP. \'b3VAC.  \'b3REPLAC\'b3INTER \'ba\par
+\'cc\'cd\'cd\'cd\'cd\'cd\'d8\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'d8\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'d8\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'d8\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'d8\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'d8\'cd\'cd\'cd\'cd\'d8\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'d8\'cd\'cd\'cd\'cd\'cd\'cd\'d8\'cd\'cd\'cd\'cd\'cd\'cd\'d8\'cd\'cd\'cd\'cd\'cd\'cd\'d8\'cd\'cd\'cd\'cd\'cd\'cd\'b9\par
+\'b3    1\'b316.07E+00\'b3    33E+00\'b3 66461E-05\'b3     4E+00\'b3  15.84\'b3  W \'b3    83E+00\'b3     4\'b3     2\'b3     2\'b3     2\'b3\par
+\'b3    1\'b316.10E+00\'b3    49E+00\'b3    -3E+00\'b3     7E+00\'b3  15.86\'b3  W \'b3    57E+00\'b3     2\'b3     1\'b3     1\'b3     1\'b3\par
+\'b3    1\'b316.28E+00\'b3    65E+00\'b3    -6E+00\'b3     6E+00\'b3  15.93\'b3  W \'b3    94E+00\'b3     4\'b3     1\'b3     3\'b3     1\'b3\par
+\'b3    1\'b316.06E+00\'b3   111E+00\'b3   -12E+00\'b3    -8E+00\'b3  15.85\'b3  W \'b3    48E+00\'b3     2\'b3     1\'b3     1\'b3     1\'b3\par
+\'b3    1\'b315.00E+00\'b3   125E+00\'b3   -14E+00\'b3   -15E+00\'b3  15.32\'b3  W \'b3   114E+00\'b3     3\'b3     1\'b3     2\'b3     1\'b3\par
+\'b3    ---------------- Data Omitted  -------------------------- Data Omitted ----------------------   \'b3\par
+\'b3    1\'b311.15E+00\'b3   293E+00\'b3  -163E+00\'b3     4E+00\'b3  13.35\'b3  W \'b3    27E+00\'b3     1\'b3     1\'b3     0\'b3     1\'b3\par
+\'c7\'c4\'c4\'c4\'c4\'c4\'c1\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c1\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c1\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c1\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c1\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c1\'c4\'c4\'c4\'c4\'c1\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c1\'c4\'c4\'c4\'c4\'c4\'c4\'c1\'c4\'c4\'c4\'c4\'c4\'c4\'c1\'c4\'c4\'c4\'c4\'c4\'c4\'c1\'c4\'c4\'c4\'c4\'c4\'c4\'b6\par
+\'ba For Ion      1:                For All Ions to date :                                              \'ba\par
+\'ba Displacements =    160.0       Average Displacements/Ion =     160.000                             \'ba\par
+\'ba Vacancies     =     48.0       Average Vacancies/Ion     =      48.000                             \'ba\par
+\'ba Replacements  =    112.0       Average Replacements/Ion  =     112.000                             \'ba\par
+\'ba Interstitials =     48.0       Average Interstitials/Ion =      48.000                             \'ba\par
+\'c7\'c4\'c4\'c4\'c4\'c4\'c2\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c2\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c2\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c2\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c2\'c4\'c4\'c4\'c4\'c2\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c2\'c4\'c4\'c4\'c4\'c4\'c4\'c2\'c4\'c4\'c4\'c4\'c4\'c4\'c2\'c4\'c4\'c4\'c4\'c4\'c4\'c2\'c4\'c4\'c4\'c4\'c4\'c4\'b6\par
+\'ba Ion \'b3  Energy \'b3  Depth   \'b3 Lateral Distance (A)\'b3  Se   \'b3Atom\'b3 Recoil   \'b3Target\'b3Target\'b3Target\'b3Target\'ba\par
+\'ba Numb\'b3  (keV)  \'b3   (A)    \'b3  Y Axis  \'b3 Z Axis   \'b3(eV/A) \'b3Hit \'b3Energy(eV)\'b3DISP. \'b3VAC.  \'b3REPLAC\'b3INTER \'ba\par
+\'cc\'cd\'cd\'cd\'cd\'cd\'d8\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'d8\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'d8\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'d8\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'d8\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'d8\'cd\'cd\'cd\'cd\'d8\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'d8\'cd\'cd\'cd\'cd\'cd\'cd\'d8\'cd\'cd\'cd\'cd\'cd\'cd\'d8\'cd\'cd\'cd\'cd\'cd\'cd\'d8\'cd\'cd\'cd\'cd\'cd\'cd\'b9\par
+\'b3    2\'b317.00E+00\'b3    37E+00\'b3    -2E+00\'b3 -8967E-04\'b3  16.09\'b3  W \'b3   476E+00\'b3    20\'b3     1\'b3    19\'b3     1\'b3\par
+\'b3    2\'b317.00E+00\'b3    50E+00\'b3     8E+00\'b3    -2E+00\'b3  16.29\'b3  W \'b3    24E+00\'b3     1\'b3     1\'b3     0\'b3     1\'b3\par
+\'b3    2\'b315.63E+00\'b3    65E+00\'b3    16E+00\'b3    -2E+00\'b3  15.63\'b3  W \'b3    77E+00\'b3     3\'b3     2\'b3     1\'b3     2\'b3\par
+\'b3    ---------------- Data Omitted  -------------------------- Data Omitted ----------------------   \'b3\par
+\cf0\b\par
+\b0\f0\fs22\par
+\cf3\b\fs32 ================================================\par
+COLLISON.TXT from a "Full Recoils" TRIM calculation.\par
+(Type "C" - All ion / atom collisions included)\cf1\b0\fs24\par
+\b\fs16\par
+\b0\fs24 This variation on COLLISON.TXT will be called type "C". This version of COLLISON.TXT includes all the ion/target collisions which result in a recoiling target atom, and also the history of what happens to that recoiling atom, i.e. the recoil cascade.\par
+\par
+\f1 See the comments for COLLISON.TXT, type "B", for details about most of this table. The additional information is for the recoil cascades. When the ion is 33 \'c5 into the target it has a collision which transfers 83 eV, and this causes the recoil to start a 6 atom cascade. This cascade is shown in detail in the box between this collision and next ion collision. The first line in this box shows the primary recoil (identified with \b\f0 <- Prime Recoil\b0 ) and then the succeeding recoils. If some of these secondary recoils cause further recoils, the box gets complicated. But each recoil is followed until it reaches zero energy, and then the last recoil it caused is tracked, etc. until the first recoil caused by the prime recoil is tracked. For a monoatomic target, Displacements = Vacancies + Replacements = Replacements + Interstitials. For more details, see the HELP section \cf5\b\i Physics of Recoil Cascades\cf1\b0\i0 . Note that the final summary is identical in type "B" and type "C" tables.\i\par
+\i0\par
+\f1 This output is for a calculation of Boron ions (17 keV) into Tungsten (300 \'c5 thick).\cf0\f0\fs22\par
+\b\par
+\cf4\b0\f2\fs16\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\par
+\'df\'df\'df\'df\'df\'df TRIM Calc.=  B( 17 keV) ==> Tungsten(  300A ) \'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\par
+\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\par
+\'c9\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'bb\par
+\'ba     Ion Name   =      B                                  \'ba\par
+\'ba     Ion Mass   =     11.010 amu                          \'ba\par
+\'ba     Ion Energy =       17.0 keV                          \'ba\par
+\'c7\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'b6\par
+\'ba     Displacement Energy=    20 eV  ( Tgt. Atom =  W )    \'ba\par
+\'ba     Binding Energy     =     2 eV                        \'ba\par
+\'c8\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'bc\par
+\par
+\'c9\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd  COLLISION HISTORY  \'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'bb\par
+\'ba NOTES: Only Ion Collisions which produce Displacements are tabulated.                              \'ba\par
+\'ba        Atom Sums and Averages are Incomplete if Recoil Cascades Leave Target.                      \'ba\par
+\'ba        Target DISPlacements = VACancies + REPLACement Collisions.                                  \'ba\par
+\'ba        Target VACancies = INTERstitial Atoms + (Atoms Leave Target Volume).                        \'ba\par
+\'c7\'c4\'c4\'c4\'c4\'c4\'c2\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c2\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c2\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c2\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c2\'c4\'c4\'c4\'c4\'c2\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c2\'c4\'c4\'c4\'c4\'c4\'c4\'c2\'c4\'c4\'c4\'c4\'c4\'c4\'c2\'c4\'c4\'c4\'c4\'c4\'c4\'c2\'c4\'c4\'c4\'c4\'c4\'c4\'b6\par
+\'ba Ion \'b3  Energy \'b3  Depth   \'b3 Lateral Distance (A)\'b3  Se   \'b3Atom\'b3 Recoil   \'b3Target\'b3Target\'b3Target\'b3Target\'ba\par
+\'ba Numb\'b3  (keV)  \'b3   (A)    \'b3  Y Axis  \'b3 Z Axis   \'b3(eV/A) \'b3Hit \'b3Energy(eV)\'b3DISP. \'b3VAC.  \'b3REPLAC\'b3INTER \'ba\par
+\'cc\'cd\'cd\'cd\'cd\'cd\'d8\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'d8\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'d8\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'d8\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'d8\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'d8\'cd\'cd\'cd\'cd\'d8\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'cd\'d8\'cd\'cd\'cd\'cd\'cd\'cd\'d8\'cd\'cd\'cd\'cd\'cd\'cd\'d8\'cd\'cd\'cd\'cd\'cd\'cd\'d8\'cd\'cd\'cd\'cd\'cd\'cd\'b9\par
+\'b3    1\'b316.07E+00\'b3    33E+00\'b3 66461E-05\'b3     4E+00\'b3  15.84\'b3  W \'b3    83E+00\'b3 <== Start of New Cascade  \'b3\par
+\'db\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'db\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'db                      \'b3\par
+\'db Recoil\'b3Atom\'b3Energy(eV)\'b3  X (A)  \'b3  Y (A)  \'b3  Z (A)  \'b3Vac\'b3Repl\'dbIon Numb     1\'db                      \'b3\par
+\'db     1   74      83E+00    33E+00     2E+00     6E+00  1    0 \'db<\'c4Prime Recoil\'db                      \'b3\par
+\'db     2   74       5E+00    36E+00     3E+00     9E+00  0    1 \'db                                     \'b3\par
+\'db     3   74      24E+00    36E+00     3E+00     9E+00  1    0 \'db                                     \'b3\par
+\'db     4   74      56E+00    34E+00     3E+00     8E+00  1    0 \'db                                     \'b3\par
+\'db     5   74      19E+00    34E+00     5E+00     7E+00  0    1 \'db                                     \'b3\par
+\'db     6   74      22E+00    34E+00     5E+00     7E+00  1    0 \'db                                     \'b3\par
+\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df                                     \'b3\par
+\'b3                                Summary of Above Cascade ==> \'b3    83E+00\'b3     4\'b3     2\'b3     2\'b3     2\'b3\par
+\'b3    1\'b316.10E+00\'b3    49E+00\'b3    -3E+00\'b3     7E+00\'b3  15.86\'b3  W \'b3    57E+00\'b3 <== Start of New Cascade  \'b3\par
+\'db\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'db\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'db                      \'b3\par
+\'db Recoil\'b3Atom\'b3Energy(eV)\'b3  X (A)  \'b3  Y (A)  \'b3  Z (A)  \'b3Vac\'b3Repl\'dbIon Numb     1\'db                      \'b3\par
+\'db     1   74      57E+00    49E+00    -6E+00     7E+00  1    0 \'db<\'c4Prime Recoil\'db                      \'b3\par
+\'db     2   74      13E+00    49E+00    -8E+00     8E+00  0    1 \'db                                     \'b3\par
+\'db     3   74      45E+00    49E+00    -8E+00     8E+00  1    0 \'db                                     \'b3\par
+\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df\'df                                     \'b3\par
+\'b3                                Summary of Above Cascade ==> \'b3    57E+00\'b3     2\'b3     1\'b3     1\'b3     1\'b3\par
+\'b3    ---------------- Data Omitted  -------------------------- Data Omitted ----------------------   \'b3\par
+\'c7\'c4\'c4\'c4\'c4\'c4\'c1\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c1\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c1\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c1\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c1\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c1\'c4\'c4\'c4\'c4\'c1\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c1\'c4\'c4\'c4\'c4\'c4\'c4\'c1\'c4\'c4\'c4\'c4\'c4\'c4\'c1\'c4\'c4\'c4\'c4\'c4\'c4\'c1\'c4\'c4\'c4\'c4\'c4\'c4\'b6\par
+\'ba For Ion      1:                For All Ions to date :                                              \'ba\par
+\'ba Displacements =    160.0       Average Displacements/Ion =     160.000                             \'ba\par
+\'ba Vacancies     =     48.0       Average Vacancies/Ion     =      48.000                             \'ba\par
+\'ba Replacements  =    112.0       Average Replacements/Ion  =     112.000                             \'ba\par
+\'ba Interstitials =     48.0       Average Interstitials/Ion =      48.000                             \'ba\par
+\'c7\'c4\'c4\'c4\'c4\'c4\'c2\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c2\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c2\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c2\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c2\'c4\'c4\'c4\'c4\'c2\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c4\'c2\'c4\'c4\'c4\'c4\'c4\'c4\'c2\'c4\'c4\'c4\'c4\'c4\'c4\'c2\'c4\'c4\'c4\'c4\'c4\'c4\'c2\'c4\'c4\'c4\'c4\'c4\'c4\'b6\par
+\cf0\f4\fs22\par
+\cf4\f5\fs16 helpTR15\cf0\f4\fs22\par
+}
+ 

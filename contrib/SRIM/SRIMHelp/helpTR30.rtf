@@ -1,0 +1,50 @@
+{\rtf1\ansi\deff0\deflang1033{\fonttbl{\f0\froman\fprq2 NewCenturySchlbk;}{\f1\froman\fprq2\fcharset2 Symbol;}{\f2\froman Times New Roman;}{\f3\froman\fcharset0 Times New Roman;}}
+{\colortbl ;\red128\green0\blue0;\red0\green0\blue255;\red0\green0\blue128;\red0\green128\blue0;}
+{\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\cf1\b\f0\fs32 TRIM FAQ and Solutions\par
+\cf0\fs18\par
+\cf2\fs28 What are Radial and Projected Range Distributions ?\par
+\pard\tx576\cf0\b0\fs20\par
+The program assumes that there is cylindrical symmetry in the final ion distributions. The assumed cylindrical axis is perpendicular to the target surface at the point of ion impact.  (If the initial ion beam is not normal to the target surface, then none of the following is valid.) The "radial" parameters refers to these cylindrical coordinates. The "projected" parameters assumes that an X-Y plane has been inserted through the axis, and the final ion distribution is projected onto this plane. This projection is identical to the view on the screen and marked as the "XY Plane" (X is the depth axis; the XZ plane is perpendicular to the XY plane).\par
+\par
+The mean "lateral range" of the ions is zero in both the radial and projected definitions if there is cylindrical symmetry. So the lateral range in TRIM is defined as the mean absolute value of the lateral range. The ion straggling has its normal definition as the second moment of the distribution. The lateral projected parameters directly describe the final distribution under a mask edge as used in VLSI technology.  Remember, the total ion concentration directly at a mask edge is one half of the concentration of a uniform implantation distribution.\par
+\par
+\pard\cf2\b\fs28 What is Straggling, Skewness and Kurtosis ?\par
+\pard\tx576\cf0\b0\fs20\par
+These words are names for quantities related to the second, third and forth moments of the ion distribution.  They are important because many VLSI modeling programs require these parameters to create analytic functions of ion implantation distributions. The use of these words in the ion implantation field is DIFFERENT from that in some statistics textbooks. In this field, we use mostly the definitions first proposed by B. Winterbon ("Ion Implantation Range and Energy Distributions", vol. 2, Plenum Press, 1975). For convenience, we define each moment below in several different standard notations. It is assumed below that the ion trajectory begins perpendicular to the target surface, co-linear to the x-axis, and the y-axis and z-axis are orthogonal in the target surface plane (the TRIM 4-plot display shows trajectories projected on both the XY and the XZ planes).\par
+\cf1\b\fs22\tab\tab Mean Projected Range  \tab\f1\'ba\f0    R\dn6 p  \up0 =  \f1\fs32 S\dn10\f0\fs16 i\fs20  \up0\fs22 x\dn6 i\up0  / N \tab\tab =  < x >  .\par
+\tab\tab Lateral Projected Range  \tab\f1\'ba\f0    R\dn6 y  =  \up0\f1\fs32 S\dn10\f0\fs16 i\up0\fs22  \f1\'bd\f0 y\dn6 i\up0\f1\'bd\f0  / N  \tab =  < \f1\'bd\f0 y\f1\'bd\f0  >  .\par
+\tab\tab Radial Range\tab\tab\f1\'ba\f0    R\dn6 r\up0   =  \f1\fs32 S\dn10\f0\fs16 i\up0\fs22  (y\dn6 i\up6 2 \up0 + z\dn6 i\up6 2\up0 )\up6 1/2\up0   /  N  .\par
+\cf0\b0\fs20\par
+Where \b x\dn6 i\b0\up0  is the projected range of ion "\b i\b0 " on the x-axis, i.e. the perpendicular distance from the surface to the end of an ion's track;  \b\f1\fs22 S\dn10\f0\fs20 i \up0 x\dn6 i\b0\up0 = sum of the ion ranges; \b\f1\fs22 S\dn10\f0\fs20 i\up0\fs24  \fs20 x\dn6 i\up0  / N\b0  = the mean projected range of N ions; and\b\fs24  < x >\b0\fs20  = the mean projected range of all ions. The transverse coordinate "\b y\b0 " is treated the same, only the distance is taken in the XY plane. The mean projected lateral range is zero for a perpendicular beam, so the above lateral range definition averages the absolute values to provide other information on the first moment of the radial spread. The mean radial range assumes cylindrical symmetry of the ion distribution.\par
+Variance is the second moment of the range distribution, and we show below several identical definitions using various common notations.\par
+\cf1\b\fs22\tab\tab Variance \tab = \f1\fs32 S\dn10\f0\fs16 i\up0\fs22  ( x\dn6 i\up0  - R\dn6 p\up0  )\up6 2\up0   /  N  \tab =  < ( x - R\dn6 p\up0  \up6 )2\up0  >  ,\par
+\tab\tab\tab\tab =  \f1\fs32 S\dn10\f0\fs16 i\up0\fs22  \f1 D\f0 x\dn6 i\up6 2\up0   /  N\tab\tab =  < ( \f1 D\f0 x\dn6 i\up0  )\up6 2\up0  >  ,\par
+\tab\tab\tab\tab =  < x\up6 2\up0  > - < x >\up6 2\tab\tab\up0 =  \fs32 (\f1 S\dn10\f0\fs16 i \up0\fs22 x\dn6 i\up6 2\up0  \fs32 )\fs22  / N - ( R\dn6 p\up0  )\up6 2  \up0 .\par
+\cf0\b0\fs20\par
+Where \b\f1\fs32 S\dn10\f0\fs16 i \up0\f1\fs20 D\f0 x\dn6 i\up6 2\up0  \b0  =  sum of the square of the deviations of the ion ranges from the mean projected range with \b\f1 D\f0 x\dn6 i\up0  = ( x\dn6 i\up0  - R\dn6 p\up0  )\b0 .\par
+Straggling is a word which is used in ion implantation in several ways, and care should be taken to determine the author's definition. Sometimes it is a synonym for variance and sometimes it is defined as the square root of the variance. In other cases an author, such as Winterbon, uses normalized definitions such as: Straggling = < \f1 D\f0 x\dn6 i\up6 2\up0  > / < x >\up6 2\up0 . We use the common definition that straggling is the square root of the variance:\par
+\cf1\b\fs22\tab Straggling \tab\f1\'ba\f0   \f1 s\dn6\f0\tab\up0 =  [ (\f1\fs32 S\dn10\f0\fs16 i \up0\fs22 x\dn6 i\up6 2\up0 ) / N  -  R\dn6 p\up6 2\up0  ]\up6\fs20 1/2\up0\fs22\tab   \tab =    < ( \f1 D\f0 x\dn6\fs20 i\up0\fs22  )\up6 2\up0  >\up6\fs20 1/2\up0\fs22   .\par
+\par
+\tab Radial \par
+\tab Straggling\tab\f1\'ba\f0   \f1 s\dn6\f0 r\tab\up0 =  [ \f1\fs32 S\dn10\f0\fs16 i \up0\fs22 (y\dn6 i\up6 2\up0  + z\dn6 i\up6 2\up0 )/N  -  R\dn6 r\up6 2\up0 ]\up6\fs20 1/2\up0\fs22\tab =    < ( \f1 D\f0 r\dn6\fs20 i\up0\fs22 )\up6 2\up0  >\up6\fs20 1/2\up0\fs22   .\par
+\cf0\par
+\b0\fs20\par
+We define lateral straggling in the same way as range straggling above. (Lateral coordinates are sometimes called Transverse coordinates.) For a normally incident beam we can assume cylindrical symmetry of the range distribution, so the mean lateral projected range is zero (i.e. \b R\dn6 y\up0  = 0\b0 ) .  Further, we average the Y and Z projected ranges to increase statistical accuracy:\par
+\cf1\b\fs22\tab Lateral\par
+\tab Straggling\tab\f1\'ba\f0   \f1 s\dn6\f0 y\tab\up0 =  [ \f1\fs32 S\dn10\f0\fs16 i \up0\fs22 ((\f1 |\f0 y\dn6 i\up0\f1 |\f0  + \f1 |\f0 z\dn6 i\up0\f1 |\f0 )/2)\up6 2\up0   /  N ]\up6\fs20 1/2\fs22   .\up0\par
+\par
+\tab Skewness\tab\f1\'ba\f0   \f1 g\f0\tab =  < \f1 D\f0 x\up6 3\up0  >  /  < \f1 D\f0 x\b0\up6\fs20 2\b\up0\fs22  >\up6 3/2  \up0 ,\up6\par
+\tab\tab\tab\tab\tab\up0 =  \f1\fs32 S\dn10\f0\fs16 i\up0\fs22  (x\dn6 i\up0  - R\dn6 p)\up6 3\up0   /  (N\f1 s\up6\f0 3\up0 )  ,\par
+\tab\tab\tab\tab\tab =   \f1\fs32 S\dn10\f0\fs16 i\up0\fs22 [x\dn6 i\up6 3\up0  - 3R\dn6 p\up0 x\dn6 i\up6 2\up0  + 3R\dn6 p\up6 2\up0 x\dn6 i\up0  - R\dn6 p\up6 3\up0  ] / (N\f1 s\up6\f0 3\up0 )  .\par
+\par
+\tab Kurtosis\tab\f1\'ba\f0   \f1 b\f0\tab =  < \f1 D\f0 x\up6 4\up0  >  /  < \f1 D\f0 x\up6\fs20 2\up0\fs22  >\up6 2  \up0 ,\up6\par
+\tab\tab\tab\tab\tab\up0 =  \f1\fs32 S\dn10\f0\fs16 i\up0\fs22  (x\dn6 i\up0  - R\dn6 p\up0 )\up6\fs20 4\up0\fs22   /  (N\f1 s\up6\f0 4\up0 )  ,\par
+\tab\tab\tab\tab\tab =   \f1\fs32 S\dn10\f0\fs16 i\up0\fs22 [x\dn6 i\up6 4\up0  - 4R\dn6 p\up0 x\dn6 i\up6\fs20 3\up0\fs22  + 6R\dn6 p\up6\fs20 2\up0\fs22 x\dn6 i\up6\fs20 2\up0\fs22  - 4R\dn6 p\up6\fs20 3\up0\fs22 x\dn6 i \up0 + R\dn6 p\up6 4\up0  ] / (N\f1 s\up6\f0 4\up0 )  .\par
+\cf0\b0\fs20\par
+TRIM uses the last variations shown above for the calculation of skewness and kurtosis. The above definitions are different from those used in versions of TRIM before 91.04, and the changes were made to allow easier integration of TRIM with VLSI modeling programs.\par
+\par
+In the above TRIM definitions, the projected range and the straggling have dimensions of length, while the high moments, skewness and kurtosis, are dimensionless.  Note that we do NOT include backscattered or transmitted ions in our moment calculations, in contrast to some theorists.  The skewness tells whether the peak is skewed towards the surface (negative values) or away from the surface (positive values). Another way of stating this is that negative skewness indicates that the most probable depth (the peak position) is greater than the mean depth, and positive values indicate the reverse.  Kurtosis indicates the extent of the distribution tails, with a value of 3.0 indicating a Gaussian distribution. Since both the shallow and deep tails contribute, no simple rule indicates what a variation from 3.0 means about the ion distribution. In general, values from 0 to 3 indicate abbreviated tails, and values above 3 indicate broad tails. The papers which most clearly discuss how to regenerate complete distributions from statistical moments are : K. B.  Winterbon, A.E.C.L. Reports #4829 (1972) and #4832 (1972), and especially CRNL-1817 (1978), available from the Chalk River Nuclear Laboratory, Chalk River, Ontario, Canada, K0J-1J0.\par
+\pard\cf3\f2\fs22\par
+\cf4\f3\fs16 helpTR30\cf3\f2\fs22\par
+}
+ 
