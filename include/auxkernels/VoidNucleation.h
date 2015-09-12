@@ -31,8 +31,7 @@ class VoidNucleation : public AuxKernel
 {
 public:
 
-  VoidNucleation(const std::string & name,
-                   InputParameters parameters);
+  VoidNucleation(const InputParameters & parameters);
 
 protected:
   virtual Real computeValue();

@@ -24,9 +24,8 @@ InputParameters validParams<DefectSource>()
 }
 
 
-DefectSource::DefectSource(const std::string & name,
-                                   InputParameters parameters)
-  :Kernel(name,parameters),
+DefectSource::DefectSource(const InputParameters & parameters)
+  :Kernel(parameters),
    _primary_source(coupledValue("PrimarySource")),
    _secondary_source(coupledValue("SecondarySource")),
    _intracascade_survival(getMaterialProperty<Real>("IntracascadeSurvivalMatProp"))

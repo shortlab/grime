@@ -22,9 +22,8 @@ InputParameters validParams<DefectRecombinationRateConstant>()
 }
 
 
-DefectRecombinationRateConstant::DefectRecombinationRateConstant(const std::string & name,
-                                   InputParameters parameters)
-  :AuxKernel(name,parameters),
+DefectRecombinationRateConstant::DefectRecombinationRateConstant(const InputParameters & parameters)
+  :AuxKernel(parameters),
    _D_v(getMaterialProperty<Real>("VacancyDiffusivityMatProp")),
    _D_i(getMaterialProperty<Real>("InterstitialDiffusivityMatProp")),
    _lattice_parameter(getMaterialProperty<Real>("LatticeParameterMatProp")),

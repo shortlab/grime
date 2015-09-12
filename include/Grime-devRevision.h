@@ -3,6 +3,6 @@
 #ifndef GRIME-DEV_REVISION_H
 #define GRIME-DEV_REVISION_H
 
-#define GRIME-DEV_REVISION "git commit c7c557a on 2014-04-16"
+#define GRIME-DEV_REVISION "git commit 73e3a49 on 2015-05-13"
 
 #endif // GRIME-DEV_REVISION_H

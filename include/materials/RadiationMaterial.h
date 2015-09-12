@@ -26,8 +26,7 @@ InputParameters validParams<RadiationMaterial>();
 class RadiationMaterial : public Material
 {
 public:
-  RadiationMaterial(const std::string & name,
-                  InputParameters parameters);
+  RadiationMaterial(const InputParameters & parameters);
 
 protected:
 //  virtual void initQpStatefulProperties();

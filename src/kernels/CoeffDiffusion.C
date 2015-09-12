@@ -12,8 +12,8 @@ InputParameters validParams<CoeffDiffusion>()
   return params;
 }
 
-CoeffDiffusion::CoeffDiffusion(const std::string & name, InputParameters parameters)
-  :Diffusion(name,parameters),
+CoeffDiffusion::CoeffDiffusion(const InputParameters & parameters)
+  :Diffusion(parameters),
    // We are grabbing the "diffusivity" from input
    _diffusivity(getParam<Real>("diffusivity"))
 {

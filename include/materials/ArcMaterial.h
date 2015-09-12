@@ -26,8 +26,7 @@ InputParameters validParams<ArcMaterial>();
 class ArcMaterial : public Material
 {
 public:
-  ArcMaterial(const std::string & name,
-                  InputParameters parameters);
+  ArcMaterial(const InputParameters & parameters);
 
 protected:
 //  virtual void initQpStatefulProperties();

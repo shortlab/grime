@@ -90,4 +90,10 @@ while [ "$i" -le "$NumberOfSimulations" ]; do
 
 ## End the while loop
 
+## Next, average the output files
+
+cd OutputFilesForAveraging
+./AverageOutputs --prefix VACANCY
+./AverageOutputs --prefix RANGE
+
 done

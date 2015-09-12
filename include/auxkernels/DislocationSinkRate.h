@@ -31,8 +31,7 @@ class DislocationSinkRate : public AuxKernel
 {
 public:
 
-  DislocationSinkRate(const std::string & name,
-                   InputParameters parameters);
+  DislocationSinkRate(const InputParameters & parameters);
 
 protected:
   virtual Real computeValue();
@@ -43,9 +42,9 @@ protected:
    */
 
   std::string _prop_name_D;
-  MaterialProperty<Real> & _D_species;
+  const MaterialProperty<Real> & _D_species;
   std::string _prop_name_DD;
-  MaterialProperty<Real> & _dislocation_density;
+  const MaterialProperty<Real> & _dislocation_density;
   Real _dislocation_core_size;
 
 };

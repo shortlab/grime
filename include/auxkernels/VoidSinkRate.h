@@ -31,8 +31,7 @@ class VoidSinkRate : public AuxKernel
 {
 public:
 
-  VoidSinkRate(const std::string & name,
-                   InputParameters parameters);
+  VoidSinkRate(const InputParameters & parameters);
 
 protected:
   virtual Real computeValue();
@@ -43,7 +42,7 @@ protected:
    */
 
   std::string _prop_name_D;
-  MaterialProperty<Real> & _D_species;
+  const MaterialProperty<Real> & _D_species;
   VariableValue & _void_density;
   VariableValue & _average_void_radius;
 

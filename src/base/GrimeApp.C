@@ -29,8 +29,8 @@ InputParameters validParams<GrimeApp>()
   return params;
 }
 
-GrimeApp::GrimeApp(const std::string & name, InputParameters parameters) :
-    MooseApp(name, parameters)
+GrimeApp::GrimeApp(const InputParameters & parameters) :
+    MooseApp(parameters)
 {
   srand(processor_id());
 

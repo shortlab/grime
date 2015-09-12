@@ -25,9 +25,8 @@ InputParameters validParams<VacancySupersaturationNumerator>()
 }
 
 
-VacancySupersaturationNumerator::VacancySupersaturationNumerator(const std::string & name,
-                                   InputParameters parameters)
-  :AuxKernel(name,parameters),
+VacancySupersaturationNumerator::VacancySupersaturationNumerator(const InputParameters & parameters)
+  :AuxKernel(parameters),
    _vacancies(coupledValue("Vacancies")),
    _interstitials(coupledValue("Interstitials")),
    _thermal_vacancies(coupledValue("EquilibriumVacancies")),
@@ -38,7 +37,7 @@ VacancySupersaturationNumerator::VacancySupersaturationNumerator(const std::stri
 Real
 VacancySupersaturationNumerator::computeValue()
 {
-  Real _numerator =   ((_D_v[_qp] * _vacancies[_qp]) - 0.1*(_D_i[_qp] * _interstitials[_qp]));
+  Real _numerator =   ((_D_v[_qp] * _vacancies[_qp]) - 0.7*(_D_i[_qp] * _interstitials[_qp]));
 
   return _numerator;
 }

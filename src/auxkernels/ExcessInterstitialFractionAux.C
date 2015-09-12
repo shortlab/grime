@@ -42,8 +42,8 @@ InputParameters validParams<ExcessInterstitialFractionAux>()
   return params;
 }
 
-ExcessInterstitialFractionAux::ExcessInterstitialFractionAux(const std::string & name, InputParameters parameters)
-  :AuxKernel(name, parameters),
+ExcessInterstitialFractionAux::ExcessInterstitialFractionAux(const InputParameters & parameters)
+  :AuxKernel(parameters),
   _vacancy_creation(coupledValue("vacancy_creation")),
   _interstitial_creation(coupledValue("interstitial_creation"))
 

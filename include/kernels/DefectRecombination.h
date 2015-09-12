@@ -31,8 +31,7 @@ class DefectRecombination : public Kernel
 {
 public:
 
-  DefectRecombination(const std::string & name,
-                   InputParameters parameters);
+  DefectRecombination(const InputParameters & parameters);
 
 protected:
   virtual Real computeQpResidual();

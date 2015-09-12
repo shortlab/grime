@@ -31,8 +31,7 @@ class DefectRecombinationRateConstant : public AuxKernel
 {
 public:
 
-  DefectRecombinationRateConstant(const std::string & name,
-                   InputParameters parameters);
+  DefectRecombinationRateConstant(const InputParameters & parameters);
 
 protected:
   virtual Real computeValue();
@@ -42,10 +41,10 @@ protected:
    * material property from the Material class
    */
 
-  MaterialProperty<Real> & _D_v;
-  MaterialProperty<Real> & _D_i;
-  MaterialProperty<Real> & _lattice_parameter;
-  MaterialProperty<Real> & _atomic_volume;
+  const MaterialProperty<Real> & _D_v;
+  const MaterialProperty<Real> & _D_i;
+  const MaterialProperty<Real> & _lattice_parameter;
+  const MaterialProperty<Real> & _atomic_volume;
 
 };
 #endif //DEFECTRECOMBINATIONRATECONSTANT_H

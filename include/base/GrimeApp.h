@@ -11,7 +11,7 @@ InputParameters validParams<GrimeApp>();
 class GrimeApp : public MooseApp
 {
 public:
-  GrimeApp(const std::string & name, InputParameters parameters);
+  GrimeApp(const InputParameters & parameters);
   virtual ~GrimeApp();
 
   static void registerApps();

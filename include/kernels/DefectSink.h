@@ -31,8 +31,7 @@ class DefectSink : public Kernel
 {
 public:
 
-  DefectSink(const std::string & name,
-                   InputParameters parameters);
+  DefectSink(const InputParameters & parameters);
 
 protected:
   virtual Real computeQpResidual();

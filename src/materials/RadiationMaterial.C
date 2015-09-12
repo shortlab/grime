@@ -49,9 +49,8 @@ InputParameters validParams<RadiationMaterial>()
   return params;
 }
 
-RadiationMaterial::RadiationMaterial(const std::string & name,
-                           InputParameters parameters)
-    :Material(name, parameters),
+RadiationMaterial::RadiationMaterial(const InputParameters & parameters)
+    :Material(parameters),
 
      // Get simple parameters from the input file
      _constant_temperature(getParam<Real>("ConstantTemperature")),

@@ -31,8 +31,7 @@ class DefectSource : public Kernel
 {
 public:
 
-  DefectSource(const std::string & name,
-                   InputParameters parameters);
+  DefectSource(const InputParameters & parameters);
 
 protected:
   virtual Real computeQpResidual();
@@ -45,7 +44,7 @@ protected:
 
   VariableValue & _primary_source;
   VariableValue & _secondary_source;
-  MaterialProperty<Real> & _intracascade_survival;
+  const MaterialProperty<Real> & _intracascade_survival;
 
 };
 #endif //DEFECTSOURCE_H

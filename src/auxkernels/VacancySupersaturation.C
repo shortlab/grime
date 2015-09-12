@@ -24,9 +24,8 @@ InputParameters validParams<VacancySupersaturation>()
 }
 
 
-VacancySupersaturation::VacancySupersaturation(const std::string & name,
-                                   InputParameters parameters)
-  :AuxKernel(name,parameters),
+VacancySupersaturation::VacancySupersaturation(const InputParameters & parameters)
+  :AuxKernel(parameters),
    _numerator(coupledValue("Numerator")),
    _thermal_vacancies(coupledValue("EquilibriumVacancies")),
    _D_v(getMaterialProperty<Real>("VacancyDiffusivityMatProp"))

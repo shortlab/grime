@@ -28,8 +28,7 @@ class VariableProduct : public Kernel
 {
 public:
   
-  VariableProduct(const std::string & name,
-                            InputParameters parameters);
+  VariableProduct(const InputParameters & parameters);
   
 protected:
   virtual Real computeQpResidual();

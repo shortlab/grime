@@ -23,9 +23,8 @@ InputParameters validParams<VoidNucleation>()
 }
 
 
-VoidNucleation::VoidNucleation(const std::string & name,
-                                   InputParameters parameters)
-  :AuxKernel(name,parameters),
+VoidNucleation::VoidNucleation(const InputParameters & parameters)
+  :AuxKernel(parameters),
    _supersaturation(coupledValue("Supersaturation"))
 {}
 

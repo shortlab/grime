@@ -24,7 +24,7 @@ class CoeffDiffusion : public Diffusion
 {
 public:
 
-  CoeffDiffusion(const std::string & name, InputParameters parameters);
+  CoeffDiffusion(const InputParameters & parameters);
 
 protected:
   /**
@@ -49,7 +49,7 @@ protected:
   virtual Real computeQpOffDiagJacobian(unsigned int jvar);
 
   /// Material property of dispersion-diffusion coefficient.
-  //MaterialProperty<Real> & _diffusivity;
+  //const MaterialProperty<Real> & _diffusivity;
   Real _diffusivity;
 };
 #endif //PRIMARYDIFFUSION_H

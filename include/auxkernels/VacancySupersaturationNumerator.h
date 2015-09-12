@@ -31,8 +31,7 @@ class VacancySupersaturationNumerator : public AuxKernel
 {
 public:
 
-  VacancySupersaturationNumerator(const std::string & name,
-                   InputParameters parameters);
+  VacancySupersaturationNumerator(const InputParameters & parameters);
 
 protected:
   virtual Real computeValue();
@@ -45,8 +44,8 @@ protected:
   VariableValue & _vacancies;
   VariableValue & _interstitials;
   VariableValue & _thermal_vacancies;
-  MaterialProperty<Real> & _D_v;
-  MaterialProperty<Real> & _D_i;
+  const MaterialProperty<Real> & _D_v;
+  const MaterialProperty<Real> & _D_i;
 
 };
 #endif //VacancySupersaturationNumeratorNUMERATOR_H

@@ -25,9 +25,8 @@ InputParameters validParams<DefectSink>()
 }
 
 
-DefectSink::DefectSink(const std::string & name,
-                                   InputParameters parameters)
-  :Kernel(name,parameters),
+DefectSink::DefectSink(const InputParameters & parameters)
+  :Kernel(parameters),
    _sink_rate(coupledValue("SinkRate")),
 //   _sink_concentration(coupledValue("SinkConcentration")),
    _defect_concentration_correction(coupledValue("ConcentrationCorrection"))

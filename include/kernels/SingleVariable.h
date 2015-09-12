@@ -28,8 +28,7 @@ class SingleVariable : public Kernel
 {
 public:
   
-  SingleVariable(const std::string & name,
-                            InputParameters parameters);
+  SingleVariable(const InputParameters & parameters);
   
 protected:
   virtual Real computeQpResidual();

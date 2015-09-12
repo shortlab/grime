@@ -24,9 +24,8 @@ InputParameters validParams<DefectRecombination>()
 }
 
 
-DefectRecombination::DefectRecombination(const std::string & name,
-                                   InputParameters parameters)
-  :Kernel(name,parameters),
+DefectRecombination::DefectRecombination(const InputParameters & parameters)
+  :Kernel(parameters),
    _other_defect(coupledValue("OtherDefect")),
    _other_defect_var(coupled("OtherDefect")),
    _recombination_rate(coupledValue("Recombination"))

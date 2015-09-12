@@ -9,7 +9,7 @@ InputParameters validParams<GrimeApp>()
   return params;
 }
 
-GrimeApp::GrimeApp(const std::string & name, InputParameters parameters) :
+GrimeApp::GrimeApp(const std::string & name, InputParameters & parameters) :
     MooseApp(name, parameters)
 {
   srand(libMesh::processor_id());

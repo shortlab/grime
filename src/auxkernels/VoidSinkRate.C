@@ -25,9 +25,8 @@ InputParameters validParams<VoidSinkRate>()
 }
 
 
-VoidSinkRate::VoidSinkRate(const std::string & name,
-                                   InputParameters parameters)
-  :AuxKernel(name,parameters),
+VoidSinkRate::VoidSinkRate(const InputParameters & parameters)
+  :AuxKernel(parameters),
    _prop_name_D(getParam<std::string>("Diffusivity")),
    _D_species(getMaterialProperty<Real>(_prop_name_D)),
    _void_density(coupledValue("VoidDensity")),

@@ -281,7 +281,7 @@
     variable = DislocationSinkRate-V
     Diffusivity = VacancyDiffusivityMatProp
     DislocationDensity = DislocationDensityMatProp
-    DislocationCoreSize = 5
+    DislocationCoreSize = 1.2
   [../]
 
   [./DislocationSinkRate-IAux]
@@ -289,7 +289,7 @@
     variable = DislocationSinkRate-I
     Diffusivity = InterstitialDiffusivityMatProp
     DislocationDensity = DislocationDensityMatProp
-    DislocationCoreSize = 9
+    DislocationCoreSize = 3.6
   [../]
 
   [./ExcessInterstitialFractionAux]
@@ -367,7 +367,7 @@ active = 'PureIron'
     InterstitialD0 = 2.09e11  # from N. Soneda & T. Diaz de La Rubia, "Migration kinetics of the self- interstitial atom and its clusters in bcc Fe", Phil Mag A 81 (2001)
 
 # Intra-cascade annihilation information
-    IntraCascadeSurvivalFraction = 5e-2
+    IntraCascadeSurvivalFraction = 25e-2
 
 # Defect sink information
     VacancySinkDensity = 5e10

@@ -25,9 +25,8 @@ InputParameters validParams<DislocationSinkRate>()
 }
 
 
-DislocationSinkRate::DislocationSinkRate(const std::string & name,
-                                   InputParameters parameters)
-  :AuxKernel(name,parameters),
+DislocationSinkRate::DislocationSinkRate(const InputParameters & parameters)
+  :AuxKernel(parameters),
    _prop_name_D(getParam<std::string>("Diffusivity")),
    _D_species(getMaterialProperty<Real>(_prop_name_D)),
    _prop_name_DD(getParam<std::string>("DislocationDensity")),
