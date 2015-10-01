@@ -1,0 +1,4 @@
+A model of the spatially dependent point defect kinetics equations with injected interstitials has been implemented
+The results predict a double peak in the void nucleation rate, helping to explain a recent experiment
+The double peak is predicted only to be evident within a narrow (+/- 30C) temperature window for self-irradiation of pure iron
+Caution should be taken when interpreting ion irradiation data, as the ballistic damage profile may not match the resultant void swelling profile

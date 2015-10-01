@@ -1,0 +1,3645 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass article
+\options review, fleqn
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine natbib
+\cite_engine_type numerical
+\biblio_style 
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 1in
+\topmargin 1in
+\rightmargin 1in
+\bottommargin 1in
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 2
+\papersides 1
+\paperpagestyle default
+\tracking_changes true
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\author 1028221600 "hereiam" 
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Modeling Injected Interstitial Effects on Void Swelling in Self-Ion Irradiation
+ Experiments
+\end_layout
+
+\begin_layout Author
+M.
+ P.
+ Short
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Dept.
+ of Nuclear Science and Engineering, Massachusetts Institute of Technology
+\end_layout
+
+\end_inset
+
+
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Corresponding Author: Tel: +1-617-347-7763, Email: hereiam@mit.edu
+\end_layout
+
+\end_inset
+
+, D.
+ R.
+ Gaston
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Idaho National Laboratory
+\end_layout
+
+\end_inset
+
+, M.
+ Jin
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Dept.
+ of Nuclear Science and Engineering, Massachusetts Institute of Technology
+\end_layout
+
+\end_inset
+
+, L.
+ Shao
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Dept.
+ of 
+\change_deleted 1028221600 1442852723
+Mechanical
+\change_inserted 1028221600 1442852725
+Nuclear
+\change_unchanged
+ Engineering, Texas A&M University
+\end_layout
+
+\end_inset
+
+, F.
+ A.
+ Garner
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Radiation Effects Consulting, 
+\change_deleted 1028221600 1442852727
+Inc.
+\change_inserted 1028221600 1442852728
+LLC
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Abstract
+Heavy ion irradiations at high dose rates are often used to simulate slow
+ and expensive neutron irradiation experiments.
+ However, many differences in the resultant modes of damage arise due to
+ unique aspects of heavy ion irradiation.
+ One such difference was recently shown in pure iron to manifest itself
+ as a double peak in void swelling, with both peaks located away from the
+ region of peak displacement damage (DPA).
+ In other cases involving a variety of ferritic alloys there is often only
+ a single peak in swelling vs.
+ depth that is located very near the ion-incident surface.
+ We show that these behaviors arise due to a combination of t
+\change_deleted 1028221600 1442084796
+hree
+\change_inserted 1028221600 1442084796
+wo
+\change_unchanged
+ separate effects: 1) suppression of void swelling due to injected interstitials
+, and 2) preferential sinking of interstitials to the ion-incident surface,
+ which are very sensitive to 
+\change_inserted 1028221600 1442084805
+the 
+\change_unchanged
+irradiation temperature and atomic displacement rate.
+ Care should therefore be used in collection and interpreting of data from
+ the depth range outside the Bragg peak of ion irradiation experiments,
+ as it is shown to be more complex than previously envisioned.
+\end_layout
+
+\begin_layout Section
+Introduction and Background
+\end_layout
+
+\begin_layout Standard
+Charged particle irradiation is frequently used to simulate the effect of
+ neutron irradiation on microstructural evolution of reactor structural
+ alloys, but is generally conducted at much higher displacement rates in
+ order to compress the time required to reach very high DPA levels needed
+ to observe phenomena such as neutron-induced void swelling and embrittlement
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Was2007"
+
+\end_inset
+
+.
+ When optimized to maximize simulation of void swelling, there is not a
+ one-to-one correspondence between microstructures observed under neutron
+ and ion irradiation.
+\end_layout
+
+\begin_layout Standard
+The primary reasons for this lack of correspondence are various consequences
+ of the increased DPA rate, very short ranges of the bombarding ion, consequence
+s of strong gradients in DPA rate along the ion range and local defect imbalance
+s arising from the bombarding ion 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Was2007,Garner1976,Garner1976a,Garner1976b,Packan1978,Lee1979,Garner1983,Bullen1984,Badger1985,Shao2014,Sindelar1985"
+
+\end_inset
+
+.
+ Additionally, there are second-order effects such as ion-induced sputtering
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Was2007,Johnston1973"
+
+\end_inset
+
+ and swelling-induced compressive states in the thin irradiated film that
+ produce a one-dimensional (not three-dimensional as in the neutron irradiation
+ case) flow of material toward the ion-incident surface 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Garner1976c,Wolfer1979"
+
+\end_inset
+
+.
+ All of these processes can be described as 
+\begin_inset Quotes eld
+\end_inset
+
+neutron-atypical
+\begin_inset Quotes erd
+\end_inset
+
+ effects.
+\end_layout
+
+\begin_layout Standard
+Swelling of both neutron and ion irradiated metals has often been shown
+ to exhibit an incubation period before the onset of steady-state swelling.
+ This incubation period is strongly dependent on DPA rate even in the absence
+ of microchemical evolution 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Was2007,Garner1976a,Garner2012,Garner2010"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+In many alloys the onset of swelling requires that a microchemical evolution
+ involving segregation and precipitation first occur, but the rate constants
+ involved in the point defect and precipitation sequences are usually rather
+ different, producing different incubation behavior at different DPA rates.
+ The very short ion ranges not only allow a strong influence of the specimen
+ surface on defect loss and dislocation loss that are atypical of neutron
+ irradiation, but strong gradients in DPA rate along the ion range provide
+ an internal rate effect on defect production 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Garner1976b"
+
+\end_inset
+
+, and also provide a driving force for elemental segregation along the ion
+ path 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Pechenkin2013"
+
+\end_inset
+
+, thereby influencing the microchemical evolution that often precedes the
+ onset of swelling.
+\end_layout
+
+\begin_layout Standard
+Defect imbalances arising during ion irradiation arise from forward scattering
+ involved with ion-atom collisions and the spatial distribution of injected
+ ions, the latter having a very strong effect on swelling that is designated
+ as the injected interstitial effect 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Lee1979,Garner1983,Bullen1984,Badger1985,Shao2014,Sindelar1985"
+
+\end_inset
+
+.
+ 
+\change_deleted 1028221600 1442852763
+In a companion paper in this conference 
+\change_unchanged
+Garner et al.
+ review the result of experiments conducted on pure iron and various ferritic-ma
+rtensitic alloys showing that the net effect of the various neutron-atypical
+ aspects is to produce a depth dependence of void swelling that often bears
+ no resemblance to the depth distribution of the atomic displacement rate
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Garner2015"
+
+\end_inset
+
+.
+ Under some irradiation conditions swelling only occurs near the specimen
+ surface, and under other conditions the swelling vs.
+ depth is more complex, sometimes producing two peaks, neither corresponding
+ to the position of maximum displacement rate 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Shao2014"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Additionally, ion beams are often rastered to provide more spatially-uniform
+ damage fields while introducing non-uniform temporal distributions compared
+ to neutron irradiation.
+ This latter effect is one of the more important neutron-atypical processes
+ that strongly affect swelling.
+ Since rastering and injected interstitials are both suppressive and synergistic
+, especially on void nucleation, their interaction must be recognized and
+ factored into data analysis.
+ Two recent papers demonstrate the strong influence of rastering to suppress
+ void swelling 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Gigax2015,Getto2015"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+If we could ignore all of these atypical influences and examine an alloy
+ that swells easily without much of an incubation period, one might assume
+ that the swelling vs.
+ depth profile should mirror the dose rate vs.
+ depth profile, but this would be an incorrect assumption.
+ In general, alloys of even simple composition such as solute-free Fe-Cr-Ni
+ ternaries have been observed to exhibit a large range of swelling vs.
+ depth profiles, frequently with no resemblance to the DPA vs.
+ depth profile 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Sindelar1985,Johnston1976"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+In order to minimize these influences, the ion irradiation community has
+ learned to conduct irradiations on simple and complex alloys by not rastering
+ the beam and by choosing a narrow volume-slice at an examination depth
+ that minimizes the effects not only of the ion-incident surface but especially
+ the surprisingly strong injected interstitial effect 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Garner1983,Shao2014"
+
+\end_inset
+
+.
+ However, the fullest utilization of the ion irradiation technique would
+ require an understanding of the evolution of swelling vs.
+ depth over the entire ion range, allowing extraction of data over a much
+ larger portion of the ion range.
+ With so many neutron-atypical processes operating simultaneously during
+ ion irradiation, a full understanding requires that a 
+\begin_inset Quotes eld
+\end_inset
+
+peel the onion
+\begin_inset Quotes erd
+\end_inset
+
+ approach be used, starting with the simplest metals and alloys, moving
+ to more complex alloys, isolating and studying each neutron-atypical process
+ at each level of compositional and microstructural complexity.
+\end_layout
+
+\begin_layout Standard
+Our approach to date has been to examine these neutron-atypical effects
+ first in annealed pure iron and cold-worked pure iron, focusing initially
+ on the rastering effect and the defect imbalance issues without the added
+ complexity arising from microchemical evolution, and then focusing later
+ on the same processes occurring in Fe-Cr binary alloys and then solute-bearing
+ Fe-Cr alloys.
+\end_layout
+
+\begin_layout Standard
+In the first of these studies we focused on void swelling of annealed pure
+ iron in a beam-rastered irradiation, showing that the injected interstitial
+ effect indeed suppresses swelling 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Shao2014"
+
+\end_inset
+
+.
+ In the second of these studies it was shown that rastering suppresses swelling
+ compared to non-rastered fixed beams 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Gigax2015"
+
+\end_inset
+
+.
+ Figure 1 of 
+\change_deleted 1028221600 1442852818
+the
+\change_inserted 1028221600 1442852819
+Gigax's
+\change_unchanged
+ study
+\change_inserted 1028221600 1442852838
+ (here reproduced in Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:VoidNuc-Plots"
+
+\end_inset
+
+c)
+\change_unchanged
+ shows the two most salient features are the very strong impact of the injected
+ interstitial effect to suppress, to very high doses, the void swelling
+ throughout the injected ion range, and the appearance of a double-peak
+ swelling distribution in the region in front of injected ion range.
+ A similar observation was made in self-ion irradiations on pure nickel
+ many years earlier 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Bullen1984,Badger1985"
+
+\end_inset
+
+.
+ Occasionally, double peaks are observed in other alloys, but the possibility
+ cannot be discounted that compositional segregation along the range might
+ be contributing to this observation.
+ 
+\end_layout
+
+\begin_layout Standard
+While the injected interstitial effect was not unexpected, the appearance
+ of a double peak in the fore-range of iron and nickel was rather surprising,
+ with the question entertained whether it might be an experimental artifact
+ or a real characteristic of ion irradiation.
+ In this paper we model the time-dependent development of depth-dependent
+ void swelling in annealed pure iron as a function of irradiation temperature
+ and accumulated dose produced during non-rastered irradiation with 3.5 MeV
+ Fe ions.
+ It is found that both the double peak and the injected interstitial suppression
+ effects are consequences of the defect imbalance effect, reproducing the
+ observed behavior.
+ This model can then be used to forecast swelling behavior in pure iron
+ and possibly more complex iron-base alloys for other temperatures, DPA
+ rates, ion energies, rastering frequencies, etc.
+ 
+\change_inserted 1028221600 1442852896
+In particular, the double-peak is predicted to only manifest itself within
+ a narrow window (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1028221600 1442853039
+
+{
+\backslash
+raise.17ex
+\backslash
+hbox{$
+\backslash
+scriptstyle
+\backslash
+sim$}}
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+30K) of temperature, which may explain some of its previous elusiveness.
+\change_unchanged
+
+\end_layout
+
+\begin_layout Section
+Methodology
+\end_layout
+
+\begin_layout Standard
+A fully coupled implementation of the point defect kinetics equations in
+ the form of Equations 10 and 11 in 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Golubov2012"
+
+\end_inset
+
+ was implemented in MOOSE 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Gaston2009"
+
+\end_inset
+
+, the Multiphysics Object Oriented Simulation Environment, a finite element
+ method framework.
+ By fully coupled, we refer to the definition of all equations and material
+ properties as functions of all possible independent variables (defect concentra
+tions, temperature, ion beam current) rather than using any numerically
+ convenient assumptions of constant or simplified material properties.
+ Only the initial stages of point defect creation and subsequent void nucleation
+ rates at zero time were studied, further stabilization and growth of voids
+ typical of cluster dynamics simulations was not considered in this study.
+\end_layout
+
+\begin_layout Standard
+The reader should therefore note what this study is and what it is not.
+ It is a simple demonstration that accounting for a tiny fraction of injected
+ interstitials greatly changes the qualitative form of the void swelling
+ distribution.
+ This study is not meant to be quantitative in any way, nor does it predict
+ true, time-dependent microstructure evolution.
+ Other recent studies using normal rate theory (NRT) and the production
+ bias model (PBM) 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Golubov2012"
+
+\end_inset
+
+, which accounts for the creation and evolution of self-interstitial atom
+ (SIA) clusters, treat radiation-induced microstructural evolution in a
+ more quantitative manner.
+\end_layout
+
+\begin_layout Subsection
+Equational Framework
+\end_layout
+
+\begin_layout Standard
+The point defect kinetics equations were implemented as follows:
+\change_inserted 1028221600 1442088122
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align left
+
+\change_inserted 1028221600 1442088159
+\begin_inset Formula 
+\[
+\mathit{\frac{\partial C_{v}}{\partial t}}=\mathit{f_{survive}K_{0}}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\begin{equation}
+\mathit{-K_{\bot,v}\rho_{\bot}C_{v}-K_{iv}C_{v}C_{i}+D_{v}\nabla^{2}C_{v}}\label{eq:Point-Defects-Vacancies}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align left
+
+\change_inserted 1028221600 1442088159
+\begin_inset Formula 
+\[
+\mathit{\frac{\partial C_{i}}{\partial t}}=\mathit{\left[f_{survive}\left(1-f_{i-cluster}\right)K_{0}+K_{II}\right]}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\begin{equation}
+\mathit{-K_{\bot,i}\rho_{\bot}C_{i}-K_{iv}C_{i}C_{v}+D_{i}\nabla^{2}C_{i}}\label{eq:Point-Defects-Interstitials}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+where 
+\begin_inset Formula $\mathit{C_{v}}$
+\end_inset
+
+ and 
+\begin_inset Formula $\mathit{C_{i}}$
+\end_inset
+
+ are the spatially-dependent concentrations of vacancies and interstitials
+ in 
+\begin_inset Formula $\mathrm{\left[\frac{\#}{nm^{3}}\right]}$
+\end_inset
+
+, 
+\begin_inset Formula $\mathit{f_{survive}}$
+\end_inset
+
+ is the intracascade point defect survival fraction (the true fraction of
+ remaining point defects after the damage cascade quenches & anneals), 
+\begin_inset Formula $\mathit{K_{0}}$
+\end_inset
+
+ is the point defect source term from binary collisions in 
+\begin_inset Formula $\mathrm{\left[\frac{\#}{nm^{3}-s}\right]}$
+\end_inset
+
+, 
+\begin_inset Formula $\mathit{K_{II}}$
+\end_inset
+
+ is the injected interstitial source term in 
+\begin_inset Formula $\mathrm{\left[\frac{\#}{nm^{3}-s}\right]}$
+\end_inset
+
+, 
+\begin_inset Formula $\mathit{K_{\bot}}$
+\end_inset
+
+ is the dislocation sink rate constant in 
+\begin_inset Formula $\left[\frac{1}{s}\right]$
+\end_inset
+
+, 
+\begin_inset Formula $\mathit{K_{iv}}$
+\end_inset
+
+ is the vacancy/interstitial recombination rate constant in 
+\begin_inset Formula $\left[\frac{nm^{3}}{\#-s}\right]$
+\end_inset
+
+, and 
+\begin_inset Formula $\mathit{D_{v}}$
+\end_inset
+
+ & 
+\begin_inset Formula $\mathit{D_{i}}$
+\end_inset
+
+ are the diffusivities of vacancies and interstitials in 
+\begin_inset Formula $\mathrm{\left[\frac{nm^{2}}{s}\right]}$
+\end_inset
+
+.
+ All rate constants, diffusivities, and point defect concentrations are
+ spatially dependent in one dimension on local state variables and defect
+ concentrations.
+ Here, an aspect of the PBM was used to assume that a fraction of interstitials
+ immediately form highly mobile SIA clusters within each damage cascade
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Golubov2012"
+
+\end_inset
+
+, which diffuse so quickly in one dimension that they are eliminated from
+ localized recombination and sinking.
+ The SIA cluster concentration is therefore not tracked in this model.
+\end_layout
+
+\begin_layout Standard
+The term 
+\begin_inset Formula $\mathrm{K_{0}}$
+\end_inset
+
+ was calculated using the SRIM-2010 code 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Ziegler2010"
+
+\end_inset
+
+, with simulation parameters as shown in Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:SRIM-simulation-parameters"
+
+\end_inset
+
+.
+\begin_inset Float table
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="7" columns="3">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+SRIM Parameter
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Value
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Unit
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Ion Type
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\mathrm{Fe^{++}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+---
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Target
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Pure Fe
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+---
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Ion Energy
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3.5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+MeV
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Number of Ions
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+500,000
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+#
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Target Density
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+7.85
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\mathrm{\frac{g}{cm^{3}}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Target Thickness
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\mathrm{\mu m}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:SRIM-simulation-parameters"
+
+\end_inset
+
+SRIM simulation parameters used to generate the point defect source term
+ in this study
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+ These parameters were chosen to match those used in the experiments of
+ Shao et al.
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Shao2014"
+
+\end_inset
+
+.
+ SRIM was run in 
+\begin_inset Quotes eld
+\end_inset
+
+quick calculation
+\begin_inset Quotes erd
+\end_inset
+
+ mode using the Kinchin-Pease model, to avoid recently discovered anomalies
+ in its full-cascade model 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Stoller2013"
+
+\end_inset
+
+.
+ Also, because the random number seed in SRIM does not change automatically,
+ 50 separate simulations each containing 10,000 flown ions were averaged
+ using a script
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+All scripts, input files, and output files used in this study are permanently
+ posted on our Github repository: 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "GitHub2015"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ to obtain smooth profiles of both the DPA rate and the injected interstitial
+ rate as a function of distance from the free surface.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename Figures/Defect-Production.eps
+	width 90col%
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:SRIM-Rates"
+
+\end_inset
+
+Frenkel pair (FP) and injected interstitial (II) production rates, as calculated
+ by SRIM.
+ Note the peak ballistic damage rate at 1000
+\begin_inset space \thinspace{}
+\end_inset
+
+nm.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+The VACANCY.TXT and RANGE.TXT files from SRIM (shown in Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:SRIM-Rates"
+
+\end_inset
+
+), which give 
+\begin_inset Formula $\frac{Vacancies}{\textrm{Å-ion}}$
+\end_inset
+
+ and 
+\begin_inset Formula $\frac{injected\thinspace ions}{cm}$
+\end_inset
+
+, respectively, were converted to data files giving defect production and
+ interstitial injection rates.
+ The ballistic Frenkel pair (FP) production rate was multiplied by the experimen
+tally measured beam current (200nA) and dividing by the beam area (1mm in
+ diameter) in terms of the ionic flux:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+K_{0_{FPs}}\left(x\right)\left[\frac{Vac.}{nm^{3}-sec}\right]
+\]
+
+\end_inset
+
+
+\change_inserted 1028221600 1442083691
+
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted 1028221600 1442083700
+\begin_inset Formula 
+\[
+=\left(K_{PKAs}+K_{Recoils}\right)_{SRIM}\left[\frac{Vac.}{\textrm{Å}-ion}\right]
+\]
+
+\end_inset
+
+
+\change_unchanged
+
+\begin_inset Formula 
+\[
+*\frac{10\thinspace\textrm{Å}}{1\thinspace nm}*\frac{1\thinspace Fe^{+2}\thinspace ion}{2\thinspace e^{-}}*200nA*\frac{1\thinspace\frac{e^{-}}{sec}}{1.6\cdot10^{-10}\thinspace nA}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\begin{equation}
+*\frac{1}{\pi\left(5\cdot10^{5}nm\right)^{2}}=7.96\left(K_{PKAs}+K_{Recoils}\right)_{SRIM}\label{eq:Ion-Flux}
+\end{equation}
+
+\end_inset
+
+Simultaneously, the spatially dependent ion range distribution from SRIM
+ was converted to total injected interstitials (II) per nm, by also multiplying
+ by the beam current density:
+\size small
+
+\begin_inset Formula 
+\[
+K_{0_{II}}\left(x\right)\left[\frac{II}{nm^{3}-sec}\right]=RANGE_{SRIM}\left[\frac{\frac{ions}{cm^{3}}}{\frac{ions}{cm^{2}}}\right]*\frac{1\thinspace cm}{10^{7}\thinspace nm}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+*\frac{1\thinspace Fe^{+2}\thinspace ion}{2\thinspace e^{-}}*200nA*\frac{1\thinspace\frac{e^{-}}{sec}}{1.6\cdot10^{-10}\thinspace nA}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\begin{equation}
+*\frac{1}{\pi\left(5\cdot10^{5}nm\right)^{2}}=RANGE_{SRIM}\left(x\right)*\left(7.96\cdot10^{-8}\right)\label{eq:Ion-Ranges}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Next, the dislocation sink rate constant was calculated by first finding
+ half the average distance between dislocations 
+\begin_inset Formula $\left(\frac{1}{2}d_{\bot}\right)$
+\end_inset
+
+ based on the dislocation density 
+\begin_inset Formula $\left(\rho_{\bot}\right)$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{equation}
+\frac{1}{2}d_{\bot}=\frac{1}{\sqrt{\pi\rho_{\bot}}}\label{eq:Dislocation-Half-Distance}
+\end{equation}
+
+\end_inset
+
+and then using it to calculate the dislocation sink rate constant:
+\begin_inset Formula 
+\begin{equation}
+K_{\bot,\left(v,i\right)}=\frac{2\pi D_{\left(v,i\right)}}{ln\left(\frac{\frac{1}{2}d_{\bot}}{r_{\bot\left(v,i\right)}}\right)}\label{eq:Dislocation-Sink-Rate}
+\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula $\mathit{r_{\bot}}$
+\end_inset
+
+ is the 
+\emph on
+core size
+\emph default
+ of the dislocation for each type of defect, or the approximate radius of
+ capture should a particular defect stray within this radius.
+ The recombination rate constant was calculated as follows:
+\begin_inset Formula 
+\begin{equation}
+K_{iv}=\frac{z_{iv}V_{Fe}\left(D_{v}+D_{i}\right)}{a_{Fe}^{2}}\label{eq:Recombination-Rate-Constant}
+\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula $\mathit{a_{Fe}}$
+\end_inset
+
+ is the temperature-dependent lattice parameter of iron, 
+\begin_inset Formula $\mathit{V_{Fe}}$
+\end_inset
+
+ is the temperature-dependent atomic volume of iron, and 
+\begin_inset Formula $\mathit{z_{iv}\sim500}$
+\end_inset
+
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Was2007"
+
+\end_inset
+
+.
+ Temperature-dependent diffusivities were calculated using an Arrhenius
+ relation:
+\begin_inset Formula 
+\begin{equation}
+D_{\left(v,i\right)}=D_{0}e^{\left(\frac{-E_{A_{\left(v,i\right)}}}{k_{B}T}\right)}\label{eq:Diffusivity-Equation}
+\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula $\mathit{D_{0}}$
+\end_inset
+
+ is a diffusivity prefactor, 
+\begin_inset Formula $\mathrm{E_{A_{\left(v,i\right)}}}$
+\end_inset
+
+are the activation energies for point defect migration in eV, 
+\emph on
+
+\begin_inset Formula $\mathit{k_{B}}$
+\end_inset
+
+
+\emph default
+ is the Boltzmann constant 
+\begin_inset Formula $\mathrm{\left(8.62\cdot10^{-5}\,\frac{eV}{K}\right)}$
+\end_inset
+
+, and 
+\emph on
+T
+\emph default
+ is the temperature in Kelvin.
+ The atomic volume of iron 
+\begin_inset Formula $\left(V_{Fe}\right)$
+\end_inset
+
+ was found from molecular dynamics simulations from 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Mendelev2009"
+
+\end_inset
+
+:
+\size small
+
+\begin_inset Formula 
+\begin{equation}
+V_{Fe}\left[nm^{3}\right]=1.93559\cdot10^{-10}T^{2}+2.68634\cdot10^{-7}T+0.0116954\label{eq:Atomic-Volume}
+\end{equation}
+
+\end_inset
+
+
+\size default
+The thermal vacancy concentration 
+\begin_inset Formula $\mathit{C_{v}^{*}}$
+\end_inset
+
+ 
+\change_deleted 1028221600 1442083796
+from 
+\change_inserted 1028221600 1442083823
+as a function of temperature 
+\change_unchanged
+was found using molecular dynamics simulations from 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Mendelev2009"
+
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{equation}
+C_{V}^{*}\,\left[\frac{\#}{nm^{3}}\right]=N_{Fe}\cdot10^{\left[-44.5997+5.73698\cdot ln\left(T-376.952\right)\right]}\label{eq:Thermal-Vacancies}
+\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula $\mathit{N_{Fe}}$
+\end_inset
+
+ is the atomic number density of iron, given by the following formula:
+\begin_inset Formula 
+\begin{equation}
+N_{Fe}\,\left[\frac{\#}{nm^{3}}\right]=\frac{\rho_{Fe}\cdot N_{A}}{\left(\frac{10^{21}\, nm^{3}}{1\, cm^{3}}\right)\cdot MM_{Fe}}\label{eq:Number-Density}
+\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula $\rho_{Fe}$
+\end_inset
+
+ is the density of pure iron 
+\begin_inset Formula $\left(7.85\,\frac{g}{cm^{3}}\right)$
+\end_inset
+
+, 
+\begin_inset Formula $\mathit{N_{A}}$
+\end_inset
+
+ is Avogadro's number 
+\begin_inset Formula $\left(6.02\cdot10^{23}\right)$
+\end_inset
+
+, and 
+\begin_inset Formula $\mathit{MM_{Fe}}$
+\end_inset
+
+ is the molar mass of natural iron 
+\begin_inset Formula $\left(55.865\,\frac{g}{mol}\right)$
+\end_inset
+
+.
+ Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Material-property-parameters"
+
+\end_inset
+
+ summarizes material property constants and parameters assumed in this study.
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="15" columns="4">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Property
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Value
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Unit
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\change_inserted 1028221600 1442085419
+Source
+\change_deleted 1028221600 1442085418
+Ref.
+\change_unchanged
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+T
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+450
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+°C
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\change_inserted 1028221600 1442085410
+Expt.
+\change_unchanged
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Beam Current
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+200
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+nA
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\change_inserted 1028221600 1442085412
+Expt.
+\change_unchanged
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Beam Area
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\mathrm{mm^{2}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\change_inserted 1028221600 1442085414
+Expt.
+\change_unchanged
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\change_inserted 1028221600 1442082747
+Peak 
+\change_unchanged
+DPA Rate
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\mathrm{4.6\cdot10^{-3}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\frac{DPA}{sec}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\change_inserted 1028221600 1442085415
+Expt.
+\change_unchanged
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\mathrm{D_{0_{v}}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+8.016
+\begin_inset Formula $\cdot10^{11}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\frac{nm^{2}}{s}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Borodin2007"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\mathrm{D_{0_{i}}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2.09
+\begin_inset Formula $\cdot10^{11}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\frac{nm^{2}}{s}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Soneda2001"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\mathrm{E_{m_{v}}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.
+\change_deleted 1028221600 1442549275
+95
+\change_inserted 1028221600 1442549275
+86
+\change_unchanged
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+eV
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\change_inserted 1028221600 1442085405
+See Text
+\change_unchanged
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\mathrm{E_{m_{i}}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.17
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+eV
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Soneda2001"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\mathit{r_{\bot_{v}}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\change_deleted 1028221600 1442086533
+5
+\change_inserted 1028221600 1442086756
+1.2
+\change_unchanged
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+nm
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\change_inserted 1028221600 1442086773
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Shastry1999"
+
+\end_inset
+
+
+\change_unchanged
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\mathit{r_{\bot_{i}}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\change_deleted 1028221600 1442086758
+9
+\change_inserted 1028221600 1442086759
+3.6
+\change_unchanged
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+nm
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\change_inserted 1028221600 1442086785
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Shastry1999"
+
+\end_inset
+
+
+\change_unchanged
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\rho_{\bot}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\mathrm{10^{-5}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\frac{\#}{nm^{2}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Bhadeshia2011"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\mathrm{a_{Fe}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.286
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+nm
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\change_inserted 1028221600 1442085473
+at 450°C
+\change_unchanged
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\mathit{f_{survive}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\change_inserted 1028221600 1442080707
+2
+\change_unchanged
+5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+%
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Malerb2006"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\mathit{f_{i-cluster}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\change_deleted 1028221600 1442085372
+90
+\change_inserted 1028221600 1442085372
+30
+\change_unchanged
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+%
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\change_deleted 1028221600 1442085376
+Assumed
+\change_inserted 1028221600 1442085392
+
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Golubov2012"
+
+\end_inset
+
+
+\change_unchanged
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Material-property-parameters"
+
+\end_inset
+
+Material property parameters used in this study
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+ The migration energy of vacancies in 99.999% iron was chosen to be 
+\change_deleted 1028221600 1442103445
+slightly 
+\change_unchanged
+higher than the 0.66
+\begin_inset space \thinspace{}
+\end_inset
+
+eV value for atomically pure iron 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Soneda2001"
+
+\end_inset
+
+ 
+\change_inserted 1028221600 1442081717
+found by molecular dynamics or 0.55
+\begin_inset space \thinspace{}
+\end_inset
+
+eV found experimentally 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Wolfenberger1996"
+
+\end_inset
+
+, 
+\change_unchanged
+to account for realistic impurities and defect-solute binding.
+
+\change_inserted 1028221600 1442853187
+ It was also chosen to be lower than vacancy migration energies for other
+ BCC steels, such as the Russian alloys ChS-68 (1.08
+\begin_inset space \thinspace{}
+\end_inset
+
+eV) or EK-164 (0.98
+\begin_inset space \thinspace{}
+\end_inset
+
+eV) 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Kozlov2014"
+
+\end_inset
+
+.
+ The actual value is known to vary between 0.75-1.4
+\begin_inset space \thinspace{}
+\end_inset
+
+eV for carbon-doped 
+\begin_inset Formula $\alpha$
+\end_inset
+
+-Fe 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Takaki1983"
+
+\end_inset
+
+, as the binding energy of vacancy-carbon complexes at Stage III temperatures
+ has been measured at 1.1
+\begin_inset space \thinspace{}
+\end_inset
+
+eV.
+ This was the only fitting parameter in this study, and was tuned to 0.86
+\begin_inset space \thinspace{}
+\end_inset
+
+eV to induce double peak formation.
+ The sensitivity of the results to this parameter are discussed in later
+ sections of this manuscript.
+\change_unchanged
+
+\end_layout
+
+\begin_layout Standard
+To obtain the zero-time void nucleation rate behavior, the vacancy supersaturati
+on is first calculated as follows:
+\begin_inset Formula 
+\begin{equation}
+S_{v}=\frac{D_{v}C_{v}-D_{i}C_{i}}{D_{v}C_{v}^{*}}\label{eq:Supersaturation}
+\end{equation}
+
+\end_inset
+
+This study is not a quantification of the true void nucleation rate, but
+ rather an estimation of relative effects.
+ Therefore the general 
+\emph on
+shape
+\emph default
+ of a post-processed supersaturation vs.
+ void nucleation rate curve derived from 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Katz1971"
+
+\end_inset
+
+, which is fully summarized in 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Wiedersich1972"
+
+\end_inset
+
+.
+
+\change_inserted 1028221600 1442081038
+ It is worth noting here that while the void nucleation rate at very low
+ dose and the void swelling rates are not directly comparable, their qualitative
+ shapes are expected to be similar.
+ It is well known that voids and void nuclei constitute additional point
+ defect sinks with their own biases, more appropriately treated using Master
+ equation 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Golubov2012"
+
+\end_inset
+
+ or cluster dynamics 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Jourdan2014"
+
+\end_inset
+
+ approaches.
+\end_layout
+
+\begin_layout Standard
+
+\change_deleted 1028221600 1442080837
+ 
+\change_unchanged
+This underscores the point that the quantity of interest in this study is
+ the 
+\emph on
+spatially dependent vacancy supersaturation
+\emph default
+, of which the zero-time void nucleation rate is a very sensitive function.
+ This function does not vary considerably in shape over a very wide temperature
+ range of 200K 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Katz1971,Wiedersich1972"
+
+\end_inset
+
+.
+ Therefore, the same void nucleation rate curve shape is used for different
+ conditions and materials to illustrate the strong effect of the more subtle
+ variations in vacancy supersaturation.
+ The curve used was for the case of Ni at 427°C, with an interstitial/vacancy
+ arrival ratio of 
+\begin_inset Formula $\frac{\beta_{i}}{\beta_{v}}=0.9$
+\end_inset
+
+.
+ The equation is as follows:
+\begin_inset Formula 
+\begin{equation}
+log\left(J_{V}\right)=5.41547\thinspace log\left(S_{v}\right)-14.6586\label{eq:Void-Nucleation-Rate}
+\end{equation}
+
+\end_inset
+
+where 
+\emph on
+
+\begin_inset Formula $\mathit{J_{V}}$
+\end_inset
+
+
+\emph default
+ is the void nucleation rate in 
+\begin_inset Formula $\mathrm{\left[\frac{\#}{nm^{3}-s}\right]}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+Finite Element Formulation
+\end_layout
+
+\begin_layout Standard
+A one-dimensional, time-dependent finite element simulation tool, centered
+ around Equations 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:Point-Defects-Vacancies"
+
+\end_inset
+
+-
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:Number-Density"
+
+\end_inset
+
+, was developed using MOOSE 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Gaston2009"
+
+\end_inset
+
+.
+ An initial mesh size of 2
+\begin_inset space \thinspace{}
+\end_inset
+
+
+\begin_inset Formula $\mu m$
+\end_inset
+
+ consisting of 200 elements was chosen, as the ultimate range of 3.5
+\begin_inset space \thinspace{}
+\end_inset
+
+MeV iron ions in iron was found to be 1.5
+\begin_inset space \thinspace{}
+\end_inset
+
+
+\begin_inset Formula $\mu m$
+\end_inset
+
+, and the SRIM data for damage production and ion range were binned into
+ 100 spatial nodes.
+ Zero concentration Dirichlet boundary conditions were assumed at the ends
+ of the mesh for simplicity, and because a free surface acts as a very strong
+ sink for defects.
+ The SolutionDT adaptive time stepping algorithm was used to accelerate
+ simulations when appropriate.
+ SolutionDT works by increasing the time step by a factor of 1.5 if the current
+ time step's solution was found to deviate very little from the previous
+ time step.
+\end_layout
+
+\begin_layout Standard
+The single matrix preconditioner (SMP) was employed to assure computational
+ efficiency, allowing` one to 
+\change_inserted 1028221600 1442083991
+only 
+\change_unchanged
+specify 
+\change_inserted 1028221600 1442083997
+certain 
+\change_unchanged
+off-diagonal Jacobian 
+\change_deleted 1028221600 1442084003
+blocks
+\change_inserted 1028221600 1442084003
+terms
+\change_unchanged
+ of the discretized partial differential equations (PDEs) in the problem.
+ This preconditioner was chosen to strike a compromise between solving a
+ Jacobian-free problem, which utilizes little computational overhead before
+ each solve but requires more iterations to converge, and fully inverting
+ the solution matrix, which yields an exact solution after prohibitively
+ long times.
+ The total residuals for each variable 
+\begin_inset Formula $\mathit{C_{v}}$
+\end_inset
+
+ and 
+\begin_inset Formula $\mathit{C_{i}}$
+\end_inset
+
+ are derived from the weak forms of Equations 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:Point-Defects-Vacancies"
+
+\end_inset
+
+-
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:Point-Defects-Interstitials"
+
+\end_inset
+
+, which were implemented as follows:
+\begin_inset Formula 
+\[
+\left|r^{2}\right|_{C_{v}}=0=\underset{\Omega}{\int}\left[\psi_{I}\frac{\partial C_{v}}{\partial t}-\psi_{I}\left(f_{s}K_{0}\right)+\psi_{I}K_{\bot_{v}}C_{v}\right]
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\begin{equation}
++\underset{\Omega}{\int}\left[\psi_{I}K_{iv}C_{v}C_{i}+D_{v}\nabla\psi_{I}\nabla C_{v}\right]+\underset{\Gamma}{\int}\left[D_{v}\psi_{I}\nabla C_{v}\cdot\overrightarrow{n}\right]\label{eq:Weak-PDE-Vacancies}
+\end{equation}
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\left|r^{2}\right|_{C_{i}}=0=\underset{\Omega}{\int}\left[\psi_{I}\frac{\partial C_{i}}{\partial t}-\psi_{I}\left(\left(f_{s}K_{0}\right)+K_{II}\right)\right]
+\]
+
+\end_inset
+
+
+\size small
+
+\begin_inset Formula 
+\begin{equation}
++\underset{\Omega}{\int}\left[\psi_{I}K_{iv}C_{i}C_{v}+\psi_{I}K_{\bot_{i}}C_{i}+D_{i}\nabla\psi_{I}\nabla C_{i}\right]+\underset{\Gamma}{\int}\left[D_{i}\psi_{I}\nabla C_{i}\cdot\overrightarrow{n}\right]\label{eq:Weak-PDE-Interstitials}
+\end{equation}
+
+\end_inset
+
+
+\size default
+where 
+\begin_inset Formula $\psi_{I}$
+\end_inset
+
+ is a particular test function, 
+\begin_inset Formula $\Omega$
+\end_inset
+
+ is the domain volume, 
+\begin_inset Formula $\Gamma$
+\end_inset
+
+ represents the boundaries of the domain 
+\begin_inset Formula $\Omega$
+\end_inset
+
+, and 
+\begin_inset Formula $\overrightarrow{n}$
+\end_inset
+
+ is the surface normal vector at each boundary 
+\begin_inset Formula $\Gamma$
+\end_inset
+
+.
+ Reference 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Gaston2009"
+
+\end_inset
+
+ contains a more thorough description of the weak form equation development
+ in the MOOSE framework.
+ The on-diagonal and off-diagonal Jacobians for Equations 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:Weak-PDE-Vacancies"
+
+\end_inset
+
+-
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:Weak-PDE-Interstitials"
+
+\end_inset
+
+ were defined as follows:
+\begin_inset Formula 
+\[
+\frac{\partial C_{v}}{\partial C_{v}\left(I\right)}=-\psi_{I}\phi_{J}\frac{\partial\left[\frac{\partial C_{v}}{\partial t}\right]}{\partial C_{v}}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\begin{equation}
++\psi_{I}K_{iv}C_{i}\phi_{J}+\psi_{I}K_{\bot_{v}}\phi_{J}+D_{v}\nabla\phi_{J}\nabla\psi_{I}\label{eq:Jacobian-Vacancies}
+\end{equation}
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\frac{\partial C_{i}}{\partial C_{i}\left(I\right)}=-\psi_{I}\phi_{J}\frac{\partial\left[\frac{\partial C_{i}}{\partial t}\right]}{\partial C_{i}}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\begin{equation}
++\psi_{I}K_{iv}C_{v}\phi_{J}+\psi_{I}K_{\bot_{i}}\phi_{J}+D_{i}\nabla\phi_{J}\nabla\psi_{I}\label{eq:Jacobian-Interstitials}
+\end{equation}
+
+\end_inset
+
+
+\begin_inset Formula 
+\begin{equation}
+\frac{\partial C_{v}}{\partial C_{v}\left(J\right)}=\psi_{I}K_{iv}\phi_{J}C_{v}\label{eq:OffDiag-Jacobian-Vacancies}
+\end{equation}
+
+\end_inset
+
+
+\begin_inset Formula 
+\begin{equation}
+\frac{\partial C_{i}}{\partial C_{i}\left(J\right)}=\psi_{I}K_{iv}\phi_{J}C_{i}\label{eq:OffDiag-Jacobian-Interstitials}
+\end{equation}
+
+\end_inset
+
+where 
+\change_inserted 1028221600 1442084479
+
+\emph on
+I
+\emph default
+ is the index (node value) for the shape function 
+\begin_inset Formula $\psi_{I}$
+\end_inset
+
+ under consideration, 
+\change_unchanged
+
+\emph on
+J
+\emph default
+ is an index for a particular trial function 
+\begin_inset Formula $\phi_{J}$
+\end_inset
+
+ under consideration.
+ An implicit Euler time step method was used, resulting in 
+\begin_inset Formula $\mathrm{\frac{\partial\frac{\partial u}{\partial t}}{\partial u}=\frac{1}{\Delta t}}$
+\end_inset
+
+, where 
+\emph on
+u 
+\emph default
+is the variable under consideration.
+ Note that the only terms that contain an off-diagonal Jacobian entry in
+ the solution matrix are coupled terms, where two or more variables in the
+ constitutive PDEs are found in the same term.
+ The only terms containing a non-zero off-diagonal Jacobian entry are the
+ defect recombination terms, as they explicitly contain both 
+\begin_inset Formula $C_{v}$
+\end_inset
+
+ and 
+\begin_inset Formula $C_{i}$
+\end_inset
+
+, which are the variables used in the PDEs in this framework.
+\end_layout
+
+\begin_layout Section
+Results
+\end_layout
+
+\begin_layout Standard
+First, the results of intermediate calculations are given, followed by simulatio
+n results meant to match the experiments of Shao et al.
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Shao2014"
+
+\end_inset
+
+.
+ Next follows predictions for varied experimental conditions.
+ Results are given for two cases: with and without injected interstitials,
+ the latter case removing the 
+\begin_inset Formula $\mathit{K_{II}}$
+\end_inset
+
+ term from Equations 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:Point-Defects-Interstitials"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:Weak-PDE-Interstitials"
+
+\end_inset
+
+.
+
+\change_deleted 1028221600 1442084595
+ Two y-axes are given in each case as the relative values of void nucleation
+ rates are far lower with injected interstitials, when all other quantities
+ are held constant.
+\change_unchanged
+
+\end_layout
+
+\begin_layout Subsection
+Defect Concentrations
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename Figures/ExcessInt.eps
+	width 90col%
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Excess-Interstitials"
+
+\end_inset
+
+Spatially dependent excess interstitial fraction with injected interstitials,
+ peaking at a value of 0.7%.
+ The bump in the curve at 1650
+\begin_inset space ~
+\end_inset
+
+nm is an artifact of noise from the SRIM simulation.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Excess-Interstitials"
+
+\end_inset
+
+ shows a spatial plot of the excess injected interstitial fraction, or the
+ ratio of the total interstitial-to-vacancy production rate minus one.
+ The plot ends near the end of the FP production region, as the excess injected
+ interstitial fraction is invalid beyond this region.
+ 
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename Figures/Defect-Comparison.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Defect-Plots"
+
+\end_inset
+
+Spatially dependent defect concentrations, without (dashed) and with (solid)
+ injected interstitials
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Defect-Plots"
+
+\end_inset
+
+ shows the quasi-steady state defect concentrations for the cases with and
+ without injected interstitials.
+ Even though the excess injected interstitial fraction shows a very slight
+ imbalance between defect production rates, in the hundreds of ppm on average,
+ the resulting steady-state defect concentrations differ greatly.
+ This imbalance, especially near the Bragg peak region of the ions where
+ SRIM calculates the most damage, causes a shift in the damage peak towards
+ the free surface.
+ The effect of the free surface itself, which is modeled as an undepletable
+ sink with a zero defect concentration, is also pronounced, preferentially
+ removing interstitials in the vicinity due to their higher mobility.
+\end_layout
+
+\begin_layout Subsection
+Vacancy Supersaturation and Qualitative Void Nucleation Rate
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename Figures/Supersat.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:SuperSat-Plots"
+
+\end_inset
+
+Vacancy supersaturation, without (black dashed) and with (solid red) injected
+ interstitials
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+The resulting vacancy supersaturation curves for cases with and without
+ injected interstitials are shown in Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:SuperSat-Plots"
+
+\end_inset
+
+.
+ Two main features are of significant interest here.
+ Firstly, the appearance of a second peak in supersaturation, though small,
+ is quite significant.
+ Secondly, the pull of the free surface, combined with a 
+\change_deleted 1028221600 1442853259
+4
+\change_inserted 1028221600 1442853259
+5
+\change_unchanged
+5% suppression of vacancy supersaturation at the location of peak damage
+ by injected interstitials, 
+\begin_inset Quotes eld
+\end_inset
+
+exposes
+\begin_inset Quotes erd
+\end_inset
+
+ this second peak rather than inducing it.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename Figures/VoidNuc-NoII.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename Figures/VoidNuc-II.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename Figures/Shao-Experiment.png
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:VoidNuc-Plots"
+
+\end_inset
+
+Void nucleation rate curve shapes, without (top) and with (middle) injected
+ interstitials, compared to (bottom) the experimental void swelling distribution
+ observed in 3.5
+\begin_inset space \thinspace{}
+\end_inset
+
+MeV 
+\begin_inset Formula $\mathrm{Fe^{+2}}$
+\end_inset
+
+ irradiation of pure iron 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Shao2014"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+Void nucleation rates with and without injected interstitials are shown
+ in Figure
+\change_inserted 1028221600 1442853276
+s
+\change_unchanged
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:VoidNuc-Plots"
+
+\end_inset
+
+
+\change_inserted 1028221600 1442853279
+a-b
+\change_unchanged
+.
+ The larger disparity is due to the very high sensitivity of void nucleation
+ rate to vacancy supersaturation value, which can change by 10-15 orders
+ of magnitude for a 10x increase in vacancy supersaturation 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Katz1971"
+
+\end_inset
+
+.
+ The case with injected interstitials is presented above
+\change_inserted 1028221600 1442853309
+ matching experimental
+\change_unchanged
+ data from 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Shao2014"
+
+\end_inset
+
+, 
+\change_inserted 1028221600 1442853326
+conducted under similar conditions as those simulated in this study, 
+\change_unchanged
+showing better agreement compared to the prediction without injected interstitia
+ls.
+ However, the model does not predict enough of a swelling peak shift towards
+ the free surface to match the experimental data.
+ Also note how the presence of injected interstitials shifts the peak supersatur
+ation level and void nucleation rate location towards the free surface by
+ 
+\change_inserted 1028221600 1442853456
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1028221600 1442853456
+
+{
+\backslash
+raise.17ex
+\backslash
+hbox{$
+\backslash
+scriptstyle
+\backslash
+sim$}}
+\end_layout
+
+\end_inset
+
+
+\change_deleted 1028221600 1442853476
+1
+\change_inserted 1028221600 1442853476
+2
+\change_unchanged
+00
+\begin_inset space \thinspace{}
+\end_inset
+
+nm.
+\end_layout
+
+\begin_layout Subsection
+Predictions at Other Defect Production Rates
+\change_inserted 1028221600 1442101917
+,
+\change_deleted 1028221600 1442101916
+ and
+\change_unchanged
+ Temperatures
+\change_inserted 1028221600 1442101922
+, and Activation Energies
+\change_unchanged
+
+\end_layout
+
+\begin_layout Standard
+A significant temperature shift has been observed 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Garner1976,Garner1976a,Packan1978,Terasawa1977"
+
+\end_inset
+
+ and proposed 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Straalsund1974,Mansur1978"
+
+\end_inset
+
+ by a number of researchers, whereby the temperature of peak void swelling
+ is seen to vary between ion and neutron irradiations, with the peak temperature
+ increasing with increasing DPA rate.
+ The largest factor 
+\change_deleted 1028221600 1442853513
+which may be responsible 
+\change_unchanged
+is 
+\change_inserted 1028221600 1442853514
+the 
+\change_unchanged
+dose rate, which determines the defect production terms relative to invariant
+ sink strengths, neglecting the formation of defect clusters which act as
+ sinks themselves.
+ 
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename Figures/Dose-Rate-Comparison.eps
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Low-Dose-Rate"
+
+\end_inset
+
+Void nucleation rate curves at a lower, LWR-typical 
+\change_inserted 1028221600 1442082809
+peak 
+\change_deleted 1028221600 1442082811
+dose
+\change_inserted 1028221600 1442082811
+DPA
+\change_unchanged
+ rate of 
+\begin_inset Formula $\mathrm{10^{-7}\thinspace\frac{DPA}{sec}}$
+\end_inset
+
+ 
+\change_inserted 1028221600 1442853378
+for 3.5
+\begin_inset space \thinspace{}
+\end_inset
+
+MeV 
+\begin_inset Formula $\mathrm{Fe^{++}}$
+\end_inset
+
+ ions 
+\change_unchanged
+at 723K, showing no second 
+\change_inserted 1028221600 1442082826
+void nucleation rate 
+\change_unchanged
+peak.
+ Injected interstitials (dashed black line) do 
+\change_inserted 1028221600 1442853396
+somewhat 
+\change_unchanged
+suppress the void nucleation rate, however.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Low-Dose-Rate"
+
+\end_inset
+
+ shows plots of void nucleation rate in a typical dose rate of 
+\begin_inset Formula $\mathrm{10^{-7}\thinspace\frac{DPA}{sec}}$
+\end_inset
+
+ found in a reactor.
+ At this lower dose rate, no shifting in the peak nucleation rate position
+ is observed.
+ This is due to the far lower defect creation driving force compared to
+ fixed sink strengths and densities.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename Figures/Temperature-Shift.png
+	width 100col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Temperature-Shift"
+
+\end_inset
+
+Normalized void nucleation rates for 3.5
+\begin_inset space \thinspace{}
+\end_inset
+
+MeV 
+\begin_inset Formula $\mathrm{Fe^{+2}}$
+\end_inset
+
+ irradiation of pure iron with injected interstitials, at temperatures ranging
+ from 6
+\change_deleted 1028221600 1442080675
+2
+\change_inserted 1028221600 1442080675
+7
+\change_unchanged
+3K to 
+\change_deleted 1028221600 1442080678
+83
+\change_inserted 1028221600 1442080679
+77
+\change_unchanged
+3K
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+Injected interstitial effect strength was also studied at different system
+ temperatures, as summarized by Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Temperature-Shift"
+
+\end_inset
+
+.
+ Prevalence of the sub-surface peak becomes more apparent at lower temperatures.
+ This is due to injected interstitials, which peak just past the location
+ of highest damage, locally suppressing vacancy concentration as temperature
+ decreases, and therefore decreasing local vacancy supersaturation.
+ Locations of both sub-surface and near-peak-damage maxima shift away from
+ the free surface with increasing temperature.
+ For other ion energies and DPA rates, the nucleation rate profiles will
+ be different but will preserve the features shown for 3.5
+\begin_inset space \thinspace{}
+\end_inset
+
+MeV.
+\change_inserted 1028221600 1442101941
+
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted 1028221600 1442853542
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+
+\change_inserted 1028221600 1442102112
+\begin_inset Graphics
+	filename Figures/Ea-Comparison.png
+	width 100col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align center
+
+\change_inserted 1028221600 1442102112
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\change_inserted 1028221600 1442102193
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Ea-Shift"
+
+\end_inset
+
+Normalized void nucleation rates for 3.5
+\begin_inset space \thinspace{}
+\end_inset
+
+MeV 
+\begin_inset Formula $\mathrm{Fe^{+2}}$
+\end_inset
+
+ irradiation of pure iron with injected interstitials, at vacancy activation
+ energies ranging fro 0.83-0.89
+\begin_inset space \thinspace{}
+\end_inset
+
+eV
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+Finally, it was found that the behavior of the void nucleation rate curve
+ was extremely sensitive to changes in the vacancy migration energy, the
+ only tuning variable used in this study.
+ Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Ea-Shift"
+
+\end_inset
+
+ shows this dependence, in a narrow range from 0.83-0.89
+\begin_inset space \thinspace{}
+\end_inset
+
+eV.
+ The fact that the results are so sensitive to this parameter implies that
+ precise knowledge of the vacancy migration energy, which is strongly tied
+ to ppm-level carbon impurities in iron 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Takaki1983"
+
+\end_inset
+
+, may determine whether the double-peak phenomenon is observed in a given
+ set of experimental or simulated conditions of dose rate, temperature,
+ and defect mobilities.
+\change_unchanged
+
+\end_layout
+
+\begin_layout Section
+Discussion
+\end_layout
+
+\begin_layout Subsection
+Importance of the Injected Interstitial Effect
+\end_layout
+
+\begin_layout Standard
+The results show qualitatively that the introduction of a subtle, spatially-depe
+ndent defect imbalance may be responsible for significant changes in both
+ magnitude and shape of spatially dependent void distributions evolving
+ during ion irradiation.
+ Injection of a very small fraction of injected interstitials, never more
+ than tenths of a percent, has wide-reaching consequences.
+ Interstitials are much more mobile, causing increased recombination at
+ the location of peak ballistic damage, shifting the main damage peak towards
+ the free surface by 100-200nm.
+ In addition, suppression of vacancy concentration by increased recombination
+ “exposes” the second peak near the free surface.
+ This effect would not be seen without taking injected interstitials into
+ account.
+\end_layout
+
+\begin_layout Standard
+This indicates that the injected interstitial effect, which has been known
+ for quite some time, must be accounted for when analyzing spatially dependent
+ void swelling experiments employing ion beam irradiation.
+ For example, 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Allen2005"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Cookson1993"
+
+\end_inset
+
+ mention irradiation inducing 
+\begin_inset Quotes eld
+\end_inset
+
+nearly uniform damage,
+\begin_inset Quotes erd
+\end_inset
+
+ in this case referring to ballistic radiation damage.
+ A region of uniform resultant microstructural change is unlikely to form,
+ though the higher the energy of the bombarding ion, the more uniform it
+ may become in front of the ion stopping region.
+ More recent studies mention taking data from a region underneath the surface,
+ to avoid both the sub-surface and injected interstitial regions 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Wang2015"
+
+\end_inset
+
+.
+ Small changes in parameters, such as temperature, dose rate, and material
+ purity (and therefore vacancy mobility) can reveal or obscure the double
+ peak, changing the relative magnitudes of the injected interstitial and
+ free surface effects.
+ Care should therefore be taken when interpreting such data from experiments.
+ It is therefore recommended to perform a spatially-dependent simulation
+ of defect concentrations during the irradiation experiment, to avoid misinterpr
+etation of data from a 
+\begin_inset Quotes eld
+\end_inset
+
+uniform region
+\begin_inset Quotes erd
+\end_inset
+
+ which may or may not exist.
+\end_layout
+
+\begin_layout Standard
+Modeling ion irradiation with and without injected interstitials at varying
+ temperatures shows the increasing importance of the injected interstitials
+ with decreasing vacancy mobility, as should be expected.
+ With increasing temperature, localization of injected interstitial recombinatio
+n decreases as both vacancies and interstitials become more mobile.
+ As vacancies increase in mobility, their ability to reach the free surface
+ from greater distances increases, shifting the sub-surface peak away from
+ the surface.
+ In addition, as interstitials become more mobile, they move farther on
+ average before recombining or sinking, spreading out their localized excess
+ recombination effect.
+\end_layout
+
+\begin_layout Standard
+These studies show that injected interstitial effects cannot be ignored
+ in simulations and experiments involving ion irradiation.
+ Depending on the temperature and the dose rate of irradiation, the resulting
+ vacancy supersaturation, and therefore the eventual void swelling profile,
+ can take on very different shapes.
+ Over-generalization of ion irradiation experiment behavior should therefore
+ be remedied, partially by taking this strong injected interstitial effect
+ into account.
+\end_layout
+
+\begin_layout Subsection
+Shortcomings of the Model
+\end_layout
+
+\begin_layout Standard
+This model is deliberately simple, neglecting the formation of defect clusters,
+ dislocation forests, and other radiation defects which would serve as additiona
+l point defect sinks.
+ Initial simulations using the model in this study clearly show, however,
+ the injected interstitial effect to weaken somewhat with increased sink
+ density, which would be expected to evolve as the material is irradiated.
+ Therefore, a quantitative measure of the injected interstitial effect will
+ only be possible by completely accounting for radiation-induced microstructural
+ changes, as proposed by Golubov et al.
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Golubov2012"
+
+\end_inset
+
+.
+ In addition, the injected interstitial effect has been observed in far
+ more complex materials
+\change_deleted 1028221600 1442853569
+, such as oxide dispersion strengthened alloys MA956 and MA957
+\change_unchanged
+, even though the grain boundary and incoherent precipitate sink terms are
+ much stronger.
+ In these alloys the observed swelling vs, depth profiles show only the
+ near-surface peak with total suppression in the injected interstitial zone,
+ most likely as a consequence of their very high sink density.
+ In simple materials such as iron (this study), nickel, and even 316 stainless
+ steel where the sink density is much lower, ion irradiation usually, but
+ not always, leads to a double peak distribution 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Badger1985,Aruga1984,Bhattachary2014"
+
+\end_inset
+
+ depending on the ion energy, DPA rate, and irradiation temperature.
+ In Badger's work 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Badger1985"
+
+\end_inset
+
+ the double peak in a very pure 316 model alloy moves from a double peak
+ to a single peak as the temperature is increased, as was observed in this
+ study.
+\end_layout
+
+\begin_layout Standard
+A full treatment of the injected interstitial effect in complex materials
+ may be possible by implementing extra, spatially-dependent interstitial
+ source terms found in recently developed models 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Barashev2014"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section
+Conclusions
+\end_layout
+
+\begin_layout Standard
+A spatially varying rate theory model for radiation defect production in
+ ion-irradiated metals was modified to account for injected interstitials,
+ and augmented with some elements of the production bias model (PBM).
+ The presence of injected interstitials both suppresses and shifts the main
+ damage peak towards the free surface, while also reducing the total vacancy
+ supersaturation via increased recombination.
+ This “exposes” a second peak, 
+\change_deleted 1028221600 1442853593
+1
+\change_inserted 1028221600 1442853594
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1028221600 1442853593
+
+{
+\backslash
+raise.17ex
+\backslash
+hbox{$
+\backslash
+scriptstyle
+\backslash
+sim$}}
+\end_layout
+
+\end_inset
+
+2
+\change_unchanged
+00
+\change_deleted 1028221600 1442853598
+ 
+\change_inserted 1028221600 1442853598
+
+\begin_inset space \thinspace{}
+\end_inset
+
+
+\change_unchanged
+nm from the free surface, which has been observed in recent experiments.
+ Predictions were made showing differences in the strength of this effect
+ at different temperatures and dose rates.
+ The most important observation is that the double peak behavior shifts
+ with increasing temperature to a single near-surface peak, in agreement
+ with experimental observations.
+ 
+\change_inserted 1028221600 1442853631
+The double peak is predicted only to be evident within a narrow (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 1028221600 1442853605
+
+{
+\backslash
+raise.17ex
+\backslash
+hbox{$
+\backslash
+scriptstyle
+\backslash
+sim$}}
+\end_layout
+
+\end_inset
+
+30C) temperature window for self-ion irradiation of pure iron.
+ 
+\change_deleted 1028221600 1442853593
+Care should be taken when interpreting ion beam irradiation experiments,
+ as no uniform or uniformly varying region of true damage may exist depending
+ on the parameters of the experiment.
+\change_inserted 1028221600 1442853643
+Caution should be taken when interpreting ion irradiation data, as the ballistic
+ damage profile may not match the resultant void swelling profile.
+\change_unchanged
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+bibfiles "InjectedInterstitials-NoTitles"
+options "unsrtnat"
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

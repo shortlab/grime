@@ -1,0 +1,17 @@
+Chikrii Softlab pseudoTeX 3.0 report.
+http://www.chikrii.com, mailto: support@chikrii.com
+
+Double-Peak-Article.tex (Ln 4) Warning: Can't find pseudoTeX definition for class/package (fontenc)
+Double-Peak-Article.tex (Ln 6) Warning: Can't find pseudoTeX definition for class/package (geometry)
+Double-Peak-Article.tex (Ln 7) Syntax Error: Undefined control sequence (\geometry)
+Double-Peak-Article.tex (Ln 8) Warning: Can't find pseudoTeX definition for class/package (textcomp)
+Double-Peak-Article.tex (Ln 11) Warning: Can't find pseudoTeX definition for class/package (esint)
+Double-Peak-Article.tex (Ln 300) Warning: Please use \mathaccent for accents in math mode
+Double-Peak-Article.tex (Ln 308) Warning: Please use \mathaccent for accents in math mode
+Double-Peak-Article.tex (Ln 311) Warning: Please use \mathaccent for accents in math mode
+Double-Peak-Article.tex (Ln 479) Syntax Error: Undefined control sequence (\underset)
+Double-Peak-Article.tex (Ln 482) Syntax Error: Undefined control sequence (\underset)
+Double-Peak-Article.tex (Ln 482) Syntax Error: Undefined control sequence (\underset)
+Double-Peak-Article.tex (Ln 485) Syntax Error: Undefined control sequence (\underset)
+Double-Peak-Article.tex (Ln 489) Syntax Error: Undefined control sequence (\underset)
+Double-Peak-Article.tex (Ln 489) Syntax Error: Undefined control sequence (\underset)
