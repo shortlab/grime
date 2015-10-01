@@ -1,5 +1,5 @@
 Readme File for 2015 JNM Injected Interstitials Paper by M. P. Short et al.
- 10.5281/zenodo.31640 
+ <a href="http://dx.doi.org/10.5281/zenodo.31640"><img src="https://zenodo.org/badge/doi/10.5281/zenodo.31640.svg" alt="10.5281/zenodo.31640"></a>
 ==============================================
 
 A note to those who want to reproduce our results:
